@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqn5br55m7y75"]
+[gd_scene load_steps=3 format=3 uid="uid://dqn5br55m7y75"]
 
 [ext_resource type="Script" path="res://scripts/select_level.gd" id="1_f4psx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgkqq"]
+font_size = 66
 
 [node name="SelectLevel" type="Control"]
 layout_mode = 3
@@ -11,16 +14,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4psx")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -45.5
-offset_right = 45.5
-offset_bottom = 23.0
+offset_left = -186.0
+offset_top = 89.0
+offset_right = 186.0
+offset_bottom = 180.0
 grow_horizontal = 2
 text = "Select Level"
+label_settings = SubResource("LabelSettings_dgkqq")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -38,22 +51,27 @@ grow_vertical = 2
 columns = 3
 
 [node name="ButtonLevel1" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Level 1"
 
 [node name="ButtonLevel2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Level 2"
 
 [node name="ButtonLevel3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Level 3"
 
 [node name="ButtonLevel4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Level 4"
 
 [node name="ButtonLevel5" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Level 5"
 
@@ -64,9 +82,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.5
-offset_top = -31.0
-offset_right = 22.5
+offset_left = -132.0
+offset_top = -139.0
+offset_right = 132.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
