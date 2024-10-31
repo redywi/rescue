@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ba42qeyg2k45i"]
+[gd_scene load_steps=12 format=3 uid="uid://ba42qeyg2k45i"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_xeg70"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_2gn6u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="4_jouu4"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="5_s2x4r"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="6_r48da"]
+[ext_resource type="AudioStream" uid="uid://cujmdtagbswpt" path="res://assets/sound/yeah.mp3" id="7_bygtj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ige3n"]
 
@@ -151,6 +152,11 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("4_jouu4")
 texture_pressed = ExtResource("5_s2x4r")
 texture_hover = ExtResource("6_r48da")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(548, 501)
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("7_bygtj")
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/SfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
