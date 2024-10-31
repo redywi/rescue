@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yl2tfvn154f5"
-path="res://.godot/imported/pvv_fly.png-7f50dd4fce2d36df06f2a968e9e579d4.ctex"
+uid="uid://depwesukvwjvj"
+path="res://.godot/imported/exit (hover).png-b860d782c73d2e5eede160ebeda849d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pvv_fly.png"
-dest_files=["res://.godot/imported/pvv_fly.png-7f50dd4fce2d36df06f2a968e9e579d4.ctex"]
+source_file="res://assets/button/exit (hover).png"
+dest_files=["res://.godot/imported/exit (hover).png-b860d782c73d2e5eede160ebeda849d5.ctex"]
 
 [params]
 

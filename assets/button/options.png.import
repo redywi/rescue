@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cadkcg7ocwakr"
-path="res://.godot/imported/pvv_tiles.png-189739cfc4778837fcb38b6afc759893.ctex"
+uid="uid://ddjrv0blb6h2p"
+path="res://.godot/imported/options.png-0ad714f42c55d428e1601eccaabcd764.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pvv_tiles.png"
-dest_files=["res://.godot/imported/pvv_tiles.png-189739cfc4778837fcb38b6afc759893.ctex"]
+source_file="res://assets/button/options.png"
+dest_files=["res://.godot/imported/options.png-0ad714f42c55d428e1601eccaabcd764.ctex"]
 
 [params]
 
