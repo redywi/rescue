@@ -1,5 +1,10 @@
 extends Control
 
+# Fungsi yang dipanggil saat scene dimuat
+func _ready() -> void:
+	# Memainkan audio secara otomatis saat scene dimuat
+	$AudioStreamPlayer.play()
+
 	# Fungsi ketika tombol Start ditekan
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/select_level.tscn")
