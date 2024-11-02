@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba42qeyg2k45i"]
+[gd_scene load_steps=11 format=3 uid="uid://ba42qeyg2k45i"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_xeg70"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_2gn6u"]
@@ -6,12 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="4_jouu4"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="5_s2x4r"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="6_r48da"]
-[ext_resource type="AudioStream" uid="uid://cujmdtagbswpt" path="res://assets/sound/yeah.mp3" id="7_bygtj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yu87h"]
 texture = ExtResource("2_2gn6u")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ige3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtcgw"]
 bg_color = Color(0.290196, 0.133333, 0.0588235, 1)
@@ -61,14 +58,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -39.0
-offset_right = 39.0
-offset_bottom = 24.0
+offset_left = -72.5
+offset_top = 10.0
+offset_right = 72.5
+offset_bottom = 55.0
 grow_horizontal = 2
-scale = Vector2(3, 3)
 theme_override_colors/font_color = Color(0.776471, 0.992157, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_r1h2e")
+theme_override_font_sizes/font_size = 30
 text = "OPTIONS"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -78,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -204.5
-offset_top = -33.0
-offset_right = 204.5
-offset_bottom = 33.0
+offset_left = -237.0
+offset_top = -52.0
+offset_right = 238.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -90,12 +88,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.894118, 0.470588, 1)
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 24
-theme_override_icons/icon = SubResource("CompressedTexture2D_ige3n")
+theme_override_font_sizes/font_size = 14
 text = "MUSIC"
 
 [node name="MusicHSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
@@ -108,9 +105,10 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsmii")
 value = 100.0
 
 [node name="MusicPersentase" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "100%"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
@@ -118,11 +116,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.894118, 0.470588, 1)
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "SFX"
 
 [node name="SfxHSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
@@ -134,33 +132,29 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsmii")
 value = 100.0
 
 [node name="SfxPersentase" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "100%"
 
 [node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -81.0
-offset_top = -78.0
-offset_right = 540.0
-offset_bottom = 81.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 74.0
+offset_right = 575.0
+offset_bottom = 233.0
 grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.3, 0.3)
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("4_jouu4")
 texture_pressed = ExtResource("5_s2x4r")
 texture_hover = ExtResource("6_r48da")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(548, 501)
-scale = Vector2(0.3, 0.3)
-stream = ExtResource("7_bygtj")
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/SfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
