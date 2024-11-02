@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ba42qeyg2k45i"]
+[gd_scene load_steps=13 format=3 uid="uid://ba42qeyg2k45i"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_xeg70"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_2gn6u"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="5_s2x4r"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="6_r48da"]
 [ext_resource type="AudioStream" uid="uid://cujmdtagbswpt" path="res://assets/sound/yeah.mp3" id="7_bygtj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yu87h"]
+texture = ExtResource("2_2gn6u")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ige3n"]
 
@@ -44,22 +47,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xeg70")
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.374139, 0.374139, 0.374139, 1)
-texture_filter = 1
-position = Vector2(640.5, 360.391)
-scale = Vector2(1.281, 0.974618)
-texture = ExtResource("2_2gn6u")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yu87h")
 
 [node name="Judul" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -109.0
-offset_top = 158.0
-offset_right = -38.0
-offset_bottom = 181.0
+offset_left = -39.0
+offset_right = 39.0
+offset_bottom = 24.0
 grow_horizontal = 2
 scale = Vector2(3, 3)
 theme_override_colors/font_color = Color(0.776471, 0.992157, 1, 1)
@@ -142,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -219.0
-offset_right = 529.0
-offset_bottom = -60.0
+offset_left = -81.0
+offset_top = -78.0
+offset_right = 540.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
