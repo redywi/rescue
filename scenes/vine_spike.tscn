@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2g0hw7qcw70y"]
+[gd_scene load_steps=15 format=3 uid="uid://c2g0hw7qcw70y"]
 
 [ext_resource type="Script" path="res://scripts/vine_spike.gd" id="1_t4cqd"]
 [ext_resource type="Texture2D" uid="uid://2novrdyskt0u" path="res://sprites/pvv_vine.png" id="2_38b3h"]
-[ext_resource type="PackedScene" uid="uid://kqjgpwrln2xx" path="res://scenes/progress_bar.tscn" id="3_bhcq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yml38"]
 atlas = ExtResource("2_38b3h")
@@ -97,7 +96,7 @@ script = ExtResource("1_t4cqd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wed4m")
-animation = &"idle"
+animation = &"seed"
 speed_scale = 0.8
 
 [node name="vine_hit_range" type="Area2D" parent="."]
@@ -115,13 +114,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6fcvy")
 disabled = true
 
-[node name="time_up" type="Timer" parent="."]
-
-[node name="time_up_bar" parent="." instance=ExtResource("3_bhcq7")]
-z_index = -1
-position = Vector2(9, -15)
-scale = Vector2(0.2, 0.2)
-
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="input_event" from="vine_hit_range" to="." method="_on_vine_hit_range_input_event"]
-[connection signal="timeout" from="time_up" to="." method="_on_time_up_timeout"]

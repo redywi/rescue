@@ -1,7 +1,6 @@
 extends Node2D
 @onready var _animated_sprite = $AnimatedSprite2D
-@onready var time_up = $time_up
-@onready var time_up_bar = $time_up_bar/TextureProgressBar
+
 @onready var vine_hit_range = $vine_hit_range
 @onready var hitbox_collision = $hitbox/CollisionShape2D
 
@@ -12,10 +11,7 @@ var power_up = 0
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
-	time_up_bar.visible = false
-	time_up_bar.max_value = 120
-	time_up_bar.tint_under = Color(0, 0, 0, 1)
-	time_up_bar.tint_progress = Color(0.1, 0.75, 0.9, 1)
+	pass
 
 func particle_effect(amount, ini_min, ini_max, gravity_y, z_in, color):
 	var particleee = particle.instantiate()
@@ -48,9 +44,6 @@ func _physics_process(delta):
 		last_state = state
 		_animated_sprite.stop()
 		_animated_sprite.play("idle")
-		time_up.wait_time = 120
-		time_up.start()
-		time_up_bar.visible = true
 		particle_effect(10, 40, 55, 30, -7, Color(1, 0.37, 0.37, 1))
 	elif state > 2:
 		last_state = state
@@ -58,12 +51,9 @@ func _physics_process(delta):
 	elif delta < 0:
 		pass
 	
-	if state > 1:
-		time_up.start(time_up.time_left - (delta * (global.speed - 1)))
-		if time_up.time_left < 0.6:
-			time_up.emit_signal("timeout")
+
 	
-	time_up_bar.value = int(time_up.time_left)
+	
 	hitbox_collision.disabled = true
 	
 	if power_up > 0:
@@ -90,7 +80,7 @@ func _on_animated_sprite_2d_frame_changed():
 
 func _on_time_up_timeout():
 	dead = true
-	time_up_bar.visible = false
+
 
 
 func _on_vine_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

@@ -250,7 +250,7 @@ script = ExtResource("1_22pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y6k14")
-animation = &"power_up"
+animation = &"seed"
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -259,13 +259,6 @@ one_shot = true
 [node name="timer_bar" parent="." instance=ExtResource("2_fl3qo")]
 modulate = Color(0.509804, 0.823529, 0.509804, 1)
 position = Vector2(-15, 8)
-scale = Vector2(0.2, 0.2)
-
-[node name="time_up" type="Timer" parent="."]
-
-[node name="time_up_bar" parent="." instance=ExtResource("2_fl3qo")]
-z_index = -1
-position = Vector2(9, -15)
 scale = Vector2(0.2, 0.2)
 
 [node name="health_bar" parent="." instance=ExtResource("3_iyv66")]
@@ -287,5 +280,4 @@ shape = SubResource("CapsuleShape2D_q3kiv")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="time_up" to="." method="_on_time_up_timeout"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

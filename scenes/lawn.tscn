@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwc4qx4lfdgjv"]
+[gd_scene load_steps=17 format=3 uid="uid://dwc4qx4lfdgjv"]
 
 [ext_resource type="Script" path="res://scripts/lawn.gd" id="1_g72vm"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="2_egcmh"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="5_xht25"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="7_3gk1p"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="7_6uhf7"]
-[ext_resource type="Texture2D" uid="uid://d11m7u11hu3wu" path="res://sprites/pvv_tiles.png" id="10_hqyov"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -317,29 +316,6 @@ z_index = -10
 position = Vector2(227.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="graft_slots" type="TileMap" parent="."]
-position = Vector2(2.08165e-12, 14)
-tile_set = SubResource("TileSet_xw7xv")
-format = 2
-layer_0/name = "graft_slots -5"
-layer_0/z_index = -5
-layer_0/tile_data = PackedInt32Array(458754, 131072, 5, 458755, 0, 6, 458756, 131072, 5, 458757, 0, 6, 458758, 0, 5, 458759, 0, 5, 524290, 65536, 5, 524291, 65536, 5, 524292, 196608, 5, 524293, 65536, 5, 524294, 196608, 5, 524295, 196608, 4, 393218, 196608, 536870916, 393219, 65536, 536870917, 393220, 65536, 536870917, 393221, 65536, 536870917, 393222, 65536, 536870917, 393223, 196608, 536870916, 524289, 196608, 5, 393217, 196608, 536870916, 393224, 196608, 805306374, 524296, 196608, 1610612742, 458760, 65536, 6, 458753, 65536, 7, 458752, 0, 7, 524288, 65536, 5, 393216, 65536, 536870917, 524287, 65536, 268435462, 589823, 196608, 6, 458751, 196608, 1342177286)
-
-[node name="leaf" type="Sprite2D" parent="graft_slots"]
-position = Vector2(16, 240)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_ql41n")
-hframes = 2
-vframes = 2
-frame = 3
-
-[node name="leaf_panel" type="Sprite2D" parent="graft_slots"]
-modulate = Color(1, 1, 1, 0.392157)
-z_index = -10
-position = Vector2(128, 240)
-scale = Vector2(8, 1)
-texture = ExtResource("7_3gk1p")
-
 [node name="ground_tiles" type="TileMap" parent="."]
 z_index = -10
 position = Vector2(2.08165e-12, -8)
@@ -397,58 +373,11 @@ hframes = 4
 vframes = 8
 frame = 16
 
-[node name="watering_can" type="Sprite2D" parent="."]
-process_mode = 1
-z_index = 1
-y_sort_enabled = true
-position = Vector2(298, 22)
-texture = SubResource("CompressedTexture2D_eymok")
-hframes = 4
-vframes = 8
-frame = 17
-
-[node name="watering_can_shadow" type="Sprite2D" parent="."]
-process_mode = 1
-position = Vector2(298, 22)
-texture = SubResource("CompressedTexture2D_eymok")
-hframes = 4
-vframes = 8
-frame = 18
-
-[node name="compose" type="Sprite2D" parent="."]
-process_mode = 1
-z_index = 1
-y_sort_enabled = true
-position = Vector2(396, 24)
-texture = ExtResource("10_hqyov")
-hframes = 4
-vframes = 8
-frame = 30
-
-[node name="compose_shadow" type="Sprite2D" parent="."]
-process_mode = 1
-position = Vector2(396, 24)
-texture = ExtResource("10_hqyov")
-hframes = 4
-vframes = 8
-frame = 31
-
 [node name="sun_value" type="Node2D" parent="."]
 position = Vector2(28, 7)
 scale = Vector2(0.8, 0.8)
 
 [node name="Label" type="Label" parent="sun_value"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-horizontal_alignment = 1
-
-[node name="leaf_value" type="Node2D" parent="."]
-position = Vector2(26, 245)
-scale = Vector2(0.8, 0.8)
-
-[node name="Label" type="Label" parent="leaf_value"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -461,186 +390,6 @@ autostart = true
 
 [node name="sun_timer" type="Timer" parent="."]
 
-[node name="speedx1" type="Node2D" parent="."]
-position = Vector2(279, 236)
-
-[node name="Label" type="Label" parent="speedx1"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-text = "x1"
-horizontal_alignment = 1
-
-[node name="Button_speed1" type="Button" parent="speedx1"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 3.0
-offset_right = 35.0
-offset_bottom = 25.0
-focus_mode = 0
-toggle_mode = true
-
-[node name="speedtile" type="Sprite2D" parent="speedx1"]
-modulate = Color(0.443137, 0.8, 0.443137, 1)
-z_index = -1
-position = Vector2(22.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedx2" type="Node2D" parent="."]
-position = Vector2(324, 236)
-
-[node name="Label" type="Label" parent="speedx2"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-text = "x2"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Button_speed2" type="Button" parent="speedx2"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 3.0
-offset_right = 35.0
-offset_bottom = 25.0
-focus_mode = 0
-toggle_mode = true
-
-[node name="speedtile" type="Sprite2D" parent="speedx2"]
-modulate = Color(0.960784, 0.921569, 0.435294, 1)
-z_index = -2
-position = Vector2(18.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile2" type="Sprite2D" parent="speedx2"]
-modulate = Color(0.960784, 0.921569, 0.435294, 1)
-z_index = -1
-position = Vector2(26.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedx3" type="Node2D" parent="."]
-position = Vector2(372, 236)
-
-[node name="Label" type="Label" parent="speedx3"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-text = "x3"
-horizontal_alignment = 1
-
-[node name="Button_speed3" type="Button" parent="speedx3"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 3.0
-offset_right = 35.0
-offset_bottom = 25.0
-focus_mode = 0
-toggle_mode = true
-
-[node name="speedtile1" type="Sprite2D" parent="speedx3"]
-modulate = Color(0.992157, 0.623529, 0.333333, 1)
-z_index = -3
-position = Vector2(16.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile2" type="Sprite2D" parent="speedx3"]
-modulate = Color(0.992157, 0.623529, 0.333333, 1)
-z_index = -2
-position = Vector2(22.7, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile3" type="Sprite2D" parent="speedx3"]
-modulate = Color(0.992157, 0.623529, 0.333333, 1)
-z_index = -1
-position = Vector2(29.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedx4" type="Node2D" parent="."]
-position = Vector2(423, 236)
-
-[node name="Label" type="Label" parent="speedx4"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-text = "x4"
-horizontal_alignment = 1
-
-[node name="Button_speed4" type="Button" parent="speedx4"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 3.0
-offset_right = 44.0
-offset_bottom = 25.0
-focus_mode = 0
-
-[node name="speedtile1" type="Sprite2D" parent="speedx4"]
-modulate = Color(0.992157, 0.407843, 0.403922, 1)
-z_index = -3
-position = Vector2(14.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile2" type="Sprite2D" parent="speedx4"]
-modulate = Color(0.992157, 0.407843, 0.403922, 1)
-z_index = -2
-position = Vector2(20.7, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile3" type="Sprite2D" parent="speedx4"]
-modulate = Color(0.992157, 0.407843, 0.403922, 1)
-z_index = -1
-position = Vector2(27.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
-[node name="speedtile4" type="Sprite2D" parent="speedx4"]
-modulate = Color(0.992157, 0.407843, 0.403922, 1)
-z_index = -1
-position = Vector2(34.2, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
-hframes = 4
-vframes = 4
-frame = 14
-
 [node name="dead_area" type="Area2D" parent="."]
 position = Vector2(-16, 135)
 
@@ -652,8 +401,4 @@ shape = SubResource("RectangleShape2D_5pil5")
 [connection signal="button_up" from="dead/restart/Button_restart" to="." method="_on_button_restart_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sun_timer" to="." method="_on_sun_timer_timeout"]
-[connection signal="button_up" from="speedx1/Button_speed1" to="." method="_on_button_speed_1_button_up"]
-[connection signal="button_up" from="speedx2/Button_speed2" to="." method="_on_button_speed_2_button_up"]
-[connection signal="button_up" from="speedx3/Button_speed3" to="." method="_on_button_speed_3_button_up"]
-[connection signal="button_up" from="speedx4/Button_speed4" to="." method="_on_button_speed_4_button_up"]
 [connection signal="area_entered" from="dead_area" to="." method="_on_dead_area_area_entered"]

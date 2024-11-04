@@ -172,7 +172,7 @@ script = ExtResource("1_juajy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6ywa")
-animation = &"seed"
+animation = &"idle"
 speed_scale = 0.8
 
 [node name="Timer" type="Timer" parent="."]
@@ -197,13 +197,6 @@ scale = Vector2(0.2, 0.2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CapsuleShape2D_3qlsk")
 
-[node name="time_up" type="Timer" parent="."]
-
-[node name="time_up_bar" parent="." instance=ExtResource("3_ouusg")]
-position = Vector2(9, -15)
-scale = Vector2(0.2, 0.2)
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sun_timer" to="." method="_on_sun_timer_timeout"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="timeout" from="time_up" to="." method="_on_time_up_timeout"]
