@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2novrdyskt0u" path="res://sprites/pvv_vine.png" id="4_ofah3"]
 [ext_resource type="Texture2D" uid="uid://cg1c8sq5s4mng" path="res://sprites/pvv_sunleaf.png" id="4_ql41n"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="5_pwjgy"]
-[ext_resource type="PackedScene" path="res://scenes/cooldown_bar.tscn" id="5_xht25"]
+[ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="5_xht25"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="7_3gk1p"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="7_6uhf7"]
 [ext_resource type="Texture2D" uid="uid://d11m7u11hu3wu" path="res://sprites/pvv_tiles.png" id="10_hqyov"]

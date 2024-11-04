@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bw5tryynhwgq5"]
+[gd_scene load_steps=19 format=3 uid="uid://bw5tryynhwgq5"]
 
+[ext_resource type="Script" path="res://scripts/boar.gd" id="1_b47or"]
 [ext_resource type="Texture2D" uid="uid://pumihb6jyi48" path="res://assets/characters/MiniBoar.png" id="1_kfd1x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kuxaa"]
@@ -115,25 +116,26 @@ animations = [{
 size = Vector2(15, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yolq"]
-size = Vector2(10, 12)
+size = Vector2(12, 12)
 
 [node name="Boar" type="Node2D"]
+script = ExtResource("1_b47or")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eg7wh")
-animation = &"idle"
-autoplay = "idle"
-frame = 2
-frame_progress = 0.907091
+animation = &"attack"
+frame_progress = 0.287516
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="vine_hit_range" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vine_hit_range"]
 position = Vector2(1.5, 9)
 shape = SubResource("RectangleShape2D_jsrtt")
 
-[node name="AttackRange" type="Area2D" parent="."]
+[node name="hit_box" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackRange"]
-position = Vector2(7, 9)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+position = Vector2(13, 9)
 shape = SubResource("RectangleShape2D_6yolq")
+
+[connection signal="input_event" from="vine_hit_range" to="." method="_on_vine_hit_range_input_event"]
