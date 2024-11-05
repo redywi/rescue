@@ -11,6 +11,7 @@ var dead = false
 var found_enemy = false
 
 func _ready():
+	health_bar.visible = false
 	health_bar.value = 100
 	_animated_sprite.play("idle")
 
