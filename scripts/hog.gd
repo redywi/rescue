@@ -11,7 +11,7 @@ var dead = false
 var found_enemy = false
 
 func _ready():
-	health_bar.value = 200
+	health_bar.value = 100
 	_animated_sprite.play("idle")
 
 func _physics_process(delta):
