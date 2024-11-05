@@ -10,7 +10,7 @@ var move = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
-	health_bar.visible = false
+	health_bar.visible = true
 	health_bar.value = 100
 	_animated_sprite.play("walk")
 
