@@ -18,7 +18,8 @@ var color_up = 200
 
 func _ready():
 	health_bar.value = 100
-	timer_bar.visible = true
+	health_bar.visible = false
+	timer_bar.visible = false
 	sun_timer.wait_time = 30
 	sun_timer.start()
 	_animated_sprite.play("idle")

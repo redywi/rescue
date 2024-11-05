@@ -12,10 +12,10 @@ var state: int = 0
 var last_state: int = 0
 
 func _ready():
+	health_bar.visible = false
+	timer_bar.visible = false
 	health_bar.value = 100
 	_animated_sprite.play("idle")
-
-	
 
 func _physics_process(delta):
 	_animated_sprite.speed_scale = 0.8 * global.speed
@@ -40,15 +40,12 @@ func _physics_process(delta):
 	get_node("hitbox/CollisionShape2D").disabled = health_bar.value <= 0
 	get_node("shoot_range/CollisionShape2D").disabled = health_bar.value <= 0
 	
-
 func _on_animated_sprite_2d_animation_looped():
 	if _animated_sprite.animation == "action":
 		var bullet = load("res://scenes/pea_bullet.tscn").instantiate()
 		bullet.position = self.position + Vector2(8, -7)
 		bullet.scale /= 2
 		get_parent().add_child(bullet)
-
-		
 
 func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy":
