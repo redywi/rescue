@@ -87,7 +87,7 @@ func _on_timer_timeout():
 func _on_animated_sprite_2d_frame_changed():
 	for i in range(5):
 		var ball = load("res://scenes/attack_area.tscn").instantiate()
-		ball.get_node("attack_area").name = "attack_area_vine"
+		ball.get_node("attack_area").name = "attack_area_hog"
 		ball.position += Vector2(0, -4)
 		ball.scale.x = 2.4
 		add_child(ball)
@@ -100,5 +100,5 @@ func _on_time_up_timeout():
 	time_up_bar.visible = false
 
 
-func _on_vine_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_hog_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	pass # Replace with function body.

@@ -47,8 +47,8 @@ func _on_area_2d_area_entered(area):
 		health_bar.value -= 8
 	if area.name == "bullet_area3":
 		health_bar.value -= 20
-	if area.name == "attack_area" or area.name == "attack_area_vine":
-		health_bar.value -= 3
+	if area.name == "attack_area" or area.name == "attack_area_hog":
+		health_bar.value -= 1
 
 func _on_enemy_area_exited(area):
 	if area.name == "hitbox" and move == 0:

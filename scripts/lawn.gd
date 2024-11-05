@@ -4,7 +4,7 @@ extends Node2D
 @onready var shovel = $shovel
 @onready var shooter_seed1 = $seed_slots/shooter_seed1
 @onready var bloom_seed2 = $seed_slots/bloom_seed2
-@onready var vine_seed3 = $seed_slots/vine_seed3
+@onready var hog_seed3 = $seed_slots/hog_seed3
 @onready var sun_value = $sun_value/Label
 
 @onready var timer = $Timer
@@ -22,7 +22,7 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/vine_spike.tscn")]
+var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn")]
 
 var shove = false
 
@@ -126,22 +126,22 @@ func seed2_key_func(event):
 
 func seed3_func(event):
 	if !event.pressed:
-		vine_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 16)
 		current_seed = 0
-		vine_seed3.z_index = 1
+		hog_seed3.z_index = 1
 		return
 	if pos.x > 128 and pos.x < 160 and pos.y > 0 and pos.y < 32 and event.pressed:
-		vine_seed3.z_index += 1
+		hog_seed3.z_index += 1
 		current_seed = 3
 
 func seed3_key_func(event):
 	if (current_seed == 3 and !event.pressed) or event.keycode != 51:
-		vine_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 16)
 		current_seed = 0
-		vine_seed3.z_index = 1
+		hog_seed3.z_index = 1
 		return false
 	if event.pressed and event.keycode == 51 and cooldown_seed3.value == 10000:
-		vine_seed3.z_index += 1
+		hog_seed3.z_index += 1
 		current_seed = 3
 		allbutone_slot_reset(3)
 		return true
@@ -155,8 +155,8 @@ func allbutone_slot_reset(slot_button):
 		bloom_seed2.position = Vector2(112, 16)
 		bloom_seed2.z_index = 1
 	if slot_button != 3:
-		vine_seed3.position = Vector2(144, 16)
-		vine_seed3.z_index = 1
+		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.z_index = 1
 	if slot_button != 4:
 		pass
 	if slot_button != 5:
@@ -288,7 +288,7 @@ func _physics_process(delta):
 	elif current_seed == 2:
 		bloom_seed2.position = get_global_mouse_position()
 	elif current_seed == 3:
-		vine_seed3.position = get_global_mouse_position()
+		hog_seed3.position = get_global_mouse_position()
 
 	
 	if global.danger_level > 0:

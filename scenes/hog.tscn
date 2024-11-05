@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://c2g0hw7qcw70y"]
+
+[ext_resource type="Script" path="res://scripts/hog.gd" id="1_syjtd"]
+[ext_resource type="Texture2D" uid="uid://tigwy4fuo68s" path="res://assets/characters/babihutan/Attack/1.png" id="2_83pj7"]
+[ext_resource type="Texture2D" uid="uid://dw5yr2ec0mkb2" path="res://assets/characters/babihutan/Attack/2.png" id="3_srlqs"]
+[ext_resource type="Texture2D" uid="uid://23yf24egwiqj" path="res://assets/characters/babihutan/Attack/3.png" id="4_83hbl"]
+[ext_resource type="Texture2D" uid="uid://bf00c10aata84" path="res://assets/characters/babihutan/Attack/4.png" id="5_pirye"]
+[ext_resource type="Texture2D" uid="uid://boy7bjeoodk67" path="res://assets/characters/babihutan/Attack/5.png" id="6_5nwaj"]
+[ext_resource type="Texture2D" uid="uid://cckiun4bfq4fd" path="res://assets/characters/babihutan/Idle/1.png" id="7_4tjxx"]
+[ext_resource type="Texture2D" uid="uid://cghntmwnyams8" path="res://assets/characters/babihutan/Idle/2.png" id="8_saswx"]
+[ext_resource type="Texture2D" uid="uid://cm8xevo6x8tni" path="res://assets/characters/babihutan/Idle/3.png" id="9_2c3ek"]
+[ext_resource type="Texture2D" uid="uid://ci5fmmm8pnsje" path="res://assets/characters/babihutan/Idle/4.png" id="10_e4yba"]
+[ext_resource type="PackedScene" uid="uid://kqjgpwrln2xx" path="res://scenes/progress_bar.tscn" id="11_mogcg"]
+[ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="12_jk84l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wed4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_83pj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_srlqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_83hbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pirye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5nwaj")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4tjxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_saswx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2c3ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e4yba")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4tjxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_saswx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2c3ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e4yba")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehcpx"]
+size = Vector2(36, 21.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fcvy"]
+radius = 8.0
+height = 32.0
+
+[node name="hog" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_syjtd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -9)
+scale = Vector2(0.25, 0.28125)
+sprite_frames = SubResource("SpriteFrames_wed4m")
+animation = &"idle"
+frame_progress = 0.450344
+speed_scale = 0.8
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="timer_bar" parent="." instance=ExtResource("11_mogcg")]
+modulate = Color(0.509804, 0.823529, 0.509804, 1)
+position = Vector2(-15, 8)
+scale = Vector2(0.2, 0.2)
+
+[node name="health_bar" parent="." instance=ExtResource("12_jk84l")]
+modulate = Color(0.960784, 0.25098, 0.298039, 1)
+z_index = -1
+position = Vector2(-15, -15)
+scale = Vector2(0.2, 0.2)
+
+[node name="hog_hit_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hog_hit_range"]
+shape = SubResource("RectangleShape2D_ehcpx")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6fcvy")
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="input_event" from="hog_hit_range" to="." method="_on_hog_hit_range_input_event"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

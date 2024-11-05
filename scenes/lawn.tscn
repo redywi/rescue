@@ -279,7 +279,7 @@ hframes = 21
 vframes = 2
 frame = 29
 
-[node name="vine_seed3" type="Sprite2D" parent="seed_slots"]
+[node name="hog_seed3" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(144, 16)
 scale = Vector2(0.18, 0.18)
