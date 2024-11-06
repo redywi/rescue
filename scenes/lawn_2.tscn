@@ -1,32 +1,32 @@
-[gd_scene load_steps=50 format=3 uid="uid://dwc4qx4lfdgjv"]
+[gd_scene load_steps=50 format=3 uid="uid://b7mml1y3kqiyk"]
 
-[ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_g72vm"]
-[ext_resource type="Script" path="res://scripts/paused.gd" id="2_egcmh"]
-[ext_resource type="Texture2D" uid="uid://f5uxf7haeika" path="res://sprites/pvv_sunpea.png" id="3_yjeqd"]
-[ext_resource type="Texture2D" uid="uid://cg1c8sq5s4mng" path="res://sprites/pvv_sunleaf.png" id="4_ql41n"]
-[ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="5_pwjgy"]
-[ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="5_xht25"]
-[ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_h5s11"]
-[ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="7_3gk1p"]
-[ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="7_6uhf7"]
-[ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_0cg3d"]
-[ext_resource type="Texture2D" uid="uid://cwxkcxcdywrdl" path="res://assets/backgroud/tileset_1/Outdoor decoration/Bridge_Wood.png" id="11_h1jak"]
-[ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="11_r14m3"]
-[ext_resource type="Texture2D" uid="uid://dwly68o8wcsmp" path="res://assets/backgroud/tileset_1/Enemies/Slime.png" id="12_be6wd"]
-[ext_resource type="Texture2D" uid="uid://dmjwgdqeh5spx" path="res://assets/backgroud/tileset_1/Tiles/Path_Tile.png" id="12_j8g8j"]
-[ext_resource type="Texture2D" uid="uid://63vywec2hegt" path="res://assets/backgroud/tileset_1/Enemies/Skeleton.png" id="13_bdsg3"]
-[ext_resource type="Texture2D" uid="uid://c642mc355pd0y" path="res://assets/backgroud/tileset_1/Outdoor decoration/Oak_Tree.png" id="13_pmqjm"]
-[ext_resource type="Texture2D" uid="uid://urslttt04pmu" path="res://assets/Tiles/Tiles.png" id="14_1ksrd"]
-[ext_resource type="Texture2D" uid="uid://cu58ayix1qyir" path="res://assets/backgroud/tileset_1/Tiles/Cliff_Tile.png" id="14_xrggu"]
-[ext_resource type="Texture2D" uid="uid://bs3r6roibnv1s" path="res://assets/backgroud/tileset_1/Tiles/Water_Middle.png" id="15_0r5xg"]
-[ext_resource type="Texture2D" uid="uid://ce1swbu3ojunh" path="res://assets/Tiles/Outside_A1.png" id="15_ffxe0"]
-[ext_resource type="Texture2D" uid="uid://l78waintk3an" path="res://assets/backgroud/tileset_1/Tiles/Water_Tile.png" id="16_8i7vn"]
-[ext_resource type="Texture2D" uid="uid://o1ofmdh7dp7x" path="res://assets/Tiles/Outside_A5.png" id="16_s784r"]
-[ext_resource type="Texture2D" uid="uid://hrxou4ljtpij" path="res://assets/backgroud/tileset_1/Outdoor decoration/Oak_Tree_Small.png" id="17_rwvi2"]
-[ext_resource type="Texture2D" uid="uid://d10niuhwexlp8" path="res://assets/backgroud/tileset_1/Outdoor decoration/Outdoor_Decor_Free.png" id="18_rtjdy"]
-[ext_resource type="Texture2D" uid="uid://dts58wthntf6b" path="res://assets/Tiles/Outside_A2.png" id="18_thtnv"]
-[ext_resource type="PackedScene" uid="uid://bmvgh0sgdbv4r" path="res://scenes/npc_pig.tscn" id="21_1yb8f"]
-[ext_resource type="PackedScene" uid="uid://0hohh4qscndr" path="res://scenes/npc_chicken.tscn" id="22_1ohab"]
+[ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_v1y32"]
+[ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
+[ext_resource type="Script" path="res://scripts/paused.gd" id="3_5tw4x"]
+[ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="4_swnol"]
+[ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="5_bn0b0"]
+[ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_digot"]
+[ext_resource type="Texture2D" uid="uid://f5uxf7haeika" path="res://sprites/pvv_sunpea.png" id="7_b1vv8"]
+[ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_dlb7k"]
+[ext_resource type="Texture2D" uid="uid://cg1c8sq5s4mng" path="res://sprites/pvv_sunleaf.png" id="9_0yj87"]
+[ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="10_7db1a"]
+[ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="11_xntsm"]
+[ext_resource type="Texture2D" uid="uid://dwly68o8wcsmp" path="res://assets/backgroud/tileset_1/Enemies/Slime.png" id="12_k8lub"]
+[ext_resource type="Texture2D" uid="uid://63vywec2hegt" path="res://assets/backgroud/tileset_1/Enemies/Skeleton.png" id="13_46blo"]
+[ext_resource type="Texture2D" uid="uid://cu58ayix1qyir" path="res://assets/backgroud/tileset_1/Tiles/Cliff_Tile.png" id="14_7jp3l"]
+[ext_resource type="Texture2D" uid="uid://ce1swbu3ojunh" path="res://assets/Tiles/Outside_A1.png" id="15_6b1f3"]
+[ext_resource type="Texture2D" uid="uid://o1ofmdh7dp7x" path="res://assets/Tiles/Outside_A5.png" id="16_rwyaw"]
+[ext_resource type="Texture2D" uid="uid://urslttt04pmu" path="res://assets/Tiles/Tiles.png" id="17_jfeek"]
+[ext_resource type="Texture2D" uid="uid://dts58wthntf6b" path="res://assets/Tiles/Outside_A2.png" id="18_e4qn1"]
+[ext_resource type="Texture2D" uid="uid://cwxkcxcdywrdl" path="res://assets/backgroud/tileset_1/Outdoor decoration/Bridge_Wood.png" id="19_n5lug"]
+[ext_resource type="Texture2D" uid="uid://dmjwgdqeh5spx" path="res://assets/backgroud/tileset_1/Tiles/Path_Tile.png" id="20_elb4h"]
+[ext_resource type="Texture2D" uid="uid://c642mc355pd0y" path="res://assets/backgroud/tileset_1/Outdoor decoration/Oak_Tree.png" id="21_uc7uq"]
+[ext_resource type="Texture2D" uid="uid://bs3r6roibnv1s" path="res://assets/backgroud/tileset_1/Tiles/Water_Middle.png" id="22_ac3sj"]
+[ext_resource type="Texture2D" uid="uid://l78waintk3an" path="res://assets/backgroud/tileset_1/Tiles/Water_Tile.png" id="23_weh1e"]
+[ext_resource type="Texture2D" uid="uid://hrxou4ljtpij" path="res://assets/backgroud/tileset_1/Outdoor decoration/Oak_Tree_Small.png" id="24_ep0ca"]
+[ext_resource type="Texture2D" uid="uid://d10niuhwexlp8" path="res://assets/backgroud/tileset_1/Outdoor decoration/Outdoor_Decor_Free.png" id="25_gaja3"]
+[ext_resource type="PackedScene" uid="uid://bmvgh0sgdbv4r" path="res://scenes/npc_pig.tscn" id="26_srjic"]
+[ext_resource type="PackedScene" uid="uid://0hohh4qscndr" path="res://scenes/npc_chicken.tscn" id="27_vf0gc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -65,7 +65,7 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evor5"]
-texture = ExtResource("7_6uhf7")
+texture = ExtResource("4_swnol")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -83,11 +83,11 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgvc4"]
-texture = ExtResource("11_r14m3")
+texture = ExtResource("11_xntsm")
 texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyua7"]
-texture = ExtResource("12_be6wd")
+texture = ExtResource("12_k8lub")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -106,7 +106,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhexe"]
-texture = ExtResource("13_bdsg3")
+texture = ExtResource("13_46blo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -162,14 +162,14 @@ texture_region_size = Vector2i(32, 32)
 3:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6t2t8"]
-texture = ExtResource("14_xrggu")
+texture = ExtResource("14_7jp3l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63a5y"]
-texture = ExtResource("15_ffxe0")
+texture = ExtResource("15_6b1f3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -605,7 +605,7 @@ texture_region_size = Vector2i(32, 32)
 23:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmmu7"]
-texture = ExtResource("16_s784r")
+texture = ExtResource("16_rwyaw")
 margins = Vector2i(48, 0)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -895,7 +895,7 @@ texture_region_size = Vector2i(32, 32)
 11:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljf4u"]
-texture = ExtResource("14_1ksrd")
+texture = ExtResource("17_jfeek")
 margins = Vector2i(68, 0)
 texture_region_size = Vector2i(17, 29)
 0:0/0 = 0
@@ -1036,7 +1036,7 @@ texture_region_size = Vector2i(17, 29)
 10:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ndn8"]
-texture = ExtResource("18_thtnv")
+texture = ExtResource("18_e4qn1")
 margins = Vector2i(0, 13)
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -1472,7 +1472,7 @@ texture_region_size = Vector2i(32, 32)
 16:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svpgb"]
-texture = ExtResource("11_h1jak")
+texture = ExtResource("19_n5lug")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -1484,14 +1484,14 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtuwg"]
-texture = ExtResource("12_j8g8j")
+texture = ExtResource("20_elb4h")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38qno"]
-texture = ExtResource("13_pmqjm")
+texture = ExtResource("21_uc7uq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -1499,25 +1499,25 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5fjg"]
-texture = ExtResource("15_0r5xg")
+texture = ExtResource("22_ac3sj")
 texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7lan"]
-texture = ExtResource("16_8i7vn")
+texture = ExtResource("23_weh1e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4mex"]
-texture = ExtResource("17_rwvi2")
+texture = ExtResource("24_ep0ca")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2j77"]
-texture = ExtResource("18_rtjdy")
+texture = ExtResource("25_gaja3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -1561,7 +1561,7 @@ size = Vector2(32, 160)
 
 [node name="lawn" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_g72vm")
+script = ExtResource("1_v1y32")
 
 [node name="pausetext" type="Node2D" parent="."]
 process_mode = 3
@@ -1603,7 +1603,7 @@ horizontal_alignment = 1
 modulate = Color(0.981127, 0.339741, 0.391828, 1)
 position = Vector2(26, -32)
 scale = Vector2(1.25, 1.25)
-texture = ExtResource("5_pwjgy")
+texture = ExtResource("2_iwrvn")
 hframes = 6
 frame = 5
 
@@ -1617,7 +1617,7 @@ offset_bottom = 13.0
 [node name="non_pause" type="Node2D" parent="."]
 process_mode = 3
 position = Vector2(423, 12)
-script = ExtResource("2_egcmh")
+script = ExtResource("3_5tw4x")
 
 [node name="Button_pause" type="Button" parent="non_pause"]
 modulate = Color(1, 1, 1, 0)
@@ -1632,7 +1632,7 @@ modulate = Color(0.436107, 0.745631, 0.920544, 1)
 z_index = 1201
 position = Vector2(20.7, 13.3)
 scale = Vector2(0.757812, 0.75)
-texture = ExtResource("7_6uhf7")
+texture = ExtResource("4_swnol")
 hframes = 4
 vframes = 4
 frame = 15
@@ -1643,7 +1643,7 @@ modulate = Color(0, 0, 0, 0.313726)
 z_index = 1200
 position = Vector2(-180, 125)
 scale = Vector2(68.2302, 38.8734)
-texture = ExtResource("7_3gk1p")
+texture = ExtResource("5_bn0b0")
 hframes = 4
 vframes = 4
 frame = 15
@@ -1657,7 +1657,7 @@ modulate = Color(0, 0, 0, 0.313726)
 z_index = 1200
 position = Vector2(239, 136)
 scale = Vector2(68.2302, 38.8734)
-texture = ExtResource("7_3gk1p")
+texture = ExtResource("5_bn0b0")
 hframes = 4
 vframes = 4
 frame = 15
@@ -1672,7 +1672,7 @@ offset_right = 412.0
 offset_bottom = 118.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("6_h5s11")
+theme_override_fonts/font = ExtResource("6_digot")
 theme_override_font_sizes/font_size = 15
 text = "Pasukanmu Gagal Menahan Pemburu!"
 horizontal_alignment = 1
@@ -1685,7 +1685,7 @@ offset_right = 338.0
 offset_bottom = 147.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("6_h5s11")
+theme_override_fonts/font = ExtResource("6_digot")
 theme_override_font_sizes/font_size = 8
 text = "Pilih restart untuk mengulangi level atau kembali ke main menu"
 horizontal_alignment = 1
@@ -1696,7 +1696,7 @@ modulate = Color(0.981127, 0.339741, 0.391828, 1)
 z_index = 1230
 position = Vector2(240, 165)
 scale = Vector2(1.25, 1.25)
-texture = ExtResource("5_pwjgy")
+texture = ExtResource("2_iwrvn")
 hframes = 6
 frame = 5
 
@@ -1751,7 +1751,7 @@ metadata/_edit_use_anchors_ = true
 y_sort_enabled = true
 position = Vector2(80, 16)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_yjeqd")
+texture = ExtResource("7_b1vv8")
 hframes = 21
 vframes = 2
 frame = 8
@@ -1760,7 +1760,7 @@ frame = 8
 y_sort_enabled = true
 position = Vector2(112, 16)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_yjeqd")
+texture = ExtResource("7_b1vv8")
 hframes = 21
 vframes = 2
 frame = 29
@@ -1769,12 +1769,12 @@ frame = 29
 y_sort_enabled = true
 position = Vector2(144, 16)
 scale = Vector2(0.218487, 0.218487)
-texture = ExtResource("8_0cg3d")
+texture = ExtResource("8_dlb7k")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
 position = Vector2(16, 16)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_ql41n")
+texture = ExtResource("9_0yj87")
 hframes = 2
 vframes = 2
 frame = 1
@@ -1784,34 +1784,34 @@ modulate = Color(1, 1, 1, 0.392157)
 z_index = -10
 position = Vector2(32, 16)
 scale = Vector2(2, 1)
-texture = ExtResource("7_3gk1p")
+texture = ExtResource("5_bn0b0")
 
-[node name="cooldown_bar_seed1" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed1" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(67.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="cooldown_bar_seed2" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed2" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(99.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="cooldown_bar_seed3" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed3" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(131.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="cooldown_bar_seed4" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed4" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(163.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="cooldown_bar_seed5" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed5" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(195.1, 3.1)
 scale = Vector2(0.81, 0.81)
 
-[node name="cooldown_bar_seed6" parent="seed_slots" instance=ExtResource("5_xht25")]
+[node name="cooldown_bar_seed6" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
 position = Vector2(227.1, 3.1)
 scale = Vector2(0.81, 0.81)
@@ -1906,17 +1906,17 @@ position = Vector2(-16, 135)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead_area"]
 shape = SubResource("RectangleShape2D_5pil5")
 
-[node name="npc_pig" parent="." instance=ExtResource("21_1yb8f")]
-position = Vector2(335, 245)
+[node name="npc_pig" parent="." instance=ExtResource("26_srjic")]
+position = Vector2(231, 257)
 
-[node name="npc_pig2" parent="." instance=ExtResource("21_1yb8f")]
-position = Vector2(352, 268)
+[node name="npc_pig2" parent="." instance=ExtResource("26_srjic")]
+position = Vector2(348, 235)
 
-[node name="npc_pig3" parent="." instance=ExtResource("21_1yb8f")]
-position = Vector2(381, 37)
+[node name="npc_pig3" parent="." instance=ExtResource("26_srjic")]
+position = Vector2(260, 44)
 
-[node name="npc_chicken" parent="." instance=ExtResource("22_1ohab")]
-position = Vector2(225, 230)
+[node name="npc_chicken" parent="." instance=ExtResource("27_vf0gc")]
+position = Vector2(64, 263)
 
 [connection signal="button_up" from="pausetext/restart/Button_restart" to="." method="_on_button_restart_button_up"]
 [connection signal="button_up" from="non_pause/Button_pause" to="non_pause" method="_on_button_pause_button_up"]

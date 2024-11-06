@@ -56,8 +56,8 @@ animations = [{
 size = Vector2(46, 21.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fcvy"]
-radius = 8.0
-height = 32.0
+radius = 5.0
+height = 20.0
 
 [node name="hog" type="Node2D"]
 process_mode = 1
@@ -91,7 +91,7 @@ shape = SubResource("RectangleShape2D_ehcpx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 light_mask = 512
 visibility_layer = 512
-position = Vector2(0, 4)
+position = Vector2(0, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6fcvy")
 

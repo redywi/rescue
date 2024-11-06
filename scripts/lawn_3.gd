@@ -5,6 +5,7 @@ extends Node2D
 @onready var shooter_seed1 = $seed_slots/shooter_seed1
 @onready var bloom_seed2 = $seed_slots/bloom_seed2
 @onready var hog_seed3 = $seed_slots/hog_seed3
+@onready var hedgehog_seed4 = $seed_slots/hedgehog_seed4
 @onready var sun_value = $sun_value/Label
 @onready var timer = $Timer
 @onready var sun_timer = $sun_timer
@@ -19,7 +20,7 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn")]
+var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn")]
 
 var shove = false
 
@@ -66,8 +67,6 @@ func shovel_key_func(event):
 	if event.pressed and event.keycode == 83:
 		shovel.z_index += 1
 		shove = true
-
-
 
 func seed1_func(event):
 	if !event.pressed:
@@ -134,7 +133,28 @@ func seed3_key_func(event):
 		current_seed = 3
 		allbutone_slot_reset(3)
 		return true
+		
+func seed4_func(event):
+	if !event.pressed:
+		hedgehog_seed4.position = Vector2(176, 16)
+		current_seed = 0
+		hedgehog_seed4.z_index = 1
+		return
+	if pos.x > 160 and pos.x < 192 and pos.y > 0 and pos.y < 32 and event.pressed:
+		hedgehog_seed4.z_index += 1
+		current_seed = 4
 
+func seed4_key_func(event):
+	if (current_seed == 4 and !event.pressed) or event.keycode != 52:
+		hedgehog_seed4.position = Vector2(176, 16)
+		current_seed = 0
+		hedgehog_seed4.z_index = 1
+		return false
+	if event.pressed and event.keycode == 52 and cooldown_seed4.value == 10000:
+		hedgehog_seed4.z_index += 1
+		current_seed = 4
+		allbutone_slot_reset(4)
+		return true
 
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
@@ -147,19 +167,21 @@ func allbutone_slot_reset(slot_button):
 		hog_seed3.position = Vector2(144, 16)
 		hog_seed3.z_index = 1
 	if slot_button != 4:
-		pass
+		hedgehog_seed4.position = Vector2(176, 16)
+		hedgehog_seed4.z_index = 1
 	if slot_button != 5:
 		pass
 	if slot_button != 6:
 		pass
 	
-
 func slotkey(event):
 	if seed1_key_func(event):
 		return
 	elif seed2_key_func(event):
 		return
 	elif seed3_key_func(event):
+		return
+	elif seed4_key_func(event):
 		return
 	
 	allbutone_slot_reset(0)
@@ -190,11 +212,7 @@ func _input(event):
 					lawn_key_list.remove_at(i)
 					break
 					
-		
 		shovel_func(event)
-	
-	
-		
 		
 		if (str(x) + str(y)) in lawn_space and !event.pressed:
 			current_seed = 0
@@ -221,6 +239,13 @@ func _input(event):
 				3:
 					if (global.sun_value - 100 >= 0) and !event.pressed:
 						global.sun_value_deficit += 100
+					elif !event.pressed:
+						current_seed = 0
+						get_node("sun_value").modulate.g = 0.2
+						get_node("sun_value").modulate.b = 0.2
+				4: 
+					if (global.sun_value - 175 >= 0) and !event.pressed:
+						global.sun_value_deficit += 175
 					elif !event.pressed:
 						current_seed = 0
 						get_node("sun_value").modulate.g = 0.2
@@ -258,7 +283,8 @@ func _input(event):
 			seed2_func(event)
 		if cooldown_seed3.value == 10000:
 			seed3_func(event)
-
+		if cooldown_seed4.value == 10000:
+			seed4_func(event)
 		
 	#hilight
 	elif event is InputEventMouseMotion:
@@ -278,7 +304,8 @@ func _physics_process(delta):
 		bloom_seed2.position = get_global_mouse_position()
 	elif current_seed == 3:
 		hog_seed3.position = get_global_mouse_position()
-
+	elif current_seed == 4:
+		hedgehog_seed4.position = get_global_mouse_position()
 	
 	if global.danger_level > 0:
 		global.danger_level += 3 * delta * global.speed
@@ -288,7 +315,6 @@ func _physics_process(delta):
 	clamp(get_node("sun_value").modulate.g, 0, 1)
 	clamp(get_node("sun_value").modulate.r, 0, 1)
 	clamp(get_node("sun_value").modulate.b, 0, 1)
-	
 	
 	if global.sun_value_deficit > 0:
 		global.sun_value -= 5
@@ -313,11 +339,10 @@ func _physics_process(delta):
 	if get_node("sun_value").modulate.b < 1:
 		get_node("sun_value").modulate.b += 0.01 * global.speed
 	
-	
 	cooldown_seed1.value += 20 * global.speed
 	cooldown_seed2.value += 20 * global.speed
 	cooldown_seed3.value += 20 * global.speed
-	cooldown_seed4.value += 20 * global.speed
+	cooldown_seed4.value += 5 * global.speed
 	cooldown_seed5.value += 20 * global.speed
 	cooldown_seed6.value += 20 * global.speed
 

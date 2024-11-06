@@ -12,7 +12,7 @@ var found_enemy = false
 
 func _ready():
 	health_bar.visible = false
-	health_bar.value = 100
+	health_bar.value = 150
 	_animated_sprite.play("idle")
 
 func _physics_process(delta):
@@ -55,7 +55,7 @@ func _on_animated_sprite_2d_frame_changed():
 			add_child(ball)
 
 func _on_hog_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy" and not dead:
