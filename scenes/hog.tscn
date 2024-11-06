@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2g0hw7qcw70y"]
+[gd_scene load_steps=15 format=3 uid="uid://c2g0hw7qcw70y"]
 
 [ext_resource type="Script" path="res://scripts/hog.gd" id="1_syjtd"]
 [ext_resource type="Texture2D" uid="uid://tigwy4fuo68s" path="res://assets/characters/babihutan/Attack/1.png" id="2_83pj7"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cghntmwnyams8" path="res://assets/characters/babihutan/Idle/2.png" id="8_saswx"]
 [ext_resource type="Texture2D" uid="uid://cm8xevo6x8tni" path="res://assets/characters/babihutan/Idle/3.png" id="9_2c3ek"]
 [ext_resource type="Texture2D" uid="uid://ci5fmmm8pnsje" path="res://assets/characters/babihutan/Idle/4.png" id="10_e4yba"]
-[ext_resource type="PackedScene" uid="uid://kqjgpwrln2xx" path="res://scenes/progress_bar.tscn" id="11_mogcg"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="12_jk84l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wed4m"]
@@ -92,11 +91,6 @@ speed_scale = 0.8
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 one_shot = true
-
-[node name="timer_bar" parent="." instance=ExtResource("11_mogcg")]
-modulate = Color(0.509804, 0.823529, 0.509804, 1)
-position = Vector2(-15, 8)
-scale = Vector2(0.2, 0.2)
 
 [node name="health_bar" parent="." instance=ExtResource("12_jk84l")]
 modulate = Color(0.960784, 0.25098, 0.298039, 1)

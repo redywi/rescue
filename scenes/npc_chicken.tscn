@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://0hohh4qscndr"]
+
+[ext_resource type="Texture2D" uid="uid://dnxesmh4pyy7j" path="res://assets/backgroud/tileset_1/Animals/Chicken/Chicken.png" id="1_86c2q"]
+[ext_resource type="Script" path="res://scripts/npc_chicken.gd" id="1_sde8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwrvv"]
+atlas = ExtResource("1_86c2q")
+region = Rect2(0, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jnyr"]
+atlas = ExtResource("1_86c2q")
+region = Rect2(32, 0, 32, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brvg2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwrvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jnyr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe08g"]
+
+[node name="npc_chicken" type="CharacterBody2D"]
+script = ExtResource("1_sde8a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_brvg2")
+animation = &"idle"
+frame_progress = 0.102517
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pe08g")

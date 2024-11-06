@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmvgh0sgdbv4r"]
+
+[ext_resource type="Texture2D" uid="uid://0yh4jhig61ig" path="res://assets/backgroud/tileset_1/Animals/Pig/Pig.png" id="1_j63mr"]
+[ext_resource type="Script" path="res://scripts/npc_pig.gd" id="1_yd26n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5va0s"]
+atlas = ExtResource("1_j63mr")
+region = Rect2(0, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb7gh"]
+atlas = ExtResource("1_j63mr")
+region = Rect2(32, 0, 32, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sr35s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5va0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb7gh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgrvd"]
+
+[node name="npc_pig" type="CharacterBody2D"]
+script = ExtResource("1_yd26n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sr35s")
+animation = &"idle"
+frame_progress = 0.538514
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sgrvd")
