@@ -20,9 +20,7 @@ var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
 var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn")]
-
 var shove = false
-
 var shovel_pos = Vector2(348.29, 21)
 var pos
 var start_sun_time = 1
@@ -66,8 +64,6 @@ func shovel_key_func(event):
 	if event.pressed and event.keycode == 83:
 		shovel.z_index += 1
 		shove = true
-
-
 
 func seed1_func(event):
 	if !event.pressed:
@@ -135,7 +131,6 @@ func seed3_key_func(event):
 		allbutone_slot_reset(3)
 		return true
 
-
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
 		shooter_seed1.position = Vector2(80, 16)
@@ -153,7 +148,6 @@ func allbutone_slot_reset(slot_button):
 	if slot_button != 6:
 		pass
 	
-
 func slotkey(event):
 	if seed1_key_func(event):
 		return
@@ -163,7 +157,6 @@ func slotkey(event):
 		return
 	
 	allbutone_slot_reset(0)
-
 
 func _input(event):
 	if global.you_lost:
@@ -177,7 +170,6 @@ func _input(event):
 		var x = int(pos.x / 32)
 		var y = int((pos.y + 8)/32)
 		
-		
 		#shovel plant from lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and shove and lawn_space.has(str(x) + str(y)):
 			# Menghapus tanaman dari lawn_space
@@ -189,13 +181,9 @@ func _input(event):
 				if lawn_key_list[i] == (str(x) + str(y)):
 					lawn_key_list.remove_at(i)
 					break
-					
-		
+						
 		shovel_func(event)
 	
-	
-		
-		
 		if (str(x) + str(y)) in lawn_space and !event.pressed:
 			current_seed = 0
 			allbutone_slot_reset(0)
@@ -258,7 +246,6 @@ func _input(event):
 			seed2_func(event)
 		if cooldown_seed3.value == 10000:
 			seed3_func(event)
-
 		
 	#hilight
 	elif event is InputEventMouseMotion:
@@ -279,7 +266,6 @@ func _physics_process(delta):
 	elif current_seed == 3:
 		hog_seed3.position = get_global_mouse_position()
 
-	
 	if global.danger_level > 0:
 		global.danger_level += 3 * delta * global.speed
 	
@@ -313,7 +299,6 @@ func _physics_process(delta):
 	if get_node("sun_value").modulate.b < 1:
 		get_node("sun_value").modulate.b += 0.01 * global.speed
 	
-	
 	cooldown_seed1.value += 20 * global.speed
 	cooldown_seed2.value += 20 * global.speed
 	cooldown_seed3.value += 20 * global.speed
@@ -321,11 +306,9 @@ func _physics_process(delta):
 	cooldown_seed5.value += 20 * global.speed
 	cooldown_seed6.value += 20 * global.speed
 
-	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
 		sun_timer.emit_signal("timeout")
-	
 
 func _on_timer_timeout():
 	for i in lawn_key_list:

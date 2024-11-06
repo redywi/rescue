@@ -3,7 +3,7 @@ extends Node2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var area_triggered = $area_triggered
 @onready var hitbox = $hitbox/CollisionShape2D
-var dead = false
+var dead = true
 var state = 0
 var last_state = 0
 
@@ -28,8 +28,6 @@ func explode():
 	ball.position += Vector2(8, -7)
 	ball.scale.x = 2.4
 	add_child(ball)
-	
-	dead = true
 
 func _on_area_triggered_area_entered(area: Area2D) -> void:
 	if area.name == "slime":

@@ -50,7 +50,7 @@ position = Vector2(-6, -30)
 scale = Vector2(0.523438, 0.49375)
 sprite_frames = SubResource("SpriteFrames_x3ale")
 animation = &"explode"
-frame_progress = 0.920027
+frame_progress = 0.77867
 
 [node name="area_triggered" type="Area2D" parent="."]
 
