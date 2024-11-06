@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehcpx"]
-size = Vector2(36, 21.5)
+size = Vector2(46, 21.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fcvy"]
 radius = 8.0
@@ -83,6 +83,7 @@ scale = Vector2(0.2, 0.2)
 [node name="hog_hit_range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hog_hit_range"]
+position = Vector2(9, 0)
 shape = SubResource("RectangleShape2D_ehcpx")
 
 [node name="hitbox" type="Area2D" parent="."]

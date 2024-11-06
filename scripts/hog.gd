@@ -50,7 +50,7 @@ func _on_animated_sprite_2d_frame_changed():
 		for i in range(5):
 			var ball = load("res://scenes/attack_area.tscn").instantiate()
 			ball.get_node("attack_area").name = "attack_area_hog"
-			ball.position += Vector2(8, -7)
+			ball.position += Vector2(9, 0)
 			ball.scale.x = 2.4
 			add_child(ball)
 
