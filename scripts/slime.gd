@@ -16,20 +16,9 @@ func _ready():
 
 func _physics_process(delta):
 	_animated_sprite.speed_scale = 1 * global.speed
-	if health_bar.value <= 0:
-		global.danger_level += 1
-		global.slime_count += 1
-		var particleee = particle.instantiate()
-		particleee.position = self.position + get_node("enemy").position
-		particleee.get_child(0).color = Color(0.4, 0.6, 1, 1)
-		particleee.get_child(0).amount = 10
-		particleee.get_child(0).emitting = true
-		particleee.get_child(0).initial_velocity_min = 25
-		particleee.get_child(0).initial_velocity_max = 40
-		particleee.get_child(0).gravity.y = 20
-		particleee.get_child(0).z_index = 10
-		get_parent().add_child(particleee)
-		self.queue_free()
+	
+	is_died(health_bar.value)
+	
 	self.position.x -= global.speed * slimespeed * delta * speed_multiplier * move
 	match move:
 		0:
@@ -71,3 +60,24 @@ func _on_animated_sprite_2d_frame_changed():
 		speed_multiplier *= 2
 	else:
 		speed_multiplier = 1
+		
+func is_died(health):
+	if health <= 0:
+		global.danger_level += 1
+		global.slime_count += 1
+		var particleee = particle.instantiate()
+		particleee.position = self.position + get_node("enemy").position
+		particleee.get_child(0).color = Color(0.4, 0.6, 1, 1)
+		particleee.get_child(0).amount = 10
+		particleee.get_child(0).emitting = true
+		particleee.get_child(0).initial_velocity_min = 25
+		particleee.get_child(0).initial_velocity_max = 40
+		particleee.get_child(0).gravity.y = 20
+		particleee.get_child(0).z_index = 10
+		get_parent().add_child(particleee)
+		self.queue_free()
+		
+func take_explode_damage(amount):
+	health_bar.value -= amount
+	is_died(health_bar.value)
+	

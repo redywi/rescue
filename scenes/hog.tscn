@@ -50,23 +50,6 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_4tjxx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_saswx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_2c3ek")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_e4yba")
-}],
-"loop": true,
-"name": &"idle2",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehcpx"]
@@ -84,8 +67,7 @@ script = ExtResource("1_syjtd")
 position = Vector2(1, -9)
 scale = Vector2(0.25, 0.28125)
 sprite_frames = SubResource("SpriteFrames_wed4m")
-animation = &"idle"
-frame_progress = 0.450344
+animation = &"attack"
 speed_scale = 0.8
 
 [node name="Timer" type="Timer" parent="."]

@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgrvd"]
@@ -33,7 +33,7 @@ script = ExtResource("1_yd26n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sr35s")
 animation = &"idle"
-frame_progress = 0.538514
+frame_progress = 0.981284
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sgrvd")

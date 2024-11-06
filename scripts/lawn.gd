@@ -49,14 +49,6 @@ func enemy_spawning():
 		slime.position = Vector2(496, pos_y)
 		add_child(slime)
 		global.danger_level -= 1
-	if global.slime_count > 10 and rng.randf_range(0, 50000) < (global.danger_level):
-		for i in range(rng.randi_range(1, 5)):
-			var fly = load("res://scenes/fly.tscn").instantiate()
-			fly.position = Vector2(496 + rng.randi_range(-8, 30), pos_y)
-			add_child(fly)
-			global.danger_level -= 1
-
-
 
 func shovel_func(event):
 	if shove and !event.pressed:
@@ -380,7 +372,7 @@ func _on_button_restart_button_up():
 	get_tree().reload_current_scene()
 
 func _on_dead_area_area_entered(area):
-	if area.name == "enemy" or area.name == "enemy_fly":
+	if area.name == "enemy":
 		get_tree().paused = true
 		global.you_lost = true
 		get_node("dead").visible = true
