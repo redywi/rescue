@@ -157,6 +157,10 @@ func slotkey(event):
 		return
 	
 	allbutone_slot_reset(0)
+	
+func level_won():
+	get_node("win").visible = true
+	allbutone_slot_reset(0)
 
 func _input(event):
 	if global.you_lost:
@@ -309,6 +313,9 @@ func _physics_process(delta):
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
 		sun_timer.emit_signal("timeout")
+	
+	if global.you_won == true:
+		level_won()
 
 func _on_timer_timeout():
 	for i in lawn_key_list:
@@ -340,12 +347,9 @@ func _on_button_restart_button_up():
 	allbutone_slot_reset(0)
 	get_tree().paused = false
 	global.speed = 1
-	global.sun_value = 300
+	global.sun_value = 100
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.leaf_value = 100
-	global.leaf_value_deficit = 0
-	global.leaf_value_surplus = 0
 	global.danger_level = 0
 	global.slime_count = 0
 	global.you_lost = false

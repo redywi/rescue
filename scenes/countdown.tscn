@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c47lcd5n7g24r"]
+
+[ext_resource type="Script" path="res://scripts/countdown.gd" id="1_1dciu"]
+
+[node name="countdown" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "02:00"
+script = ExtResource("1_1dciu")

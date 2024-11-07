@@ -19,6 +19,9 @@ func _physics_process(delta):
 	
 	is_died(health_bar.value)
 	
+	if global.you_won == true:
+		health_bar.value -= 999
+	
 	self.position.x -= global.speed * slimespeed * delta * speed_multiplier * move
 	match move:
 		0:

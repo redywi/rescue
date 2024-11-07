@@ -15,7 +15,6 @@ func _on_settings_button_pressed():
 	# Ganti ke scene pengaturan
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
 
-
 # Fungsi untuk tombol Exit
 func _on_exit_button_pressed():
 	# Menutup aplikasi
