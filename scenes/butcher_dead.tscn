@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://b43sidcxbdehv"]
+
+[ext_resource type="Texture2D" uid="uid://2obsta7tyd0s" path="res://assets/characters/enemies/Butcher/Death/butcher_d_1.png" id="1_3ftsf"]
+[ext_resource type="Texture2D" uid="uid://opexndek8cpq" path="res://assets/characters/enemies/Butcher/Death/butcher_d_2.png" id="2_7f26c"]
+[ext_resource type="Texture2D" uid="uid://qkbk2qr4c8mf" path="res://assets/characters/enemies/Butcher/Death/butcher_d_3.png" id="3_45tvy"]
+[ext_resource type="Texture2D" uid="uid://1cmowvib2vbq" path="res://assets/characters/enemies/Butcher/Death/butcher_d_4.png" id="4_k34ka"]
+[ext_resource type="Texture2D" uid="uid://5fndbc74f471" path="res://assets/characters/enemies/Butcher/Death/butcher_d_5.png" id="5_2ix74"]
+[ext_resource type="Texture2D" uid="uid://bqj2jpqi18y7y" path="res://assets/characters/enemies/Butcher/Death/butcher_d_6.png" id="6_pa20q"]
+[ext_resource type="Script" path="res://scripts/butcher_dead.gd" id="7_3v653"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdgx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3ftsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7f26c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_45tvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k34ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ix74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pa20q")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 3.0
+}]
+
+[node name="ButcherDead" type="Node2D"]
+script = ExtResource("7_3v653")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -16)
+scale = Vector2(0.306534, 0.306534)
+sprite_frames = SubResource("SpriteFrames_jdgx7")
+animation = &"dead"
+frame = 5
+frame_progress = 1.0

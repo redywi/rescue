@@ -9,7 +9,7 @@ var last_state = 0
 
 func _ready():
 	_animated_sprite.play("idle")
-	$area_triggered.connect("area_entered", Callable(self, "_on_area_triggered_area_entered"))
+	area_triggered.connect("area_entered", Callable(self, "_on_area_triggered_area_entered"))
 	
 func _physics_process(delta):
 	_animated_sprite.speed_scale = 0.8 * global.speed

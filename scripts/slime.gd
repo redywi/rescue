@@ -8,6 +8,7 @@ var slimespeed = 2
 var speed_multiplier = 1
 var move = 1
 var particle = preload("res://scenes/particles_square.tscn")
+var butcher_dead = preload("res://scenes/butcher_dead.tscn")
 
 func _ready():
 	health_bar.visible = false
@@ -70,16 +71,9 @@ func is_died(health):
 	if health <= 0:
 		global.danger_level += 1
 		global.slime_count += 1
-		var particleee = particle.instantiate()
-		particleee.position = self.position + get_node("enemy").position
-		particleee.get_child(0).color = Color(0.4, 0.6, 1, 1)
-		particleee.get_child(0).amount = 10
-		particleee.get_child(0).emitting = true
-		particleee.get_child(0).initial_velocity_min = 25
-		particleee.get_child(0).initial_velocity_max = 40
-		particleee.get_child(0).gravity.y = 20
-		particleee.get_child(0).z_index = 10
-		get_parent().add_child(particleee)
+		var dead_anim = butcher_dead.instantiate()
+		dead_anim.position = self.position + get_node("enemy").position
+		get_parent().add_child(dead_anim)
 		self.queue_free()
 		
 func take_explode_damage(amount):

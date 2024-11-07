@@ -1,62 +1,36 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6x1crfsipy3r"]
+[gd_scene load_steps=16 format=3 uid="uid://c6x1crfsipy3r"]
 
-[ext_resource type="Texture2D" uid="uid://im2i14pgeod4" path="res://sprites/pvv_slime.png" id="1_c5a4q"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_oqocq"]
+[ext_resource type="Texture2D" uid="uid://bgj28n7ba1xbm" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_1.png" id="2_qfn11"]
+[ext_resource type="Texture2D" uid="uid://cjccbayxx6r3u" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_2.png" id="3_2osh8"]
+[ext_resource type="Texture2D" uid="uid://dx2mwyuxsq424" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_1.png" id="3_h33fo"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="3_sr18h"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xmly"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_byvqp"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eguls"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t81ml"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_awalr"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_edw7h"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hiix"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwer5"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ei70"]
-atlas = ExtResource("1_c5a4q")
-region = Rect2(64, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://ddbjubaosp36" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_2.png" id="4_53xu4"]
+[ext_resource type="Texture2D" uid="uid://8v58odxkw1by" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_3.png" id="4_y06x5"]
+[ext_resource type="Texture2D" uid="uid://dpspks3a1n2sj" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_4.png" id="5_8v4d2"]
+[ext_resource type="Texture2D" uid="uid://c5idelhofvugi" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_3.png" id="5_jcimw"]
+[ext_resource type="Texture2D" uid="uid://b4u2vkl1vthd8" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_5.png" id="6_i8m5g"]
+[ext_resource type="Texture2D" uid="uid://d1vfkpwwc1e3e" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_4.png" id="6_jhed2"]
+[ext_resource type="Texture2D" uid="uid://db62j4a2v8lx5" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_5.png" id="7_mskvx"]
+[ext_resource type="Texture2D" uid="uid://brrvf7s7mtebo" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_6.png" id="8_bcquk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f76ql"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0xmly")
+"texture": ExtResource("2_qfn11")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_byvqp")
+"texture": ExtResource("3_2osh8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eguls")
+"texture": ExtResource("4_y06x5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t81ml")
+"texture": ExtResource("5_8v4d2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_awalr")
+"texture": ExtResource("6_i8m5g")
 }],
 "loop": true,
 "name": &"eat",
@@ -64,16 +38,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_edw7h")
+"texture": ExtResource("3_h33fo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7hiix")
+"texture": ExtResource("4_53xu4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cwer5")
+"texture": ExtResource("5_jcimw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ei70")
+"texture": ExtResource("6_jhed2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mskvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bcquk")
 }],
 "loop": true,
 "name": &"walk",
@@ -81,22 +61,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tf21x"]
-radius = 8.0
-height = 24.0
+radius = 9.0
+height = 26.0
 
 [node name="slime" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_oqocq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -10)
+scale = Vector2(0.34977, 0.344848)
 sprite_frames = SubResource("SpriteFrames_f76ql")
-animation = &"walk"
+animation = &"eat"
 
 [node name="enemy" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
-position = Vector2(0, 2)
-rotation = 1.5708
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_tf21x")
 
 [node name="health_bar" parent="." instance=ExtResource("3_sr18h")]
@@ -104,6 +85,7 @@ modulate = Color(0.960784, 0.25098, 0.298039, 1)
 position = Vector2(-15, -15)
 scale = Vector2(0.2, 0.2)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="enemy" to="." method="_on_area_2d_area_entered"]
