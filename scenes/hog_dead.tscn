@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy3r6dc1hplsi"]
+
+[ext_resource type="Script" path="res://scripts/hog_dead.gd" id="1_5qvyr"]
+[ext_resource type="Texture2D" uid="uid://pumihb6jyi48" path="res://assets/characters/MiniBoar.png" id="1_lxlum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uguda"]
+atlas = ExtResource("1_lxlum")
+region = Rect2(0, 168, 33, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m816r"]
+atlas = ExtResource("1_lxlum")
+region = Rect2(33, 168, 33, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_024iv"]
+atlas = ExtResource("1_lxlum")
+region = Rect2(66, 168, 33, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whybe"]
+atlas = ExtResource("1_lxlum")
+region = Rect2(99, 168, 33, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5uot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uguda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m816r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_024iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whybe")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 3.0
+}]
+
+[node name="HogDead" type="Node2D"]
+script = ExtResource("1_5qvyr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -6)
+scale = Vector2(1.64394, 1.78125)
+sprite_frames = SubResource("SpriteFrames_j5uot")
+animation = &"dead"

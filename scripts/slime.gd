@@ -41,7 +41,7 @@ func _on_area_2d_area_entered(area):
 	if area.name == "bullet_area3":
 		health_bar.value -= 20
 	if area.name == "attack_area" or area.name == "attack_area_hog":
-		health_bar.value -= 1.6
+		health_bar.value -= 0
 	if area.name == "explode_area" or area.name == "explode_area_bomb":
 		health_bar.value -= 100
 

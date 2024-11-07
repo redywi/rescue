@@ -1,10 +1,12 @@
 extends Control
 
+@onready var music = $main_menu_music
+
 # Fungsi yang dipanggil saat scene dimuat
 func _ready() -> void:
 	# Memainkan audio secara otomatis saat scene dimuat
-	$AudioStreamPlayer.play()
-
+	music.play()
+	
 	# Fungsi ketika tombol Start ditekan
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/select_level.tscn")

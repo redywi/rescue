@@ -319,18 +319,22 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	for i in lawn_key_list:
-		if lawn_space[i].dead:
-			if lawn_space[i].state < 2:
-				global.leaf_value_surplus += 2
-			elif lawn_space[i].state >= 2:
-				global.leaf_value_surplus += 10
-			lawn_space[i].queue_free()
-			lawn_space.erase(i)
-			global.danger_level -= 1
-			for j in len(lawn_key_list):
-				if lawn_key_list[j] == i:
-					lawn_key_list.remove_at(j)
-					break
+		# Cek apakah objek di lawn_space[i] masih valid
+		if is_instance_valid(lawn_space[i]):
+			if lawn_space[i].dead:
+				if lawn_space[i].state < 2:
+					global.leaf_value_surplus += 2
+				elif lawn_space[i].state >= 2:
+					global.leaf_value_surplus += 10
+				lawn_space[i].queue_free()
+				lawn_space.erase(i)
+				global.danger_level -= 1
+				
+				# Cari dan hapus elemen dari lawn_key_list
+				for j in range(len(lawn_key_list)):
+					if lawn_key_list[j] == i:
+						lawn_key_list.remove_at(j)
+						break
 
 func _on_sun_timer_timeout():
 	if global.danger_level == 0:

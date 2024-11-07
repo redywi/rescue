@@ -4,11 +4,11 @@ extends Node2D
 @onready var hog_hit_range = $hog_hit_range
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var hitbox_collision = $hitbox/CollisionShape2D
+var hog_dead = preload("res://scenes/hog_dead.tscn")
 var state = 0
-
 var last_state = 0
-var dead = false
 var found_enemy = false
+var dead = false
 
 func _ready():
 	health_bar.visible = false
@@ -18,9 +18,7 @@ func _ready():
 func _physics_process(delta):
 	_animated_sprite.speed_scale = 0.8 * global.speed
 	
-	if health_bar.value <= 0 and not dead:
-		dead = true
-		_on_death()
+	is_died(health_bar.value, dead)
 	
 	if not dead:
 		found_enemy = false
@@ -37,16 +35,23 @@ func _physics_process(delta):
 			if _animated_sprite.animation != "idle":
 				_animated_sprite.play("idle")
 
-func _on_death():
-	# Nonaktifkan hitbox dan area serangan
-	hitbox_collision.disabled = true
-	hog_hit_range.get_node("CollisionShape2D").disabled = true
-	
-	# Sembunyikan karakter
-	_animated_sprite.visible = false
+func is_died(health, dead:bool):
+	if health <= 0:
+		dead = true
+		hitbox_collision.disabled = true
+		hog_hit_range.get_node("CollisionShape2D").disabled = true
+		_animated_sprite.visible = false
+		
+		var dead_anim = hog_dead.instantiate()
+		dead_anim.position = self.position + get_node("hitbox").position
+		get_parent().add_child(dead_anim)
+		
+		self.queue_free()
+		
+	return dead
 
 func _on_animated_sprite_2d_frame_changed():
-	if not dead:
+	if health_bar.value > 0:
 		for i in range(5):
 			var ball = load("res://scenes/attack_area.tscn").instantiate()
 			ball.get_node("attack_area").name = "attack_area_hog"
@@ -59,4 +64,4 @@ func _on_hog_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx:
 
 func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy" and not dead:
-		health_bar.value -= 1
+		health_bar.value -= 10
