@@ -6,7 +6,6 @@ extends Node2D
 @onready var bloom_seed2 = $seed_slots/bloom_seed2
 @onready var hog_seed3 = $seed_slots/hog_seed3
 @onready var sun_value = $sun_value/Label
-
 @onready var timer = $Timer
 @onready var sun_timer = $sun_timer
 @onready var cooldown_seed1 = $seed_slots/cooldown_bar_seed1/TextureProgressBar
@@ -16,16 +15,12 @@ extends Node2D
 @onready var cooldown_seed5 = $seed_slots/cooldown_bar_seed5/TextureProgressBar
 @onready var cooldown_seed6 = $seed_slots/cooldown_bar_seed6/TextureProgressBar
 
-
-
 var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
 var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn")]
-
 var shove = false
-
 var shovel_pos = Vector2(348.29, 21)
 var pos
 var start_sun_time = 1
@@ -167,6 +162,9 @@ func slotkey(event):
 	
 	allbutone_slot_reset(0)
 
+func level_won():
+	get_node("win").visible = true
+	allbutone_slot_reset(0)
 
 func _input(event):
 	if global.you_lost:
@@ -179,7 +177,6 @@ func _input(event):
 		pos = event.position
 		var x = int(pos.x / 32)
 		var y = int((pos.y + 8)/32)
-		
 		
 		#shovel plant from lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and shove and lawn_space.has(str(x) + str(y)):
@@ -329,6 +326,8 @@ func _physics_process(delta):
 	if sun_timer.time_left < 0.5:
 		sun_timer.emit_signal("timeout")
 	
+	if global.you_won == true:
+		level_won()
 
 func _on_timer_timeout():
 	for i in lawn_key_list:

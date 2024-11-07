@@ -21,9 +21,7 @@ var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
 var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn")]
-
 var shove = false
-
 var shovel_pos = Vector2(348.29, 21)
 var pos
 var start_sun_time = 1
@@ -186,6 +184,9 @@ func slotkey(event):
 	
 	allbutone_slot_reset(0)
 
+func level_won():
+	get_node("win").visible = true
+	allbutone_slot_reset(0)
 
 func _input(event):
 	if global.you_lost:
@@ -345,12 +346,13 @@ func _physics_process(delta):
 	cooldown_seed4.value += 5 * global.speed
 	cooldown_seed5.value += 20 * global.speed
 	cooldown_seed6.value += 20 * global.speed
-
 	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
 		sun_timer.emit_signal("timeout")
 	
+	if global.you_won == true:
+		level_won()
 
 func _on_timer_timeout():
 	for i in lawn_key_list:

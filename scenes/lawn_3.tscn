@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b7uemo4sodf3v"]
+[gd_scene load_steps=53 format=3 uid="uid://b7uemo4sodf3v"]
 
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://d10niuhwexlp8" path="res://assets/backgroud/tileset_1/Outdoor decoration/Outdoor_Decor_Free.png" id="26_wtjbt"]
 [ext_resource type="PackedScene" uid="uid://bmvgh0sgdbv4r" path="res://scenes/npc_pig.tscn" id="27_umn2b"]
 [ext_resource type="PackedScene" uid="uid://0hohh4qscndr" path="res://scenes/npc_chicken.tscn" id="28_41mvr"]
+[ext_resource type="PackedScene" uid="uid://c47lcd5n7g24r" path="res://scenes/countdown.tscn" id="29_p880x"]
+[ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="30_vqwuf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -1935,6 +1937,26 @@ position = Vector2(381, 37)
 
 [node name="npc_chicken" parent="." instance=ExtResource("28_41mvr")]
 position = Vector2(225, 230)
+
+[node name="survive" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 242.0
+offset_right = 407.0
+offset_bottom = 265.0
+text = "Survive"
+
+[node name="countdown" parent="." instance=ExtResource("29_p880x")]
+offset_left = 411.0
+offset_top = 243.0
+offset_right = 452.0
+offset_bottom = 266.0
+
+[node name="win" parent="." instance=ExtResource("30_vqwuf")]
+visible = false
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 486.0
+offset_bottom = 275.0
 
 [connection signal="button_up" from="pausetext/restart/Button_restart" to="." method="_on_button_restart_button_up"]
 [connection signal="button_up" from="non_pause/Button_pause" to="non_pause" method="_on_button_pause_button_up"]

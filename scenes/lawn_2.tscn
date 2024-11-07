@@ -1,6 +1,6 @@
-[gd_scene load_steps=50 format=3 uid="uid://b7mml1y3kqiyk"]
+[gd_scene load_steps=52 format=3 uid="uid://b7mml1y3kqiyk"]
 
-[ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_v1y32"]
+[ext_resource type="Script" path="res://scripts/lawn_2.gd" id="1_qrkx8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="3_5tw4x"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="4_swnol"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://d10niuhwexlp8" path="res://assets/backgroud/tileset_1/Outdoor decoration/Outdoor_Decor_Free.png" id="25_gaja3"]
 [ext_resource type="PackedScene" uid="uid://bmvgh0sgdbv4r" path="res://scenes/npc_pig.tscn" id="26_srjic"]
 [ext_resource type="PackedScene" uid="uid://0hohh4qscndr" path="res://scenes/npc_chicken.tscn" id="27_vf0gc"]
+[ext_resource type="PackedScene" uid="uid://c47lcd5n7g24r" path="res://scenes/countdown.tscn" id="28_erxfp"]
+[ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="29_5td0y"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -1561,7 +1563,7 @@ size = Vector2(32, 160)
 
 [node name="lawn" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_v1y32")
+script = ExtResource("1_qrkx8")
 
 [node name="pausetext" type="Node2D" parent="."]
 process_mode = 3
@@ -1917,6 +1919,26 @@ position = Vector2(260, 44)
 
 [node name="npc_chicken" parent="." instance=ExtResource("27_vf0gc")]
 position = Vector2(64, 263)
+
+[node name="survive" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 242.0
+offset_right = 407.0
+offset_bottom = 265.0
+text = "Survive"
+
+[node name="countdown" parent="." instance=ExtResource("28_erxfp")]
+offset_left = 411.0
+offset_top = 243.0
+offset_right = 452.0
+offset_bottom = 266.0
+
+[node name="win" parent="." instance=ExtResource("29_5td0y")]
+visible = false
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 486.0
+offset_bottom = 275.0
 
 [connection signal="button_up" from="pausetext/restart/Button_restart" to="." method="_on_button_restart_button_up"]
 [connection signal="button_up" from="non_pause/Button_pause" to="non_pause" method="_on_button_pause_button_up"]
