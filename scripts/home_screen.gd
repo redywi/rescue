@@ -1,23 +1,13 @@
 extends Control
 
-@onready var music = $main_menu_music
-
-# Fungsi yang dipanggil saat scene dimuat
 func _ready() -> void:
-	# Memainkan audio secara otomatis saat scene dimuat
-	music.play()
-	
-	# Fungsi ketika tombol Start ditekan
+	pass
+
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/select_level.tscn")
 	
-	
-# Fungsi untuk tombol Settings 
 func _on_settings_button_pressed():
-	# Ganti ke scene pengaturan
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
 
-# Fungsi untuk tombol Exit
 func _on_exit_button_pressed():
-	# Menutup aplikasi
 	get_tree().quit()

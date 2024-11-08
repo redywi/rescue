@@ -1,8 +1,7 @@
 extends Control
 
-# Fungsi untuk ketika Level 1 dipilih
 func _on_button_level_1_pressed() -> void:
-	pass # Replace with function body.
+	main_music.stop()
 	get_tree().change_scene_to_file("res://scenes/lawn_1.tscn")
 
 # Fungsi untuk ketika Level 2 dipilih

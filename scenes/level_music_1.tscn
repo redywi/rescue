@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4iowkbfpxg7v"]
+
+[ext_resource type="AudioStream" uid="uid://blcrttjyg1twf" path="res://assets/sound/Field1.ogg" id="1_5ujd0"]
+
+[node name="LevelMusic1" type="AudioStreamPlayer"]
+stream = ExtResource("1_5ujd0")
+volume_db = -24.36

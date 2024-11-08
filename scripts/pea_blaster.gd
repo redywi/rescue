@@ -1,13 +1,12 @@
 extends Node2D
+
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var timer_bar = $timer_bar/TextureProgressBar
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var shoot_range = $shoot_range
 @onready var hitbox = $hitbox
-
 var dead = false
 var found_enemy = false
-
 var state: int = 0
 var last_state: int = 0
 

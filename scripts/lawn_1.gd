@@ -14,6 +14,7 @@ extends Node2D
 @onready var cooldown_seed4 = $seed_slots/cooldown_bar_seed4/TextureProgressBar
 @onready var cooldown_seed5 = $seed_slots/cooldown_bar_seed5/TextureProgressBar
 @onready var cooldown_seed6 = $seed_slots/cooldown_bar_seed6/TextureProgressBar
+@onready var win_sound_play = $win_sound
 
 var rng = RandomNumberGenerator.new()
 var lawn_space = {}
@@ -27,6 +28,7 @@ var start_sun_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
+	music_1.play()
 	sun_value.text = str(global.sun_value)
 	sun_timer.start()
 
@@ -159,6 +161,7 @@ func slotkey(event):
 	allbutone_slot_reset(0)
 	
 func level_won():
+	music_1.stop()
 	get_node("win").visible = true
 	allbutone_slot_reset(0)
 
@@ -319,22 +322,18 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	for i in lawn_key_list:
-		# Cek apakah objek di lawn_space[i] masih valid
-		if is_instance_valid(lawn_space[i]):
-			if lawn_space[i].dead:
-				if lawn_space[i].state < 2:
-					global.leaf_value_surplus += 2
-				elif lawn_space[i].state >= 2:
-					global.leaf_value_surplus += 10
-				lawn_space[i].queue_free()
-				lawn_space.erase(i)
-				global.danger_level -= 1
-				
-				# Cari dan hapus elemen dari lawn_key_list
-				for j in range(len(lawn_key_list)):
-					if lawn_key_list[j] == i:
-						lawn_key_list.remove_at(j)
-						break
+		if lawn_space[i].dead:
+			if lawn_space[i].state < 2:
+				global.leaf_value_surplus += 2
+			elif lawn_space[i].state >= 2:
+				global.leaf_value_surplus += 10
+			lawn_space[i].queue_free()
+			lawn_space.erase(i)
+			global.danger_level -= 1
+			for j in len(lawn_key_list):
+				if lawn_key_list[j] == i:
+					lawn_key_list.remove_at(j)
+					break
 
 func _on_sun_timer_timeout():
 	if global.danger_level == 0:

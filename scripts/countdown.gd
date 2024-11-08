@@ -1,6 +1,6 @@
 extends Label
 
-var time_s = 150
+var time_s = 175
 
 func _ready():
 	set_text(time_format(time_s))
