@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://iqw07kb60r8u"]
+
+[ext_resource type="AudioStream" uid="uid://brmjexr0sicbr" path="res://assets/sound/menang.mp3" id="1_cu30a"]
+
+[node name="WinSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_cu30a")

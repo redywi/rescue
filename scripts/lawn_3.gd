@@ -28,6 +28,7 @@ var start_sun_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
+	music_1.play()
 	sun_value.text = str(global.sun_value)
 	sun_timer.start()
 
@@ -185,6 +186,8 @@ func slotkey(event):
 	allbutone_slot_reset(0)
 
 func level_won():
+	music_1.stop()
+	win_sound.play()
 	get_node("win").visible = true
 	allbutone_slot_reset(0)
 

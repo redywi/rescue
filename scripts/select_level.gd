@@ -6,10 +6,12 @@ func _on_button_level_1_pressed() -> void:
 
 # Fungsi untuk ketika Level 2 dipilih
 func _on_button_level_2_pressed() -> void:
+	main_music.stop()
 	get_tree().change_scene_to_file("res://scenes/lawn_2.tscn")
 
 # Fungsi untuk ketika Level 3 dipilih
 func _on_button_level_3_pressed() -> void:
+	main_music.stop()
 	get_tree().change_scene_to_file("res://scenes/lawn_3.tscn")
 
 # Fungsi untuk ketika Level 4 dipilih
