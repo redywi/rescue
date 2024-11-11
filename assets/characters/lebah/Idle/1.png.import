@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn0k0ln16obxu"
-path="res://.godot/imported/Bee_Idle.png-5d037e9b57219d2a40f275e5b9652f62.ctex"
+uid="uid://bc3ylg2scf42a"
+path="res://.godot/imported/1.png-60ffee9fe5e5161619e4942022debef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/lebah/Mentahan/Bee_Idle.png"
-dest_files=["res://.godot/imported/Bee_Idle.png-5d037e9b57219d2a40f275e5b9652f62.ctex"]
+source_file="res://assets/characters/lebah/Idle/1.png"
+dest_files=["res://.godot/imported/1.png-60ffee9fe5e5161619e4942022debef8.ctex"]
 
 [params]
 

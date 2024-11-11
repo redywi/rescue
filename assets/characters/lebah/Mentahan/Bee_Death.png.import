@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c35r0nh26snxf"
-path="res://.godot/imported/Bee_Death.png-b533c02db127aa7e04de823ef59d7a45.ctex"
+path="res://.godot/imported/Bee_Death.png-5645ab5a28452bba9612f4e86c95b950.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/lebah/Spritesheets/Bee_Death.png"
-dest_files=["res://.godot/imported/Bee_Death.png-b533c02db127aa7e04de823ef59d7a45.ctex"]
+source_file="res://assets/characters/lebah/Mentahan/Bee_Death.png"
+dest_files=["res://.godot/imported/Bee_Death.png-5645ab5a28452bba9612f4e86c95b950.ctex"]
 
 [params]
 

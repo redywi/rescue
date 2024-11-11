@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boo61wlco5m6t"
-path="res://.godot/imported/Bee_Attack.png-904c7eec95dfa053a0dcb8f7830dacf1.ctex"
+path="res://.godot/imported/Bee_Attack.png-76347ef0cad0ead01b899f107dbee508.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/lebah/Spritesheets/Bee_Attack.png"
-dest_files=["res://.godot/imported/Bee_Attack.png-904c7eec95dfa053a0dcb8f7830dacf1.ctex"]
+source_file="res://assets/characters/lebah/Mentahan/Bee_Attack.png"
+dest_files=["res://.godot/imported/Bee_Attack.png-76347ef0cad0ead01b899f107dbee508.ctex"]
 
 [params]
 
