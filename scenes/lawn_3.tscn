@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b7uemo4sodf3v"]
+[gd_scene load_steps=54 format=3 uid="uid://b7uemo4sodf3v"]
 
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="5_hqag1"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_50nua"]
 [ext_resource type="Texture2D" uid="uid://f5uxf7haeika" path="res://sprites/pvv_sunpea.png" id="7_r1ajv"]
+[ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_6jc36"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_k1mj4"]
 [ext_resource type="Texture2D" uid="uid://b4br7tdau8jwv" path="res://assets/characters/slot/hedgehog.png" id="9_2dkl0"]
-[ext_resource type="Texture2D" uid="uid://cg1c8sq5s4mng" path="res://sprites/pvv_sunleaf.png" id="10_3e1rw"]
+[ext_resource type="Texture2D" uid="uid://cwskkcrl6146b" path="res://assets/icon/pvv_honey.png" id="11_a1hf7"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="11_i6rb6"]
 [ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="12_vqxpt"]
 [ext_resource type="Texture2D" uid="uid://dwly68o8wcsmp" path="res://assets/backgroud/tileset_1/Enemies/Slime.png" id="13_vl8lo"]
@@ -1773,11 +1774,8 @@ frame = 8
 [node name="bloom_seed2" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(112, 16)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("7_r1ajv")
-hframes = 21
-vframes = 2
-frame = 29
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_6jc36")
 
 [node name="hog_seed3" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
@@ -1794,7 +1792,7 @@ texture = ExtResource("9_2dkl0")
 [node name="sun" type="Sprite2D" parent="seed_slots"]
 position = Vector2(16, 16)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("10_3e1rw")
+texture = ExtResource("11_a1hf7")
 hframes = 2
 vframes = 2
 frame = 1
