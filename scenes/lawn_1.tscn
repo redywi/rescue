@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="7_6uhf7"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_0cg3d"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_wff5f"]
-[ext_resource type="Texture2D" uid="uid://cwskkcrl6146b" path="res://assets/icon/pvv_honey.png" id="10_qghby"]
+[ext_resource type="Texture2D" uid="uid://uwuuwqycy5ai" path="res://assets/characters/bee hive/honey_drop.png" id="10_xjjki"]
 [ext_resource type="Texture2D" uid="uid://cwxkcxcdywrdl" path="res://assets/backgroud/tileset_1/Outdoor decoration/Bridge_Wood.png" id="11_h1jak"]
 [ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="11_r14m3"]
 [ext_resource type="Texture2D" uid="uid://dwly68o8wcsmp" path="res://assets/backgroud/tileset_1/Enemies/Slime.png" id="12_be6wd"]
@@ -1774,11 +1774,8 @@ texture = ExtResource("8_0cg3d")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
 position = Vector2(16, 16)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("10_qghby")
-hframes = 2
-vframes = 2
-frame = 1
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("10_xjjki")
 
 [node name="sun_panel" type="Sprite2D" parent="seed_slots"]
 modulate = Color(1, 1, 1, 0.392157)
