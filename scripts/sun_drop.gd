@@ -7,21 +7,16 @@ var rng = RandomNumberGenerator.new()
 var sun_speed = 40
 var move = 1
 var rand_choice = rng.randi_range(1, 2)
-var rand_rotate_num
 var pick_sun_pos = Vector2(16, 16)
 var picked = false
 
 func _ready():
 	timer.start()
-	if rand_choice == 1:
-		rand_rotate_num = rng.randf_range(-5, -2)
-	else:
-		rand_rotate_num = rng.randf_range(5, 2)
+
 
 func _physics_process(delta):
 	if !picked:
 		self.position.y += sun_speed * global.speed * delta
-		self.rotate(rand_rotate_num * delta * global.speed)
 	else:
 		self.position = self.position.move_toward(pick_sun_pos, delta * (sun_speed/5.0) * global.speed * (self.position.distance_to(pick_sun_pos)))
 		if self.rotation_degrees > 0.5 :

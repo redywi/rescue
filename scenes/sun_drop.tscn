@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://beo17y3w7rptv"]
 
 [ext_resource type="Script" path="res://scripts/sun_drop.gd" id="1_ecfuq"]
-[ext_resource type="Texture2D" uid="uid://cwskkcrl6146b" path="res://assets/icon/pvv_honey.png" id="2_rxswi"]
+[ext_resource type="Texture2D" uid="uid://uwuuwqycy5ai" path="res://assets/characters/bee hive/honey_drop.png" id="2_4ol26"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsdic"]
 
@@ -11,9 +11,8 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("1_ecfuq")
 
 [node name="sun_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_rxswi")
-hframes = 2
-vframes = 2
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_4ol26")
 
 [node name="sun_area" type="Area2D" parent="."]
 
