@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b7mml1y3kqiyk"]
+[gd_scene load_steps=54 format=3 uid="uid://b7mml1y3kqiyk"]
 
 [ext_resource type="Script" path="res://scripts/lawn_2.gd" id="1_qrkx8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://0hohh4qscndr" path="res://scenes/npc_chicken.tscn" id="27_vf0gc"]
 [ext_resource type="PackedScene" uid="uid://c47lcd5n7g24r" path="res://scenes/countdown.tscn" id="28_erxfp"]
 [ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="29_5td0y"]
+[ext_resource type="PackedScene" uid="uid://javcnl5adskq" path="res://scenes/npc_bee.tscn" id="29_pq705"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -1917,6 +1918,24 @@ position = Vector2(260, 44)
 
 [node name="npc_chicken" parent="." instance=ExtResource("27_vf0gc")]
 position = Vector2(64, 263)
+
+[node name="NpcBee" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(262, 9)
+
+[node name="NpcBee2" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(287, 12)
+
+[node name="NpcBee3" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(330, 10)
+
+[node name="NpcBee4" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(45, 11)
+
+[node name="NpcBee5" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(440, 13)
+
+[node name="NpcBee6" parent="." instance=ExtResource("29_pq705")]
+position = Vector2(189, 39)
 
 [node name="survive" type="Label" parent="."]
 offset_left = 350.0
