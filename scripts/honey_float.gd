@@ -26,7 +26,7 @@ func _process(delta):
 			self.rotation_degrees -= 8 * delta * global.speed * abs(self.rotation_degrees)
 		elif self.rotation_degrees < -0.5:
 			self.rotation_degrees += 8 * delta * global.speed * abs(self.rotation_degrees)
-		self.modulate.a -= (1/self.position.distance_to(pick_sun_pos)) * delta * global.speed
+		self.modulate.a -= (1 / self.position.distance_to(pick_sun_pos)) * delta * global.speed
 	
 	if self.modulate.a < 0:
 		self.queue_free()
