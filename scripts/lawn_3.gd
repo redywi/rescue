@@ -9,6 +9,7 @@ extends Node2D
 @onready var sun_value = $sun_value/Label
 @onready var timer = $Timer
 @onready var sun_timer = $sun_timer
+@onready var countdown = $countdown
 @onready var cooldown_seed1 = $seed_slots/cooldown_bar_seed1/TextureProgressBar
 @onready var cooldown_seed2 = $seed_slots/cooldown_bar_seed2/TextureProgressBar
 @onready var cooldown_seed3 = $seed_slots/cooldown_bar_seed3/TextureProgressBar
@@ -45,6 +46,11 @@ func enemy_spawning():
 		var butcher = load("res://scenes/butcher.tscn").instantiate()
 		butcher.position = Vector2(496, pos_y)
 		add_child(butcher)
+		global.danger_level -= 1
+	if rng.randf_range(0, 60000) < (global.danger_level):
+		var helmet_butcher = load("res://scenes/helmet_butcher.tscn").instantiate()
+		helmet_butcher.position = Vector2(496, pos_y)
+		add_child(helmet_butcher)
 		global.danger_level -= 1
 
 func shovel_func(event):
