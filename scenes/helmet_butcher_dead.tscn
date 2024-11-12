@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwuutekrh1dup"]
+
+[ext_resource type="Script" path="res://scripts/helmet_butcher_dead.gd" id="1_e0n0v"]
+[ext_resource type="Texture2D" uid="uid://dmotwrmswal16" path="res://assets/characters/enemies/Helmet Butcher/death/1.png" id="1_q23ny"]
+[ext_resource type="Texture2D" uid="uid://bkw2mtnen7e5u" path="res://assets/characters/enemies/Helmet Butcher/death/2.png" id="2_3rt72"]
+[ext_resource type="Texture2D" uid="uid://cgkmk64r375v" path="res://assets/characters/enemies/Helmet Butcher/death/3.png" id="3_6pmvl"]
+[ext_resource type="Texture2D" uid="uid://bn14abc8ki1xi" path="res://assets/characters/enemies/Helmet Butcher/death/4.png" id="4_ovml1"]
+[ext_resource type="Texture2D" uid="uid://b87xih7imli4f" path="res://assets/characters/enemies/Helmet Butcher/death/5.png" id="5_6d83y"]
+[ext_resource type="Texture2D" uid="uid://dr8hr75ipjml" path="res://assets/characters/enemies/Helmet Butcher/death/6.png" id="6_xm768"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ofu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q23ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3rt72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6pmvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ovml1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6d83y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xm768")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 3.0
+}]
+
+[node name="HelmetButcherDead" type="Node2D"]
+script = ExtResource("1_e0n0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -16)
+scale = Vector2(0.307, 0.307)
+sprite_frames = SubResource("SpriteFrames_3ofu7")
+animation = &"dead"
+frame = 5
+frame_progress = 1.0

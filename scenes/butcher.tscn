@@ -1,0 +1,92 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6x1crfsipy3r"]
+
+[ext_resource type="Script" path="res://scripts/butcher.gd" id="1_rxl0g"]
+[ext_resource type="Texture2D" uid="uid://bgj28n7ba1xbm" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_1.png" id="2_58hhv"]
+[ext_resource type="Texture2D" uid="uid://cjccbayxx6r3u" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_2.png" id="3_1b1vn"]
+[ext_resource type="Texture2D" uid="uid://8v58odxkw1by" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_3.png" id="4_t1ph1"]
+[ext_resource type="Texture2D" uid="uid://dpspks3a1n2sj" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_4.png" id="5_n3ufa"]
+[ext_resource type="Texture2D" uid="uid://b4u2vkl1vthd8" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_5.png" id="6_x0d27"]
+[ext_resource type="Texture2D" uid="uid://dx2mwyuxsq424" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_1.png" id="7_qa4ck"]
+[ext_resource type="Texture2D" uid="uid://ddbjubaosp36" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_2.png" id="8_s8kt8"]
+[ext_resource type="Texture2D" uid="uid://c5idelhofvugi" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_3.png" id="9_y8hqy"]
+[ext_resource type="Texture2D" uid="uid://d1vfkpwwc1e3e" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_4.png" id="10_h34x0"]
+[ext_resource type="Texture2D" uid="uid://db62j4a2v8lx5" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_5.png" id="11_bqmk3"]
+[ext_resource type="Texture2D" uid="uid://brrvf7s7mtebo" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_6.png" id="12_08g3l"]
+[ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="13_lgyx3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f76ql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_58hhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1b1vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t1ph1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n3ufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x0d27")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qa4ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s8kt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_y8hqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h34x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bqmk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_08g3l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tf21x"]
+radius = 9.0
+height = 26.0
+
+[node name="butcher" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_rxl0g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -10)
+scale = Vector2(0.34977, 0.344848)
+sprite_frames = SubResource("SpriteFrames_f76ql")
+animation = &"walk"
+
+[node name="enemy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_tf21x")
+
+[node name="health_bar" parent="." instance=ExtResource("13_lgyx3")]
+modulate = Color(0.960784, 0.25098, 0.298039, 1)
+position = Vector2(-15, -15)
+scale = Vector2(0.2, 0.2)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="area_entered" from="enemy" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="enemy" to="." method="_on_enemy_area_exited"]

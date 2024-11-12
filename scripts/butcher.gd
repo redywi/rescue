@@ -75,8 +75,3 @@ func is_died(health):
 		dead_anim.position = self.position + get_node("enemy").position
 		get_parent().add_child(dead_anim)
 		self.queue_free()
-		
-func take_explode_damage(amount):
-	health_bar.value -= amount
-	is_died(health_bar.value)
-	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://javcnl5adskq"]
 
 [ext_resource type="Texture2D" uid="uid://cn0k0ln16obxu" path="res://assets/characters/lebah/Mentahan/Bee_Idle.png" id="1_eokpp"]
-[ext_resource type="Script" path="res://scenes/npc_bee.gd" id="1_vmsj5"]
+[ext_resource type="Script" path="res://scripts/npc_bee.gd" id="1_vmsj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ws3je"]
 atlas = ExtResource("1_eokpp")

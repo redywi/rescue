@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_dlb7k"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_jsdt6"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="10_7db1a"]
-[ext_resource type="Texture2D" uid="uid://uwuuwqycy5ai" path="res://assets/characters/bee hive/honey_drop.png" id="10_jdyof"]
+[ext_resource type="Texture2D" uid="uid://dtei2fn6g3l6e" path="res://assets/characters/bee hive/honey_drop.png" id="10_jdyof"]
 [ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="11_xntsm"]
 [ext_resource type="Texture2D" uid="uid://dwly68o8wcsmp" path="res://assets/backgroud/tileset_1/Enemies/Slime.png" id="12_k8lub"]
 [ext_resource type="Texture2D" uid="uid://63vywec2hegt" path="res://assets/backgroud/tileset_1/Enemies/Skeleton.png" id="13_46blo"]
