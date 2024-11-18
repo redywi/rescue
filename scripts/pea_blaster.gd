@@ -24,7 +24,7 @@ func _physics_process(delta):
 	# Periksa musuh di area tembak
 	found_enemy = false
 	for area in shoot_range.get_overlapping_areas():
-		if area.name == "enemy" or area.name == "enemy_fly":
+		if area.name == "enemy":
 			found_enemy = true
 		if found_enemy and _animated_sprite.animation != "action":
 			_animated_sprite.play("action")

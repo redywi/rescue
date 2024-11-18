@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://52hfk12e8uxm"]
 
-[ext_resource type="Texture2D" uid="uid://bgv55ofuh5bvl" path="res://sprites/pvv_peablasting.png" id="1_fylfw"]
 [ext_resource type="Script" path="res://scripts/pea_bullet.gd" id="1_q8o0q"]
+[ext_resource type="Texture2D" uid="uid://bye03reger4n7" path="res://assets/characters/gorilla/attack/proyektil.png" id="2_yraio"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh5dn"]
 radius = 7.0
@@ -10,11 +10,7 @@ radius = 7.0
 script = ExtResource("1_q8o0q")
 
 [node name="pvv_peablasting" type="Sprite2D" parent="."]
-modulate = Color(0.378, 0.9, 0.4128, 1)
-texture = ExtResource("1_fylfw")
-hframes = 5
-vframes = 2
-frame = 7
+texture = ExtResource("2_yraio")
 
 [node name="bullet_area" type="Area2D" parent="."]
 

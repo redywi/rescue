@@ -1,82 +1,20 @@
-[gd_scene load_steps=38 format=3 uid="uid://dgc6utx06dd54"]
+[gd_scene load_steps=30 format=3 uid="uid://dgc6utx06dd54"]
 
 [ext_resource type="Script" path="res://scripts/pea_blaster.gd" id="1_22pup"]
+[ext_resource type="Texture2D" uid="uid://bo47v806lmn4p" path="res://assets/characters/gorilla/attack/1.png" id="2_7akfa"]
 [ext_resource type="Texture2D" uid="uid://bgv55ofuh5bvl" path="res://sprites/pvv_peablasting.png" id="2_ay2b3"]
 [ext_resource type="PackedScene" uid="uid://kqjgpwrln2xx" path="res://scenes/progress_bar.tscn" id="2_fl3qo"]
 [ext_resource type="Texture2D" uid="uid://f5uxf7haeika" path="res://sprites/pvv_sunpea.png" id="3_4r1qs"]
+[ext_resource type="Texture2D" uid="uid://dh66wij3v6qtc" path="res://assets/characters/gorilla/attack/2.png" id="3_cranj"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="3_iyv66"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uiffk"]
-atlas = ExtResource("2_ay2b3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsofc"]
-atlas = ExtResource("2_ay2b3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6qlx"]
-atlas = ExtResource("2_ay2b3")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fb1f"]
-atlas = ExtResource("2_ay2b3")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_abhn2"]
-atlas = ExtResource("2_ay2b3")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5uh1"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbmc1"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xoa04"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_quigq"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvpft"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(384, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ct3wi"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(416, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f66ha"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(448, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iu2lo"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(480, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n232c"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(512, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l61if"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(544, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jptxo"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(576, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrfeg"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(608, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_je8bk"]
-atlas = ExtResource("3_4r1qs")
-region = Rect2(640, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://csha7311xrhcx" path="res://assets/characters/gorilla/attack/3.png" id="4_0srkb"]
+[ext_resource type="Texture2D" uid="uid://r4m3gt5m5ftf" path="res://assets/characters/gorilla/attack/4.png" id="5_vose8"]
+[ext_resource type="Texture2D" uid="uid://gyx4t281j7cj" path="res://assets/characters/gorilla/attack/5.png" id="6_mv6j2"]
+[ext_resource type="Texture2D" uid="uid://bwb7vy6ybu5ii" path="res://assets/characters/gorilla/attack/6.png" id="7_dypo5"]
+[ext_resource type="Texture2D" uid="uid://b6o1dhqas58d4" path="res://assets/characters/gorilla/idle/1.png" id="8_chvlf"]
+[ext_resource type="Texture2D" uid="uid://b8dag0ywrh814" path="res://assets/characters/gorilla/idle/2.png" id="9_h1sjo"]
+[ext_resource type="Texture2D" uid="uid://c6il38iyqf3fe" path="res://assets/characters/gorilla/idle/3.png" id="10_nshpd"]
+[ext_resource type="Texture2D" uid="uid://mojcaey5ujdo" path="res://assets/characters/gorilla/idle/4.png" id="11_gaasf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw2pp"]
 atlas = ExtResource("3_4r1qs")
@@ -126,19 +64,22 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uiffk")
+"texture": ExtResource("7_dypo5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hsofc")
+"texture": ExtResource("6_mv6j2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l6qlx")
+"texture": ExtResource("2_7akfa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7fb1f")
+"texture": ExtResource("3_cranj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abhn2")
+"texture": ExtResource("4_0srkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vose8")
 }],
 "loop": true,
 "name": &"action",
@@ -146,43 +87,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c5uh1")
+"texture": ExtResource("8_chvlf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbmc1")
+"texture": ExtResource("9_h1sjo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xoa04")
+"texture": ExtResource("10_nshpd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_quigq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jvpft")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ct3wi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f66ha")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iu2lo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n232c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l61if")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jptxo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrfeg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_je8bk")
+"texture": ExtResource("11_gaasf")
 }],
 "loop": true,
 "name": &"idle",
@@ -241,7 +155,7 @@ animations = [{
 size = Vector2(484, 14)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q3kiv"]
-radius = 4.0
+radius = 7.0
 height = 24.0
 
 [node name="pea_blaster" type="Node2D"]
@@ -249,8 +163,12 @@ process_mode = 1
 script = ExtResource("1_22pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -2)
+scale = Vector2(0.372266, 0.372266)
 sprite_frames = SubResource("SpriteFrames_y6k14")
-animation = &"idle"
+animation = &"action"
+frame = 5
+frame_progress = 0.692726
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="4_swnol"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="5_bn0b0"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_digot"]
-[ext_resource type="Texture2D" uid="uid://f5uxf7haeika" path="res://sprites/pvv_sunpea.png" id="7_b1vv8"]
+[ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="7_vj16e"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_dlb7k"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_jsdt6"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="10_7db1a"]
@@ -1754,11 +1754,8 @@ metadata/_edit_use_anchors_ = true
 [node name="shooter_seed1" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(80, 16)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("7_b1vv8")
-hframes = 21
-vframes = 2
-frame = 8
+scale = Vector2(0.292135, 0.292135)
+texture = ExtResource("7_vj16e")
 
 [node name="bloom_seed2" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
@@ -1769,7 +1766,7 @@ texture = ExtResource("8_jsdt6")
 [node name="hog_seed3" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(144, 16)
-scale = Vector2(0.218487, 0.218487)
+scale = Vector2(0.242991, 0.242991)
 texture = ExtResource("8_dlb7k")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
