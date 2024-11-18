@@ -17,6 +17,9 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 global="*res://scripts/global.gd"
+main_music="*res://scenes/main_music.tscn"
+music_1="*res://scenes/level_music_1.tscn"
+win_sound="*res://scenes/win_sound.tscn"
 
 [display]
 
