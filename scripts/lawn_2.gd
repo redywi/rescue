@@ -365,9 +365,6 @@ func _on_button_restart_button_up():
 	global.sun_value = 300
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.leaf_value = 100
-	global.leaf_value_deficit = 0
-	global.leaf_value_surplus = 0
 	global.danger_level = 0
 	global.slime_count = 0
 	global.you_lost = false
