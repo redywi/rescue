@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7xjrseq6oaat"]
+
+[ext_resource type="AudioStream" uid="uid://csy6iquhng66y" path="res://assets/sound/Rainbow Plains.mp3" id="1_ik8ln"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ik8ln")
