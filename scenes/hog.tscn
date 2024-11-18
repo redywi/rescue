@@ -1,19 +1,52 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2g0hw7qcw70y"]
+[gd_scene load_steps=25 format=3 uid="uid://c2g0hw7qcw70y"]
 
 [ext_resource type="Script" path="res://scripts/hog.gd" id="1_syjtd"]
+[ext_resource type="Texture2D" uid="uid://dudrw5vcm5u1g" path="res://assets/characters/babihutan_remake/attack/1.png" id="2_6wye5"]
 [ext_resource type="Texture2D" uid="uid://tigwy4fuo68s" path="res://assets/characters/babihutan/Attack/1.png" id="2_83pj7"]
 [ext_resource type="Texture2D" uid="uid://dw5yr2ec0mkb2" path="res://assets/characters/babihutan/Attack/2.png" id="3_srlqs"]
+[ext_resource type="Texture2D" uid="uid://c2p6t2xfvb68o" path="res://assets/characters/babihutan_remake/attack/2.png" id="3_twunc"]
 [ext_resource type="Texture2D" uid="uid://23yf24egwiqj" path="res://assets/characters/babihutan/Attack/3.png" id="4_83hbl"]
+[ext_resource type="Texture2D" uid="uid://clbb1vmfw3e1g" path="res://assets/characters/babihutan_remake/attack/3.png" id="4_jnq0n"]
 [ext_resource type="Texture2D" uid="uid://bf00c10aata84" path="res://assets/characters/babihutan/Attack/4.png" id="5_pirye"]
+[ext_resource type="Texture2D" uid="uid://crfil473jjyrl" path="res://assets/characters/babihutan_remake/attack/4.png" id="5_r1iy0"]
 [ext_resource type="Texture2D" uid="uid://boy7bjeoodk67" path="res://assets/characters/babihutan/Attack/5.png" id="6_5nwaj"]
+[ext_resource type="Texture2D" uid="uid://b4u1odrwqbkws" path="res://assets/characters/babihutan_remake/attack/5.png" id="6_mhl5i"]
 [ext_resource type="Texture2D" uid="uid://cckiun4bfq4fd" path="res://assets/characters/babihutan/Idle/1.png" id="7_4tjxx"]
+[ext_resource type="Texture2D" uid="uid://27wp50kc350l" path="res://assets/characters/babihutan_remake/attack/6.png" id="7_lr4om"]
 [ext_resource type="Texture2D" uid="uid://cghntmwnyams8" path="res://assets/characters/babihutan/Idle/2.png" id="8_saswx"]
 [ext_resource type="Texture2D" uid="uid://cm8xevo6x8tni" path="res://assets/characters/babihutan/Idle/3.png" id="9_2c3ek"]
 [ext_resource type="Texture2D" uid="uid://ci5fmmm8pnsje" path="res://assets/characters/babihutan/Idle/4.png" id="10_e4yba"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="12_jk84l"]
+[ext_resource type="Texture2D" uid="uid://ipoxhue3s006" path="res://assets/characters/babihutan_remake/idle/1.png" id="13_yhs85"]
+[ext_resource type="Texture2D" uid="uid://dxg1ts7a5fr8u" path="res://assets/characters/babihutan_remake/idle/2.png" id="14_32rt0"]
+[ext_resource type="Texture2D" uid="uid://bq0b2hyh5oo7q" path="res://assets/characters/babihutan_remake/idle/3.png" id="15_hmq0f"]
+[ext_resource type="Texture2D" uid="uid://c74r0whjcc364" path="res://assets/characters/babihutan_remake/idle/4.png" id="16_4kmci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wed4m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6wye5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_twunc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jnq0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1iy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mhl5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lr4om")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_83pj7")
@@ -31,7 +64,24 @@ animations = [{
 "texture": ExtResource("6_5nwaj")
 }],
 "loop": true,
-"name": &"attack",
+"name": &"attack_old",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_yhs85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_32rt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hmq0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4kmci")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -48,7 +98,7 @@ animations = [{
 "texture": ExtResource("10_e4yba")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_old",
 "speed": 5.0
 }]
 
@@ -63,10 +113,11 @@ process_mode = 1
 script = ExtResource("1_syjtd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -9)
-scale = Vector2(0.25, 0.28125)
+position = Vector2(1, 4)
+scale = Vector2(0.3, 0.337)
 sprite_frames = SubResource("SpriteFrames_wed4m")
 animation = &"attack"
+frame_progress = 0.869572
 speed_scale = 0.8
 
 [node name="Timer" type="Timer" parent="."]
