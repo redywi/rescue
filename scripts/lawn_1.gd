@@ -19,11 +19,11 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/sun_bloom.tscn"), preload("res://scenes/hog.tscn")]
+var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn")]
 var shove = false
 var shovel_pos = Vector2(348.29, 21)
 var pos
-var start_sun_time = 1
+var start_honey_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
@@ -41,9 +41,9 @@ func enemy_spawning():
 		4: pos_y = 103
 		5: pos_y = 71
 	if rng.randf_range(0, 50000) < (global.danger_level):
-		var slime = load("res://scenes/slime.tscn").instantiate()
-		slime.position = Vector2(496, pos_y)
-		add_child(slime)
+		var butcher = load("res://scenes/butcher.tscn").instantiate()
+		butcher.position = Vector2(496, pos_y)
+		add_child(butcher)
 		global.danger_level -= 1
 
 func shovel_func(event):
@@ -338,12 +338,12 @@ func _on_timer_timeout():
 func _on_sun_timer_timeout():
 	if global.danger_level == 0:
 		return
-	var sun_drop = load("res://scenes/sun_drop.tscn").instantiate()
-	sun_drop.position = self.position + Vector2(rng.randi_range(80, 400), -10)
-	add_child(sun_drop)
-	if start_sun_time < 20:
-		start_sun_time += 0.5
-	sun_timer.wait_time = start_sun_time
+	var honey_drop = load("res://scenes/honey_drop.tscn").instantiate()
+	honey_drop.position = self.position + Vector2(rng.randi_range(80, 400), -10)
+	add_child(honey_drop)
+	if start_honey_time < 20:
+		start_honey_time += 0.5
+	sun_timer.wait_time = start_honey_time
 	sun_timer.start()
 
 func _on_button_restart_button_up():

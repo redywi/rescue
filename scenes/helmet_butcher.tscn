@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://cewq3ujok33qv"]
+
+[ext_resource type="Texture2D" uid="uid://htt4ma7mtwjy" path="res://assets/characters/enemies/Helmet Butcher/attack/1.png" id="1_1asi8"]
+[ext_resource type="Texture2D" uid="uid://barypggjkweg4" path="res://assets/characters/enemies/Helmet Butcher/walk/1.png" id="1_1hhwj"]
+[ext_resource type="Script" path="res://scripts/helmet_butcher.gd" id="1_keoam"]
+[ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="1_o7cpp"]
+[ext_resource type="Texture2D" uid="uid://bxqumawrbaq6m" path="res://assets/characters/enemies/Helmet Butcher/attack/2.png" id="2_b4av3"]
+[ext_resource type="Texture2D" uid="uid://dqy2k73l674lo" path="res://assets/characters/enemies/Helmet Butcher/walk/2.png" id="2_r2jgi"]
+[ext_resource type="Texture2D" uid="uid://bj2og8sqv224u" path="res://assets/characters/enemies/Helmet Butcher/walk/3.png" id="3_bhnbq"]
+[ext_resource type="Texture2D" uid="uid://cnb56mk7t6fj" path="res://assets/characters/enemies/Helmet Butcher/attack/3.png" id="3_r1d37"]
+[ext_resource type="Texture2D" uid="uid://dbub3543ts42v" path="res://assets/characters/enemies/Helmet Butcher/walk/4.png" id="4_1l4up"]
+[ext_resource type="Texture2D" uid="uid://b28j527b8br0b" path="res://assets/characters/enemies/Helmet Butcher/attack/4.png" id="4_hhhd4"]
+[ext_resource type="Texture2D" uid="uid://ct7us1h6dypp1" path="res://assets/characters/enemies/Helmet Butcher/attack/5.png" id="5_muwm5"]
+[ext_resource type="Texture2D" uid="uid://ch0hj45e6ft3j" path="res://assets/characters/enemies/Helmet Butcher/walk/5.png" id="5_trbvg"]
+[ext_resource type="Texture2D" uid="uid://bre36qwtvsug6" path="res://assets/characters/enemies/Helmet Butcher/walk/6.png" id="6_kojcm"]
+[ext_resource type="Texture2D" uid="uid://bmqld6olct73" path="res://assets/characters/enemies/Helmet Butcher/attack/6.png" id="6_x1gkt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtxtw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1asi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b4av3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r1d37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hhhd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_muwm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x1gkt")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1hhwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r2jgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bhnbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1l4up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_trbvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kojcm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cv1yg"]
+height = 28.0
+
+[node name="HelmetButcher" type="Node2D"]
+script = ExtResource("1_keoam")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -10)
+scale = Vector2(0.35, 0.345)
+sprite_frames = SubResource("SpriteFrames_qtxtw")
+animation = &"attack"
+
+[node name="enemy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_cv1yg")
+
+[node name="health_bar" parent="." instance=ExtResource("1_o7cpp")]
+position = Vector2(-15, -15)
+scale = Vector2(0.2, 0.2)
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="area_entered" from="enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="area_exited" from="enemy" to="." method="_on_enemy_area_exited"]
