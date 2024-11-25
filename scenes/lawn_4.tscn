@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/lawn_4.gd" id="1_86kph"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_s2kwu"]
-[ext_resource type="Texture2D" uid="uid://c2aa1s1y1pguv" path="res://assets/button/restart.png" id="3_13ggi"]
+[ext_resource type="Texture2D" uid="uid://b52owsv36cemf" path="res://assets/button/restart.png" id="3_13ggi"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="3_cdkhw"]
-[ext_resource type="Texture2D" uid="uid://dwnlihidwnvit" path="res://assets/button/restart (hover).png" id="4_3y6ly"]
+[ext_resource type="Texture2D" uid="uid://de4c83qmpxfbq" path="res://assets/button/restart (hover).png" id="4_3y6ly"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="4_vxqdi"]
-[ext_resource type="Texture2D" uid="uid://dem6maqjflh0" path="res://assets/button/home.png" id="5_k5jid"]
+[ext_resource type="Texture2D" uid="uid://ddejo4sr2y6if" path="res://assets/button/home.png" id="5_k5jid"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="5_s8vip"]
-[ext_resource type="Texture2D" uid="uid://djgqhvjf5j2qa" path="res://assets/button/home (hover).png" id="6_s50gj"]
+[ext_resource type="Texture2D" uid="uid://c8vlnt7m0ncp4" path="res://assets/button/home (hover).png" id="6_s50gj"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_yu6v7"]
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="7_bt114"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_pdnwl"]
@@ -1743,7 +1743,7 @@ sources/24 = SubResource("TileSetAtlasSource_xo1fm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pil5"]
 size = Vector2(32, 160)
 
-[node name="lawn_1" type="Node2D"]
+[node name="lawn" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_86kph")
 
@@ -1751,8 +1751,7 @@ script = ExtResource("1_86kph")
 process_mode = 3
 visible = false
 z_index = 1201
-position = Vector2(218, 125)
-scale = Vector2(0.8, 0.8)
+position = Vector2(235, 125)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pausetext"]
 offset_left = -45.0

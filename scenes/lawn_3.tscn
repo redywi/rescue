@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="3_1htbh"]
-[ext_resource type="Texture2D" uid="uid://c2aa1s1y1pguv" path="res://assets/button/restart.png" id="3_epbcv"]
+[ext_resource type="Texture2D" uid="uid://b52owsv36cemf" path="res://assets/button/restart.png" id="3_epbcv"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="4_6i42r"]
-[ext_resource type="Texture2D" uid="uid://dwnlihidwnvit" path="res://assets/button/restart (hover).png" id="4_vbijv"]
+[ext_resource type="Texture2D" uid="uid://de4c83qmpxfbq" path="res://assets/button/restart (hover).png" id="4_vbijv"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="5_hqag1"]
-[ext_resource type="Texture2D" uid="uid://dem6maqjflh0" path="res://assets/button/home.png" id="5_um7ao"]
-[ext_resource type="Texture2D" uid="uid://djgqhvjf5j2qa" path="res://assets/button/home (hover).png" id="6_6cfd0"]
+[ext_resource type="Texture2D" uid="uid://ddejo4sr2y6if" path="res://assets/button/home.png" id="5_um7ao"]
+[ext_resource type="Texture2D" uid="uid://c8vlnt7m0ncp4" path="res://assets/button/home (hover).png" id="6_6cfd0"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_50nua"]
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="7_87u0i"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_6jc36"]
@@ -1750,8 +1750,7 @@ script = ExtResource("1_4jms8")
 process_mode = 3
 visible = false
 z_index = 1201
-position = Vector2(218, 125)
-scale = Vector2(0.8, 0.8)
+position = Vector2(235, 125)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pausetext"]
 offset_left = -45.0
