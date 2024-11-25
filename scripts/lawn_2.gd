@@ -23,11 +23,11 @@ var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://
 var shove = false
 var shovel_pos = Vector2(410, 25)
 var pos
-var start_sun_time = 1
+var start_honey_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
-	music_2.play()
+	music_1.play()
 	sun_value.text = str(global.sun_value)
 	sun_timer.start()
 
@@ -68,17 +68,17 @@ func shovel_key_func(event):
 
 func seed1_func(event):
 	if !event.pressed:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return
-	if pos.x > 64 and pos.x < 96 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and event.pressed:
 		shooter_seed1.z_index += 1
 		current_seed = 1
 
 func seed1_key_func(event):
 	if (current_seed == 1 and !event.pressed) or event.keycode != 49:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return false
@@ -90,17 +90,17 @@ func seed1_key_func(event):
 
 func seed2_func(event):
 	if !event.pressed:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return
-	if pos.x > 96 and pos.x < 128 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and event.pressed:
 		bloom_seed2.z_index += 1
 		current_seed = 2
 
 func seed2_key_func(event):
 	if (current_seed == 2 and !event.pressed) or event.keycode != 50:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return false
@@ -112,17 +112,17 @@ func seed2_key_func(event):
 
 func seed3_func(event):
 	if !event.pressed:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return
-	if pos.x > 128 and pos.x < 160 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and event.pressed:
 		hog_seed3.z_index += 1
 		current_seed = 3
 
 func seed3_key_func(event):
 	if (current_seed == 3 and !event.pressed) or event.keycode != 51:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return false
@@ -132,16 +132,15 @@ func seed3_key_func(event):
 		allbutone_slot_reset(3)
 		return true
 
-
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		shooter_seed1.z_index = 1
 	if slot_button != 2:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		bloom_seed2.z_index = 1
 	if slot_button != 3:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		hog_seed3.z_index = 1
 	if slot_button != 4:
 		pass
@@ -150,7 +149,6 @@ func allbutone_slot_reset(slot_button):
 	if slot_button != 6:
 		pass
 	
-
 func slotkey(event):
 	if seed1_key_func(event):
 		return
@@ -160,9 +158,9 @@ func slotkey(event):
 		return
 	
 	allbutone_slot_reset(0)
-
+	
 func level_won():
-	music_2.stop()
+	music_1.stop()
 	win_sound.play()
 	get_node("win").visible = true
 	allbutone_slot_reset(0)
@@ -170,39 +168,35 @@ func level_won():
 func _input(event):
 	if global.you_lost:
 		return
+
 	if event is InputEventKey:
 		shovel_key_func(event)
 		slotkey(event)
-	
+
 	if event is InputEventMouseButton:
 		pos = event.position
 		var x = int(pos.x / 32)
-		var y = int((pos.y + 8)/32)
-		
-		#shovel plant from lawn
+		var y = int((pos.y + 8) / 32)
+
+		# Menghapus tanaman dari lawn menggunakan shovel
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and shove and lawn_space.has(str(x) + str(y)):
-			# Menghapus tanaman dari lawn_space
 			remove_child(lawn_space[str(x) + str(y)])
 			lawn_space[str(x) + str(y)].queue_free()
 			lawn_space.erase(str(x) + str(y))
-	
-			for i in range(len(lawn_key_list)):
-				if lawn_key_list[i] == (str(x) + str(y)):
-					lawn_key_list.remove_at(i)
-					break
-					
-		
+
+		for i in range(len(lawn_key_list)):
+			if lawn_key_list[i] == (str(x) + str(y)):
+				lawn_key_list.remove_at(i)
+				break
+
 		shovel_func(event)
-	
-	
-		
-		
+
 		if (str(x) + str(y)) in lawn_space and !event.pressed:
 			current_seed = 0
 			allbutone_slot_reset(0)
 			return
-		
-		#add plant in lawn from seed slot
+
+		# Menambahkan tanaman dari seed slot ke lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216:
 			match current_seed:
 				1:
@@ -226,7 +220,7 @@ func _input(event):
 						current_seed = 0
 						get_node("sun_value").modulate.g = 0.2
 						get_node("sun_value").modulate.b = 0.2
-		
+
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and current_seed != 0:
 			var instance = seed_list[current_seed].instantiate()
 			instance.position = hi_light.position
@@ -243,16 +237,11 @@ func _input(event):
 					cooldown_seed2.value = 0
 				3:
 					cooldown_seed3.value = 0
-				4:
-					cooldown_seed4.value = 0
-				5:
-					cooldown_seed5.value = 0
-				6:
-					cooldown_seed6.value = 0
 			global.danger_level += 1
 			allbutone_slot_reset(0)
 			current_seed = 0
-		
+
+		# Periksa cooldown untuk seed
 		if cooldown_seed1.value == 10000:
 			seed1_func(event)
 		if cooldown_seed2.value == 10000:
@@ -260,10 +249,9 @@ func _input(event):
 		if cooldown_seed3.value == 10000:
 			seed3_func(event)
 
-		
-	#hilight
 	elif event is InputEventMouseMotion:
 		pos = event.position
+		# Perbarui posisi highlight hanya dalam area lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216:
 			hi_light.position = Vector2(16 + 32 * int(pos.x / 32), 8 + 32 * int((pos.y + 8) / 32))
 		else:
@@ -280,7 +268,6 @@ func _physics_process(delta):
 	elif current_seed == 3:
 		hog_seed3.position = get_global_mouse_position()
 
-	
 	if global.danger_level > 0:
 		global.danger_level += 3 * delta * global.speed
 	
@@ -314,7 +301,6 @@ func _physics_process(delta):
 	if get_node("sun_value").modulate.b < 1:
 		get_node("sun_value").modulate.b += 0.01 * global.speed
 	
-	
 	cooldown_seed1.value += 20 * global.speed
 	cooldown_seed2.value += 20 * global.speed
 	cooldown_seed3.value += 20 * global.speed
@@ -322,7 +308,6 @@ func _physics_process(delta):
 	cooldown_seed5.value += 20 * global.speed
 	cooldown_seed6.value += 20 * global.speed
 
-	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
 		sun_timer.emit_signal("timeout")
@@ -351,10 +336,20 @@ func _on_sun_timer_timeout():
 	var honey_drop = load("res://scenes/honey_drop.tscn").instantiate()
 	honey_drop.position = self.position + Vector2(rng.randi_range(80, 400), -10)
 	add_child(honey_drop)
-	if start_sun_time < 20:
-		start_sun_time += 0.5
-	sun_timer.wait_time = start_sun_time
+	if start_honey_time < 20:
+		start_honey_time += 0.5
+	sun_timer.wait_time = start_honey_time
 	sun_timer.start()
+
+
+func _on_dead_area_area_entered(area):
+	if area.name == "enemy":
+		get_tree().paused = true
+		global.you_lost = true
+		get_node("dead").visible = true
+		#get_node("pausetext").visible = false
+		#get_node("non_pause").visible = false
+
 
 func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)
@@ -368,11 +363,10 @@ func _on_button_restart_pressed() -> void:
 	global.you_lost = false
 	get_tree().reload_current_scene()
 
-
 func _on_button_home_pressed() -> void:
 	allbutone_slot_reset(0)
 	get_tree().paused = false
-	music_2.stop()
+	music_1.stop()
 	main_music.play()
 	global.speed = 1
 	global.sun_value = 100
@@ -382,11 +376,3 @@ func _on_button_home_pressed() -> void:
 	global.slime_count = 0
 	global.you_lost = false
 	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
-
-func _on_dead_area_area_entered(area):
-	if area.name == "enemy":
-		get_tree().paused = true
-		global.you_lost = true
-		get_node("dead").visible = true
-		#get_node("pausetext").visible = false
-		#get_node("non_pause").visible = false

@@ -1,6 +1,6 @@
-[gd_scene load_steps=60 format=3 uid="uid://b7mml1y3kqiyk"]
+[gd_scene load_steps=62 format=3 uid="uid://b7mml1y3kqiyk"]
 
-[ext_resource type="Script" path="res://scripts/lawn_2.gd" id="1_qrkx8"]
+[ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_ke2sw"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="3_5tw4x"]
 [ext_resource type="Texture2D" uid="uid://b52owsv36cemf" path="res://assets/button/restart.png" id="3_xqflg"]
@@ -36,12 +36,13 @@
 [ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="29_5td0y"]
 [ext_resource type="PackedScene" uid="uid://javcnl5adskq" path="res://scenes/npc_bee.tscn" id="29_pq705"]
 [ext_resource type="Texture2D" uid="uid://n6cpsgwy016v" path="res://assets/button/delete.png" id="36_k5ppl"]
+[ext_resource type="Texture2D" uid="uid://db3rwq23jw25j" path="res://assets/button/kayu1.png" id="36_o7obk"]
 [ext_resource type="Texture2D" uid="uid://x10wocg6srgl" path="res://assets/button/delete_shadow.png" id="37_yv0p0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45po4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adf33"]
 texture = SubResource("CompressedTexture2D_eymok")
 texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
@@ -56,11 +57,11 @@ texture_region_size = Vector2i(32, 32)
 0:7/0 = 0
 1:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_xw7xv"]
+[sub_resource type="TileSet" id="TileSet_arbfn"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_45po4")
+sources/0 = SubResource("TileSetAtlasSource_adf33")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bg8c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o1e1"]
 texture = SubResource("CompressedTexture2D_eymok")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -74,7 +75,7 @@ texture_region_size = Vector2i(32, 32)
 1:2/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evor5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67xbv"]
 texture = ExtResource("4_swnol")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -92,11 +93,11 @@ texture_region_size = Vector2i(32, 32)
 0:3/0 = 0
 1:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgvc4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfvs8"]
 texture = ExtResource("11_xntsm")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyua7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrqv8"]
 texture = ExtResource("12_k8lub")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -115,7 +116,7 @@ texture_region_size = Vector2i(32, 32)
 3:2/0 = 0
 4:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhexe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jaihl"]
 texture = ExtResource("13_46blo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -171,14 +172,14 @@ texture_region_size = Vector2i(32, 32)
 2:9/0 = 0
 3:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6t2t8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6smt"]
 texture = ExtResource("14_7jp3l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63a5y"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqesm"]
 texture = ExtResource("15_6b1f3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -614,7 +615,7 @@ texture_region_size = Vector2i(32, 32)
 22:17/0 = 0
 23:17/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmmu7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pdwe"]
 texture = ExtResource("16_rwyaw")
 margins = Vector2i(48, 0)
 texture_region_size = Vector2i(32, 32)
@@ -904,7 +905,7 @@ texture_region_size = Vector2i(32, 32)
 10:23/0 = 0
 11:23/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljf4u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba4r6"]
 texture = ExtResource("17_jfeek")
 margins = Vector2i(68, 0)
 texture_region_size = Vector2i(17, 29)
@@ -1045,7 +1046,7 @@ texture_region_size = Vector2i(17, 29)
 9:11/0 = 0
 10:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ndn8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f32j4"]
 texture = ExtResource("18_e4qn1")
 margins = Vector2i(0, 13)
 texture_region_size = Vector2i(32, 32)
@@ -1481,7 +1482,7 @@ texture_region_size = Vector2i(32, 32)
 16:2/0 = 0
 16:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svpgb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ni1p"]
 texture = ExtResource("19_n5lug")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -1493,14 +1494,14 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtuwg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7j4kq"]
 texture = ExtResource("20_elb4h")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38qno"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4c4v"]
 texture = ExtResource("21_uc7uq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -1508,25 +1509,25 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5fjg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjw35"]
 texture = ExtResource("22_ac3sj")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7lan"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j82ug"]
 texture = ExtResource("23_weh1e")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4mex"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l17ib"]
 texture = ExtResource("24_ep0ca")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2j77"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e51ud"]
 texture = ExtResource("25_gaja3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -1546,38 +1547,41 @@ texture_region_size = Vector2i(32, 32)
 0:5/0 = 0
 1:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_8dl8b"]
+[sub_resource type="TileSet" id="TileSet_elqds"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_6bg8c")
-sources/1 = SubResource("TileSetAtlasSource_evor5")
-sources/3 = SubResource("TileSetAtlasSource_svpgb")
-sources/4 = SubResource("TileSetAtlasSource_gtuwg")
-sources/5 = SubResource("TileSetAtlasSource_38qno")
-sources/6 = SubResource("TileSetAtlasSource_d5fjg")
-sources/7 = SubResource("TileSetAtlasSource_l7lan")
-sources/8 = SubResource("TileSetAtlasSource_t4mex")
-sources/9 = SubResource("TileSetAtlasSource_l2j77")
-sources/10 = SubResource("TileSetAtlasSource_xgvc4")
-sources/11 = SubResource("TileSetAtlasSource_yyua7")
-sources/12 = SubResource("TileSetAtlasSource_qhexe")
-sources/2 = SubResource("TileSetAtlasSource_ljf4u")
-sources/13 = SubResource("TileSetAtlasSource_6t2t8")
-sources/14 = SubResource("TileSetAtlasSource_63a5y")
-sources/19 = SubResource("TileSetAtlasSource_hmmu7")
-sources/20 = SubResource("TileSetAtlasSource_8ndn8")
+sources/0 = SubResource("TileSetAtlasSource_8o1e1")
+sources/1 = SubResource("TileSetAtlasSource_67xbv")
+sources/3 = SubResource("TileSetAtlasSource_1ni1p")
+sources/4 = SubResource("TileSetAtlasSource_7j4kq")
+sources/5 = SubResource("TileSetAtlasSource_f4c4v")
+sources/6 = SubResource("TileSetAtlasSource_cjw35")
+sources/7 = SubResource("TileSetAtlasSource_j82ug")
+sources/8 = SubResource("TileSetAtlasSource_l17ib")
+sources/9 = SubResource("TileSetAtlasSource_e51ud")
+sources/10 = SubResource("TileSetAtlasSource_cfvs8")
+sources/11 = SubResource("TileSetAtlasSource_nrqv8")
+sources/12 = SubResource("TileSetAtlasSource_jaihl")
+sources/2 = SubResource("TileSetAtlasSource_ba4r6")
+sources/13 = SubResource("TileSetAtlasSource_p6smt")
+sources/14 = SubResource("TileSetAtlasSource_yqesm")
+sources/19 = SubResource("TileSetAtlasSource_2pdwe")
+sources/20 = SubResource("TileSetAtlasSource_f32j4")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3dfxm"]
+load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pil5"]
 size = Vector2(32, 160)
 
 [node name="lawn" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_qrkx8")
+script = ExtResource("1_ke2sw")
 
 [node name="pausetext" type="Node2D" parent="."]
 process_mode = 3
 visible = false
 z_index = 1201
-position = Vector2(240, 125)
+position = Vector2(235, 125)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pausetext"]
 offset_left = -45.0
@@ -1699,14 +1703,14 @@ offset_right = 15.0
 offset_bottom = 13.0
 
 [node name="seed_slots" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_xw7xv")
+tile_set = SubResource("TileSet_arbfn")
 format = 2
 layer_0/name = "seed_slots -5"
 layer_0/z_index = -5
-layer_0/tile_data = PackedInt32Array(2, 0, 6, 3, 0, 5, 4, 0, 6, 5, 0, 6, 6, 0, 5, 65542, 196608, 4, 65541, 65536, 5, 65540, 196608, 5, 65538, 65536, 5, 65539, 65536, 5, -65534, 196608, 536870916, -65533, 196608, 536870916, -65532, 65536, 536870917, -65531, 196608, 536870917, -65530, 196608, 536870917, 65543, 65536, 5, -65529, 65536, 536870917, 7, 0, 5, 8, 65536, 6, 65544, 196608, 1610612742, -65528, 196608, 805306374, 1, 65536, 7, 65537, 196608, 5, -65535, 65536, 536870917, 0, 0, 7, 65536, 196608, 4, -65536, 196608, 536870917, 65535, 196608, 1879048197, 131071, 196608, 6, -1, 196608, 1342177286)
+layer_0/tile_data = PackedInt32Array(458752, 0, 7, 458753, 65536, 7, 458754, 0, 6, 458755, 0, 5, 458756, 0, 6, 458757, 0, 6, 458758, 0, 5, 458759, 0, 5, 524287, 131072, 6, 524288, 131072, 1610612742, 524289, 131072, 1610612742, 524290, 131072, 1610612742, 524291, 131072, 1610612742, 524292, 131072, 1610612742, 524293, 131072, 1610612742, 524294, 131072, 1610612742, 524295, 131072, 1610612742, 458760, 131072, 805306374, 393223, 131072, 1342177286, 393222, 131072, 1342177286, 393221, 131072, 1342177286, 393220, 131072, 1342177286, 393219, 131072, 1342177286, 393218, 131072, 1342177286, 393217, 131072, 1342177286, 393216, 131072, 1342177286, 589823, 196608, 6, 458751, 196608, 1342177286, 524296, 196608, 1610612742, 393224, 196608, 805306374)
 
 [node name="sun_cost_seed1" type="Node2D" parent="seed_slots"]
-position = Vector2(74, 28)
+position = Vector2(74, 252)
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="seed_slots/sun_cost_seed1"]
@@ -1717,7 +1721,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="sun_cost_seed2" type="Node2D" parent="seed_slots"]
-position = Vector2(106, 28)
+position = Vector2(106, 252)
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="seed_slots/sun_cost_seed2"]
@@ -1728,7 +1732,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="sun_cost_seed3" type="Node2D" parent="seed_slots"]
-position = Vector2(138, 28)
+position = Vector2(138, 252)
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="seed_slots/sun_cost_seed3"]
@@ -1740,68 +1744,68 @@ metadata/_edit_use_anchors_ = true
 
 [node name="shooter_seed1" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
-position = Vector2(80, 16)
+position = Vector2(80, 240)
 scale = Vector2(0.351351, 0.351351)
 texture = ExtResource("7_vj16e")
 
 [node name="bloom_seed2" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
-position = Vector2(112, 16)
+position = Vector2(112, 240)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_jsdt6")
 
 [node name="hog_seed3" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
-position = Vector2(144, 16)
+position = Vector2(144, 240)
 scale = Vector2(0.242991, 0.242991)
 texture = ExtResource("8_dlb7k")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
-position = Vector2(16, 16)
+position = Vector2(16, 240)
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("10_jdyof")
 
 [node name="sun_panel" type="Sprite2D" parent="seed_slots"]
 modulate = Color(1, 1, 1, 0.392157)
 z_index = -10
-position = Vector2(32, 16)
+position = Vector2(32, 240)
 scale = Vector2(2, 1)
 texture = ExtResource("5_bn0b0")
 
 [node name="cooldown_bar_seed1" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(67.1, 3.1)
+position = Vector2(67.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="cooldown_bar_seed2" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(99.1, 3.1)
+position = Vector2(99.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="cooldown_bar_seed3" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(131.1, 3.1)
+position = Vector2(131.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="cooldown_bar_seed4" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(163.1, 3.1)
+position = Vector2(163.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="cooldown_bar_seed5" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(195.1, 3.1)
+position = Vector2(195.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="cooldown_bar_seed6" parent="seed_slots" instance=ExtResource("10_7db1a")]
 z_index = -10
-position = Vector2(227.1, 3.1)
+position = Vector2(227.1, 227.1)
 scale = Vector2(0.81, 0.81)
 
 [node name="ground_tiles" type="TileMap" parent="."]
 z_index = -10
 position = Vector2(2.08165e-12, -8)
-tile_set = SubResource("TileSet_8dl8b")
+tile_set = SubResource("TileSet_elqds")
 format = 2
 layer_0/name = "dirt -5"
 layer_0/z_index = -7
@@ -1825,6 +1829,7 @@ layer_6/name = "tree-2"
 layer_6/z_index = -1
 layer_6/tile_data = PackedInt32Array(458755, 5, 0, 524291, 5, 1, 458756, 65541, 0, 524292, 65541, 1, 458763, 5, 0, 524299, 5, 1, 458764, 65541, 0, 524300, 65541, 1, 0, 5, 0, 65536, 5, 1, 1, 65541, 0, 65537, 65541, 1, 2, 5, 0, 65538, 5, 1, 3, 65541, 0, 65539, 65541, 1, 6, 5, 0, 65542, 5, 1, 7, 65541, 0, 65543, 65541, 1, 8, 5, 0, 65544, 5, 1, 9, 65541, 0, 65545, 65541, 1, 12, 5, 0, 65548, 5, 1, 13, 65541, 0, 65549, 65541, 1, 65541, 65544, 0, 11, 65544, 0, 65546, 65544, 0, 458760, 5, 0, 524296, 5, 1, 458761, 65541, 0, 524297, 65541, 1, 458753, 720898, 10)
 layer_7/name = "tree-3"
+layer_7/z_index = -1
 layer_7/tile_data = PackedInt32Array(458752, 5, 0, 458753, 65541, 0, 524288, 5, 1, 524289, 65541, 1, 458757, 5, 0, 458758, 65541, 0, 524293, 5, 1, 524294, 65541, 1, 458754, 5, 0, 524290, 5, 1, 458755, 65541, 0, 524291, 65541, 1, 524300, 65544, 0, 458765, 65544, 0, 524292, 8, 0, 524296, 8, 0, 524297, 8, 0)
 layer_8/name = "bush-1"
 layer_8/z_index = 1
@@ -1833,7 +1838,7 @@ layer_8/z_index = 1
 process_mode = 1
 modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(-100, 86)
-texture = SubResource("CompressedTexture2D_eymok")
+texture = SubResource("CompressedTexture2D_3dfxm")
 hframes = 4
 vframes = 8
 frame = 14
@@ -1842,13 +1847,27 @@ frame = 14
 process_mode = 1
 modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(-100, 125)
-texture = SubResource("CompressedTexture2D_eymok")
+texture = SubResource("CompressedTexture2D_3dfxm")
 hframes = 4
 vframes = 8
 frame = 14
 
+[node name="shovel" type="Sprite2D" parent="."]
+process_mode = 1
+z_index = 1
+y_sort_enabled = true
+position = Vector2(410, 25)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("36_k5ppl")
+
+[node name="shovel_shadow" type="Sprite2D" parent="."]
+process_mode = 1
+position = Vector2(410, 25)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("37_yv0p0")
+
 [node name="sun_value" type="Node2D" parent="."]
-position = Vector2(28, 7)
+position = Vector2(28, 230)
 scale = Vector2(0.8, 0.8)
 
 [node name="Label" type="Label" parent="sun_value"]
@@ -1871,22 +1890,22 @@ position = Vector2(-16, 135)
 shape = SubResource("RectangleShape2D_5pil5")
 
 [node name="npc_pig" parent="." instance=ExtResource("26_srjic")]
-position = Vector2(231, 257)
+position = Vector2(378, 23)
 
 [node name="npc_pig2" parent="." instance=ExtResource("26_srjic")]
-position = Vector2(348, 235)
+position = Vector2(333, 258)
 
 [node name="npc_pig3" parent="." instance=ExtResource("26_srjic")]
-position = Vector2(260, 44)
+position = Vector2(257, 39)
 
 [node name="npc_chicken" parent="." instance=ExtResource("27_vf0gc")]
-position = Vector2(64, 263)
+position = Vector2(66, 41)
 
 [node name="NpcBee" parent="." instance=ExtResource("29_pq705")]
-position = Vector2(262, 9)
+position = Vector2(276, 19)
 
 [node name="NpcBee2" parent="." instance=ExtResource("29_pq705")]
-position = Vector2(287, 12)
+position = Vector2(151, 14)
 
 [node name="NpcBee3" parent="." instance=ExtResource("29_pq705")]
 position = Vector2(330, 10)
@@ -1898,9 +1917,15 @@ position = Vector2(45, 11)
 position = Vector2(440, 13)
 
 [node name="NpcBee6" parent="." instance=ExtResource("29_pq705")]
-position = Vector2(189, 39)
+position = Vector2(207, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400.5, 255.5)
+scale = Vector2(0.205, 0.181)
+texture = ExtResource("36_o7obk")
 
 [node name="survive" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
 offset_left = 350.0
 offset_top = 242.0
 offset_right = 407.0
@@ -1908,6 +1933,7 @@ offset_bottom = 265.0
 text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("28_erxfp")]
+modulate = Color(1, 1, 0, 1)
 offset_left = 411.0
 offset_top = 243.0
 offset_right = 452.0
@@ -1919,20 +1945,6 @@ offset_left = -5.0
 offset_top = -7.0
 offset_right = 486.0
 offset_bottom = 275.0
-
-[node name="shovel" type="Sprite2D" parent="."]
-process_mode = 1
-z_index = 1
-y_sort_enabled = true
-position = Vector2(410, 25)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("36_k5ppl")
-
-[node name="shovel_shadow" type="Sprite2D" parent="."]
-process_mode = 1
-position = Vector2(410, 25)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("37_yv0p0")
 
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]

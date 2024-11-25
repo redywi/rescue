@@ -75,17 +75,17 @@ func shovel_key_func(event):
 
 func seed1_func(event):
 	if !event.pressed:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return
-	if pos.x > 64 and pos.x < 96 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and event.pressed:
 		shooter_seed1.z_index += 1
 		current_seed = 1
 
 func seed1_key_func(event):
 	if (current_seed == 1 and !event.pressed) or event.keycode != 49:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return false
@@ -97,17 +97,17 @@ func seed1_key_func(event):
 
 func seed2_func(event):
 	if !event.pressed:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return
-	if pos.x > 96 and pos.x < 128 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and event.pressed:
 		bloom_seed2.z_index += 1
 		current_seed = 2
 
 func seed2_key_func(event):
 	if (current_seed == 2 and !event.pressed) or event.keycode != 50:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return false
@@ -119,17 +119,17 @@ func seed2_key_func(event):
 
 func seed3_func(event):
 	if !event.pressed:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return
-	if pos.x > 128 and pos.x < 160 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and event.pressed:
 		hog_seed3.z_index += 1
 		current_seed = 3
 
 func seed3_key_func(event):
 	if (current_seed == 3 and !event.pressed) or event.keycode != 51:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return false
@@ -141,17 +141,17 @@ func seed3_key_func(event):
 		
 func seed4_func(event):
 	if !event.pressed:
-		hedgehog_seed4.position = Vector2(176, 16)
+		hedgehog_seed4.position = Vector2(176, 240)
 		current_seed = 0
 		hedgehog_seed4.z_index = 1
 		return
-	if pos.x > 160 and pos.x < 192 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 160 and pos.x < 192 and pos.y > 240 and pos.y < 272 and event.pressed:
 		hedgehog_seed4.z_index += 1
 		current_seed = 4
 
 func seed4_key_func(event):
 	if (current_seed == 4 and !event.pressed) or event.keycode != 52:
-		hedgehog_seed4.position = Vector2(176, 16)
+		hedgehog_seed4.position = Vector2(176, 240)
 		current_seed = 0
 		hedgehog_seed4.z_index = 1
 		return false
@@ -163,16 +163,16 @@ func seed4_key_func(event):
 
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		shooter_seed1.z_index = 1
 	if slot_button != 2:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		bloom_seed2.z_index = 1
 	if slot_button != 3:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		hog_seed3.z_index = 1
 	if slot_button != 4:
-		hedgehog_seed4.position = Vector2(176, 16)
+		hedgehog_seed4.position = Vector2(176, 240)
 		hedgehog_seed4.z_index = 1
 	if slot_button != 5:
 		pass
