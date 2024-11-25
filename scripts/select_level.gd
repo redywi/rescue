@@ -16,8 +16,7 @@ func _on_button_level_3_pressed() -> void:
 
 # Fungsi untuk ketika Level 4 dipilih
 func _on_button_level_4_pressed() -> void:
-	pass # Replace with function body.
-	#get_tree().change_scene_to_file("res://scenes/lawn_4.tscn")
+	get_tree().change_scene_to_file("res://scenes/lawn_4.tscn")
 
 # Fungsi untuk ketika Level 5 dipilih
 func _on_button_level_5_pressed() -> void:

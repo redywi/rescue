@@ -10,6 +10,8 @@ radius = 7.0
 script = ExtResource("1_q8o0q")
 
 [node name="pvv_peablasting" type="Sprite2D" parent="."]
+position = Vector2(-0.499999, 4.28125)
+scale = Vector2(0.40625, 0.416016)
 texture = ExtResource("2_yraio")
 
 [node name="bullet_area" type="Area2D" parent="."]

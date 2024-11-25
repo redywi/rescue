@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0gi6wl2myl4x"]
+
+[ext_resource type="Script" path="res://scripts/elephant.gd" id="1_8rs8o"]
+[ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="1_70dvt"]
+[ext_resource type="Texture2D" uid="uid://d0bp4i7k55so6" path="res://assets/characters/gajah/2.png" id="2_8yax5"]
+[ext_resource type="Texture2D" uid="uid://hjbstki7vlw1" path="res://assets/characters/gajah/1.png" id="3_jhb4p"]
+[ext_resource type="Texture2D" uid="uid://bjrat5enat10l" path="res://assets/characters/gajah/4.png" id="4_b3m5f"]
+[ext_resource type="Texture2D" uid="uid://7vr82likoxq2" path="res://assets/characters/gajah/3.png" id="5_2k6qt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yosp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8yax5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jhb4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b3m5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2k6qt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tn2xd"]
+radius = 9.0
+height = 42.0
+
+[node name="Elephant" type="Node2D"]
+script = ExtResource("1_8rs8o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -8)
+scale = Vector2(0.39375, 0.39375)
+sprite_frames = SubResource("SpriteFrames_3yosp")
+animation = &"idle"
+frame_progress = 0.00866906
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="health_bar" parent="." instance=ExtResource("1_70dvt")]
+modulate = Color(0.960784, 0.25098, 0.298039, 1)
+z_index = -1
+position = Vector2(-27, -29)
+scale = Vector2(0.2, 0.2)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(4, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tn2xd")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

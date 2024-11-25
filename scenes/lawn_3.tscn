@@ -1940,7 +1940,7 @@ metadata/_edit_use_anchors_ = true
 [node name="shooter_seed1" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(80, 16)
-scale = Vector2(0.292135, 0.292135)
+scale = Vector2(0.351351, 0.351351)
 texture = ExtResource("7_87u0i")
 
 [node name="bloom_seed2" type="Sprite2D" parent="seed_slots"]

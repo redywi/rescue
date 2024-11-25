@@ -116,8 +116,7 @@ script = ExtResource("1_syjtd")
 position = Vector2(1, 4)
 scale = Vector2(0.3, 0.337)
 sprite_frames = SubResource("SpriteFrames_wed4m")
-animation = &"attack"
-frame_progress = 0.869572
+animation = &"idle"
 speed_scale = 0.8
 
 [node name="Timer" type="Timer" parent="."]
