@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="29_5td0y"]
 [ext_resource type="PackedScene" uid="uid://javcnl5adskq" path="res://scenes/npc_bee.tscn" id="29_pq705"]
 [ext_resource type="Texture2D" uid="uid://n6cpsgwy016v" path="res://assets/button/delete.png" id="36_k5ppl"]
-[ext_resource type="Texture2D" uid="uid://gd2vnv2pjxe4" path="res://assets/button/delete_shadow.png" id="37_yv0p0"]
+[ext_resource type="Texture2D" uid="uid://x10wocg6srgl" path="res://assets/button/delete_shadow.png" id="37_yv0p0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
