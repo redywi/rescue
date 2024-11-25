@@ -402,6 +402,8 @@ func _on_dead_area_area_entered(area):
 func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)
 	get_tree().paused = false
+	music_3.stop()
+	main_music.play()
 	global.speed = 1
 	global.sun_value = 300
 	global.sun_value_deficit = 0

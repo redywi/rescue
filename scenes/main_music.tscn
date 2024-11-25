@@ -5,4 +5,3 @@
 [node name="MainMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_jwq11")
 volume_db = -13.117
-autoplay = true
