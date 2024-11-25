@@ -21,7 +21,7 @@ var lawn_key_list = []
 var current_seed = 0
 var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn")]
 var shove = false
-var shovel_pos = Vector2(348.29, 21)
+var shovel_pos = Vector2(410, 25)
 var pos
 var start_honey_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
@@ -52,7 +52,7 @@ func shovel_func(event):
 		shove = false
 		shovel.z_index = 1
 		return
-	if pos.x > 331 and pos.x < 358 and pos.y > 9 and pos.y < 34 and event.pressed and !shove:
+	if pos.x > 390 and pos.x < 430 and pos.y > 9 and pos.y < 34 and event.pressed and !shove:
 		shovel.z_index += 1
 		shove = true
 
