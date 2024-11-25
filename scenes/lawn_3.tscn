@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b7uemo4sodf3v"]
+[gd_scene load_steps=73 format=3 uid="uid://b7uemo4sodf3v"]
 
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://c47lcd5n7g24r" path="res://scenes/countdown.tscn" id="29_p880x"]
 [ext_resource type="PackedScene" uid="uid://javcnl5adskq" path="res://scenes/npc_bee.tscn" id="30_qavya"]
 [ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="30_vqwuf"]
+[ext_resource type="Texture2D" uid="uid://n6cpsgwy016v" path="res://assets/button/delete.png" id="43_wxc8a"]
+[ext_resource type="Texture2D" uid="uid://gd2vnv2pjxe4" path="res://assets/button/delete_shadow.png" id="44_im62k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -2037,24 +2039,6 @@ hframes = 4
 vframes = 8
 frame = 14
 
-[node name="shovel" type="Sprite2D" parent="."]
-process_mode = 1
-z_index = 1
-y_sort_enabled = true
-position = Vector2(348.29, 21)
-texture = SubResource("CompressedTexture2D_eymok")
-hframes = 4
-vframes = 8
-frame = 15
-
-[node name="shovel_shadow" type="Sprite2D" parent="."]
-process_mode = 1
-position = Vector2(348.29, 21)
-texture = SubResource("CompressedTexture2D_eymok")
-hframes = 4
-vframes = 8
-frame = 16
-
 [node name="sun_value" type="Node2D" parent="."]
 position = Vector2(28, 7)
 scale = Vector2(0.8, 0.8)
@@ -2127,6 +2111,20 @@ offset_left = -5.0
 offset_top = -7.0
 offset_right = 486.0
 offset_bottom = 275.0
+
+[node name="shovel" type="Sprite2D" parent="."]
+process_mode = 1
+z_index = 1
+y_sort_enabled = true
+position = Vector2(410, 25)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("43_wxc8a")
+
+[node name="shovel_shadow" type="Sprite2D" parent="."]
+process_mode = 1
+position = Vector2(410, 25)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("44_im62k")
 
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
