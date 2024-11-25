@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmvm6g6qdnfeb"]
 
-[ext_resource type="AudioStream" uid="uid://b7ve4egp1vc3w" path="res://assets/sound/Raging Veins.mp3" id="1_k02kt"]
+[ext_resource type="AudioStream" uid="uid://boalyxm0hkvt6" path="res://assets/sound/Rainbow Plains.mp3" id="1_65ds1"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_k02kt")
+[node name="LevelMusic2" type="AudioStreamPlayer"]
+stream = ExtResource("1_65ds1")

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Rainbow Plains.mp3-e4ee05b6ca3e808729018aa9bf
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

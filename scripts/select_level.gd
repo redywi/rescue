@@ -1,5 +1,11 @@
 extends Control
 
+func _ready() -> void:
+	if main_music.playing == false:
+		main_music.play()
+	else:
+		pass
+
 func _on_button_level_1_pressed() -> void:
 	main_music.stop()
 	get_tree().change_scene_to_file("res://scenes/lawn_1.tscn")
@@ -21,9 +27,8 @@ func _on_button_level_4_pressed() -> void:
 
 # Fungsi untuk ketika Level 5 dipilih
 func _on_button_level_5_pressed() -> void:
-	pass # Replace with function body.
-	#main_music.stop()
-	#get_tree().change_scene_to_file("res://scenes/lawn_5.tscn")
+	main_music.stop()
+	get_tree().change_scene_to_file("res://scenes/lawn_5.tscn")
 	
 # Fungsi untuk ketika Level boss dipilih
 func _on_button_level_boss_pressed() -> void:

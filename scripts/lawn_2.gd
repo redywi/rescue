@@ -367,7 +367,6 @@ func _on_button_home_pressed() -> void:
 	allbutone_slot_reset(0)
 	get_tree().paused = false
 	music_1.stop()
-	main_music.play()
 	global.speed = 1
 	global.sun_value = 100
 	global.sun_value_deficit = 0

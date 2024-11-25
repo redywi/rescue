@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=3 uid="uid://b7mml1y3kqiyk"]
 
-[ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_ke2sw"]
+[ext_resource type="Script" path="res://scripts/lawn_2.gd" id="1_qrkx8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="3_5tw4x"]
 [ext_resource type="Texture2D" uid="uid://b52owsv36cemf" path="res://assets/button/restart.png" id="3_xqflg"]
@@ -1575,7 +1575,7 @@ size = Vector2(32, 160)
 
 [node name="lawn" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_ke2sw")
+script = ExtResource("1_qrkx8")
 
 [node name="pausetext" type="Node2D" parent="."]
 process_mode = 3
