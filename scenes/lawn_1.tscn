@@ -1700,6 +1700,7 @@ offset_right = 15.0
 offset_bottom = 13.0
 
 [node name="seed_slots" type="TileMap" parent="."]
+position = Vector2(0, 8)
 tile_set = SubResource("TileSet_xw7xv")
 format = 2
 layer_0/name = "seed_slots -5"
@@ -1864,7 +1865,7 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("27_2wanb")
 
 [node name="sun_value" type="Node2D" parent="."]
-position = Vector2(28, 230)
+position = Vector2(28, 238)
 scale = Vector2(0.8, 0.8)
 
 [node name="Label" type="Label" parent="sun_value"]
@@ -1917,24 +1918,24 @@ position = Vector2(440, 13)
 position = Vector2(187, 13)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(400.5, 240.5)
+position = Vector2(400.5, 247.5)
 scale = Vector2(0.205, 0.181)
 texture = ExtResource("36_jekqe")
 
 [node name="survive" type="Label" parent="."]
 modulate = Color(1, 1, 0, 1)
 offset_left = 350.0
-offset_top = 227.0
+offset_top = 234.0
 offset_right = 407.0
-offset_bottom = 250.0
+offset_bottom = 257.0
 text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("34_elof8")]
 modulate = Color(1, 1, 0, 1)
 offset_left = 411.0
-offset_top = 228.0
+offset_top = 235.0
 offset_right = 452.0
-offset_bottom = 251.0
+offset_bottom = 258.0
 
 [node name="win" parent="." instance=ExtResource("7_3g3n4")]
 visible = false
