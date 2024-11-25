@@ -389,7 +389,17 @@ func _on_sun_timer_timeout():
 	sun_timer.wait_time = start_sun_time
 	sun_timer.start()
 
-func _on_button_restart_button_up():
+
+func _on_dead_area_area_entered(area):
+	if area.name == "enemy":
+		get_tree().paused = true
+		global.you_lost = true
+		get_node("dead").visible = true
+		#get_node("pausetext").visible = false
+		#get_node("non_pause").visible = false
+
+
+func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)
 	get_tree().paused = false
 	global.speed = 1
@@ -401,10 +411,15 @@ func _on_button_restart_button_up():
 	global.you_lost = false
 	get_tree().reload_current_scene()
 
-func _on_dead_area_area_entered(area):
-	if area.name == "enemy":
-		get_tree().paused = true
-		global.you_lost = true
-		get_node("dead").visible = true
-		#get_node("pausetext").visible = false
-		#get_node("non_pause").visible = false
+
+func _on_button_home_pressed() -> void:
+	allbutone_slot_reset(0)
+	get_tree().paused = false
+	global.speed = 1
+	global.sun_value = 100
+	global.sun_value_deficit = 0
+	global.sun_value_surplus = 0
+	global.danger_level = 0
+	global.slime_count = 0
+	global.you_lost = false
+	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
