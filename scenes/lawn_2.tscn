@@ -1623,7 +1623,7 @@ focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="pausetile" type="Sprite2D" parent="non_pause"]
-modulate = Color(0.436107, 0.745631, 0.920544, 1)
+modulate = Color(0.890196, 0.686275, 0.482353, 1)
 z_index = 1201
 position = Vector2(20.7, 13.3)
 scale = Vector2(0.757812, 0.75)
@@ -1920,24 +1920,24 @@ position = Vector2(440, 13)
 position = Vector2(207, 11)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(400.5, 255.5)
+position = Vector2(400.5, 239.5)
 scale = Vector2(0.205, 0.181)
 texture = ExtResource("36_o7obk")
 
 [node name="survive" type="Label" parent="."]
 modulate = Color(1, 1, 0, 1)
 offset_left = 350.0
-offset_top = 242.0
+offset_top = 226.0
 offset_right = 407.0
-offset_bottom = 265.0
+offset_bottom = 249.0
 text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("28_erxfp")]
 modulate = Color(1, 1, 0, 1)
 offset_left = 411.0
-offset_top = 243.0
+offset_top = 227.0
 offset_right = 452.0
-offset_bottom = 266.0
+offset_bottom = 250.0
 
 [node name="win" parent="." instance=ExtResource("29_5td0y")]
 visible = false

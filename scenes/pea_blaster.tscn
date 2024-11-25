@@ -155,16 +155,16 @@ animations = [{
 size = Vector2(484, 14)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q3kiv"]
-radius = 7.0
-height = 24.0
+radius = 8.0
+height = 26.0
 
 [node name="pea_blaster" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_22pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -2)
-scale = Vector2(0.372266, 0.372266)
+position = Vector2(-4.69532, -5.30468)
+scale = Vector2(0.421191, 0.446191)
 sprite_frames = SubResource("SpriteFrames_y6k14")
 animation = &"action"
 frame = 5
@@ -194,6 +194,7 @@ shape = SubResource("RectangleShape2D_3ik8d")
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_q3kiv")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

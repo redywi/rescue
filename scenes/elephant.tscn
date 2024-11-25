@@ -35,8 +35,8 @@ height = 42.0
 script = ExtResource("1_8rs8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -8)
-scale = Vector2(0.39375, 0.39375)
+position = Vector2(5.5, -11.5)
+scale = Vector2(0.40625, 0.43125)
 sprite_frames = SubResource("SpriteFrames_3yosp")
 animation = &"idle"
 frame_progress = 0.00866906

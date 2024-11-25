@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://b7uemo4sodf3v"]
+[gd_scene load_steps=74 format=3 uid="uid://b7uemo4sodf3v"]
 
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://c47lcd5n7g24r" path="res://scenes/countdown.tscn" id="29_p880x"]
 [ext_resource type="PackedScene" uid="uid://javcnl5adskq" path="res://scenes/npc_bee.tscn" id="30_qavya"]
 [ext_resource type="PackedScene" uid="uid://dxdps3010fknq" path="res://scenes/win.tscn" id="30_vqwuf"]
+[ext_resource type="Texture2D" uid="uid://db3rwq23jw25j" path="res://assets/button/kayu1.png" id="41_h4u4p"]
 [ext_resource type="Texture2D" uid="uid://n6cpsgwy016v" path="res://assets/button/delete.png" id="43_wxc8a"]
 [ext_resource type="Texture2D" uid="uid://x10wocg6srgl" path="res://assets/button/delete_shadow.png" id="44_im62k"]
 
@@ -1794,7 +1795,7 @@ focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="pausetile" type="Sprite2D" parent="non_pause"]
-modulate = Color(0.436107, 0.745631, 0.920544, 1)
+modulate = Color(0.890196, 0.686275, 0.482353, 1)
 z_index = 1201
 position = Vector2(20.7, 13.3)
 scale = Vector2(0.757812, 0.75)
@@ -2017,6 +2018,7 @@ layer_6/name = "tree-2"
 layer_6/z_index = -1
 layer_6/tile_data = PackedInt32Array(458755, 17, 0, 524291, 17, 1, 458756, 65553, 0, 524292, 65553, 1, 458763, 17, 0, 524299, 17, 1, 458764, 65553, 0, 524300, 65553, 1, 0, 18, 0, 65536, 18, 1, 1, 65554, 0, 65537, 65554, 1, 2, 18, 0, 65538, 18, 1, 3, 65554, 0, 65539, 65554, 1, 6, 17, 0, 65542, 17, 1, 7, 65553, 0, 65543, 65553, 1, 8, 18, 0, 65544, 18, 1, 9, 65554, 0, 65545, 65554, 1, 12, 17, 0, 65548, 17, 1, 13, 65553, 0, 65549, 65553, 1, 65541, 22, 0, 11, 22, 0, 65546, 22, 0, 458760, 17, 0, 524296, 17, 1, 458761, 65553, 0, 524297, 65553, 1, 458753, 22, 0)
 layer_7/name = "tree-3"
+layer_7/z_index = -1
 layer_7/tile_data = PackedInt32Array(458752, 18, 0, 458753, 65554, 0, 524288, 18, 1, 524289, 65554, 1, 458757, 18, 0, 458758, 65554, 0, 524294, 65554, 1, 458754, 18, 0, 524290, 18, 1, 458755, 65554, 0, 524291, 65554, 1, 524295, 22, 0, 524293, 18, 1, 458765, 22, 0, 65537, 24, 0, 65538, 65560, 0, 65539, 65560, 0, 65540, 65560, 0, 65541, 65560, 0, 65542, 65560, 0, 65543, 131096, 0, 65544, 131096, 0, 65545, 131096, 0, 65546, 131096, 0, 65547, 65560, 0, 65548, 65560, 0, 65549, 196632, 0)
 layer_8/name = "bush-1"
 layer_8/z_index = 1
@@ -2092,18 +2094,25 @@ position = Vector2(440, 13)
 [node name="NpcBee6" parent="." instance=ExtResource("30_qavya")]
 position = Vector2(126, 7)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400.5, 240.5)
+scale = Vector2(0.205, 0.181)
+texture = ExtResource("41_h4u4p")
+
 [node name="survive" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
 offset_left = 350.0
-offset_top = 242.0
+offset_top = 227.0
 offset_right = 407.0
-offset_bottom = 265.0
+offset_bottom = 250.0
 text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("29_p880x")]
+modulate = Color(1, 1, 0, 1)
 offset_left = 411.0
-offset_top = 243.0
+offset_top = 228.0
 offset_right = 452.0
-offset_bottom = 266.0
+offset_bottom = 251.0
 
 [node name="win" parent="." instance=ExtResource("30_vqwuf")]
 visible = false

@@ -113,8 +113,8 @@ process_mode = 1
 script = ExtResource("1_syjtd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 4)
-scale = Vector2(0.3, 0.337)
+position = Vector2(5.125, 2)
+scale = Vector2(0.398437, 0.431781)
 sprite_frames = SubResource("SpriteFrames_wed4m")
 animation = &"idle"
 speed_scale = 0.8

@@ -96,15 +96,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3qlsk"]
-radius = 4.0
+radius = 9.0
 height = 24.0
 
 [node name="sun_bloom" type="Node2D"]
 script = ExtResource("1_juajy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(0.16875, 0.16875)
+position = Vector2(5.68434e-14, -5)
+scale = Vector2(0.215625, 0.215625)
 sprite_frames = SubResource("SpriteFrames_v6ywa")
 animation = &"idle"
 frame_progress = 0.561763
@@ -119,12 +119,12 @@ process_callback = 0
 
 [node name="timer_bar" parent="." instance=ExtResource("3_ouusg")]
 modulate = Color(0.509804, 0.823529, 0.509804, 1)
-position = Vector2(-15, 8)
+position = Vector2(-21, 8)
 scale = Vector2(0.2, 0.2)
 
 [node name="health_bar" parent="." instance=ExtResource("4_hejuf")]
 modulate = Color(0.960784, 0.25098, 0.298039, 1)
-position = Vector2(-15, -15)
+position = Vector2(-21, -19)
 scale = Vector2(0.2, 0.2)
 
 [node name="hitbox" type="Area2D" parent="."]

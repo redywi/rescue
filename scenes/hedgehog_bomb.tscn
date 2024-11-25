@@ -46,12 +46,10 @@ height = 24.0
 script = ExtResource("1_06yar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, -30)
-scale = Vector2(0.523438, 0.49375)
+position = Vector2(-3.53124, -24.5578)
+scale = Vector2(0.455859, 0.430004)
 sprite_frames = SubResource("SpriteFrames_x3ale")
 animation = &"explode"
-frame = 1
-frame_progress = 0.198216
 
 [node name="area_triggered" type="Area2D" parent="."]
 
