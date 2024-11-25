@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4a1jyhx334c2"
-path="res://.godot/imported/br_d_5.png-3065ce7084a4f13eb22d2527266fd450.ctex"
+uid="uid://beb5xmg585bsy"
+path="res://.godot/imported/br_w_6.png-649149bdfc0557a8af5fa5460bff36e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/enemies/Blood Ranger/walk/br_d_5.png"
-dest_files=["res://.godot/imported/br_d_5.png-3065ce7084a4f13eb22d2527266fd450.ctex"]
+source_file="res://assets/characters/enemies/Blood Ranger/walk/br_w_6.png"
+dest_files=["res://.godot/imported/br_w_6.png-649149bdfc0557a8af5fa5460bff36e1.ctex"]
 
 [params]
 
