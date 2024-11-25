@@ -66,8 +66,6 @@ func shovel_key_func(event):
 		shovel.z_index += 1
 		shove = true
 
-
-
 func seed1_func(event):
 	if !event.pressed:
 		shooter_seed1.position = Vector2(80, 16)

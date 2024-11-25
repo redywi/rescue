@@ -7,7 +7,7 @@ var rng = RandomNumberGenerator.new()
 var sun_speed = 40
 var move = 1
 var rand_choice = rng.randi_range(1, 2)
-var pick_sun_pos = Vector2(16, 16)
+var pick_sun_pos = Vector2(16, 240)
 var picked = false
 
 func _ready():

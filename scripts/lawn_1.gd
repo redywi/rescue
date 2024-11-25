@@ -68,17 +68,17 @@ func shovel_key_func(event):
 
 func seed1_func(event):
 	if !event.pressed:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return
-	if pos.x > 64 and pos.x < 96 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and event.pressed:
 		shooter_seed1.z_index += 1
 		current_seed = 1
 
 func seed1_key_func(event):
 	if (current_seed == 1 and !event.pressed) or event.keycode != 49:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return false
@@ -90,17 +90,17 @@ func seed1_key_func(event):
 
 func seed2_func(event):
 	if !event.pressed:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return
-	if pos.x > 96 and pos.x < 128 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and event.pressed:
 		bloom_seed2.z_index += 1
 		current_seed = 2
 
 func seed2_key_func(event):
 	if (current_seed == 2 and !event.pressed) or event.keycode != 50:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return false
@@ -112,17 +112,17 @@ func seed2_key_func(event):
 
 func seed3_func(event):
 	if !event.pressed:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return
-	if pos.x > 128 and pos.x < 160 and pos.y > 0 and pos.y < 32 and event.pressed:
+	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and event.pressed:
 		hog_seed3.z_index += 1
 		current_seed = 3
 
 func seed3_key_func(event):
 	if (current_seed == 3 and !event.pressed) or event.keycode != 51:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return false
@@ -134,13 +134,13 @@ func seed3_key_func(event):
 
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
-		shooter_seed1.position = Vector2(80, 16)
+		shooter_seed1.position = Vector2(80, 240)
 		shooter_seed1.z_index = 1
 	if slot_button != 2:
-		bloom_seed2.position = Vector2(112, 16)
+		bloom_seed2.position = Vector2(112, 240)
 		bloom_seed2.z_index = 1
 	if slot_button != 3:
-		hog_seed3.position = Vector2(144, 16)
+		hog_seed3.position = Vector2(144, 240)
 		hog_seed3.z_index = 1
 	if slot_button != 4:
 		pass
@@ -168,35 +168,35 @@ func level_won():
 func _input(event):
 	if global.you_lost:
 		return
+
 	if event is InputEventKey:
 		shovel_key_func(event)
 		slotkey(event)
-	
+
 	if event is InputEventMouseButton:
 		pos = event.position
 		var x = int(pos.x / 32)
-		var y = int((pos.y + 8)/32)
-		
-		#shovel plant from lawn
+		var y = int((pos.y + 8) / 32)
+
+		# Menghapus tanaman dari lawn menggunakan shovel
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and shove and lawn_space.has(str(x) + str(y)):
-			# Menghapus tanaman dari lawn_space
 			remove_child(lawn_space[str(x) + str(y)])
 			lawn_space[str(x) + str(y)].queue_free()
 			lawn_space.erase(str(x) + str(y))
-	
-			for i in range(len(lawn_key_list)):
-				if lawn_key_list[i] == (str(x) + str(y)):
-					lawn_key_list.remove_at(i)
-					break
-						
+
+		for i in range(len(lawn_key_list)):
+			if lawn_key_list[i] == (str(x) + str(y)):
+				lawn_key_list.remove_at(i)
+				break
+
 		shovel_func(event)
-	
+
 		if (str(x) + str(y)) in lawn_space and !event.pressed:
 			current_seed = 0
 			allbutone_slot_reset(0)
 			return
-		
-		#add plant in lawn from seed slot
+
+		# Menambahkan tanaman dari seed slot ke lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216:
 			match current_seed:
 				1:
@@ -220,7 +220,7 @@ func _input(event):
 						current_seed = 0
 						get_node("sun_value").modulate.g = 0.2
 						get_node("sun_value").modulate.b = 0.2
-		
+
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and current_seed != 0:
 			var instance = seed_list[current_seed].instantiate()
 			instance.position = hi_light.position
@@ -237,26 +237,21 @@ func _input(event):
 					cooldown_seed2.value = 0
 				3:
 					cooldown_seed3.value = 0
-				4:
-					cooldown_seed4.value = 0
-				5:
-					cooldown_seed5.value = 0
-				6:
-					cooldown_seed6.value = 0
 			global.danger_level += 1
 			allbutone_slot_reset(0)
 			current_seed = 0
-		
+
+		# Periksa cooldown untuk seed
 		if cooldown_seed1.value == 10000:
 			seed1_func(event)
 		if cooldown_seed2.value == 10000:
 			seed2_func(event)
 		if cooldown_seed3.value == 10000:
 			seed3_func(event)
-		
-	#hilight
+
 	elif event is InputEventMouseMotion:
 		pos = event.position
+		# Perbarui posisi highlight hanya dalam area lawn
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216:
 			hi_light.position = Vector2(16 + 32 * int(pos.x / 32), 8 + 32 * int((pos.y + 8) / 32))
 		else:
