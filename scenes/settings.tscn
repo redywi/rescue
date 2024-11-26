@@ -1,37 +1,62 @@
-[gd_scene load_steps=11 format=3 uid="uid://ba42qeyg2k45i"]
+[gd_scene load_steps=16 format=3 uid="uid://ba42qeyg2k45i"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_xeg70"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_2gn6u"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="3_r1h2e"]
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="4_jouu4"]
+[ext_resource type="Texture2D" uid="uid://dgh0sdklf0ybe" path="res://assets/icon/border_3.png" id="4_om510"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="5_s2x4r"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="6_r48da"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yu87h"]
 texture = ExtResource("2_2gn6u")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtcgw"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4alc5"]
+texture = ExtResource("4_om510")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rc2k"]
 bg_color = Color(0.290196, 0.133333, 0.0588235, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsmii"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qdk6"]
 bg_color = Color(1, 0.894118, 0.470588, 1)
 corner_radius_top_left = 7
 corner_radius_bottom_left = 7
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t67lb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38kub"]
+bg_color = Color(1, 0.894118, 0.470588, 1)
+corner_radius_top_left = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng16w"]
 bg_color = Color(0.290196, 0.133333, 0.0588235, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f4dh"]
+bg_color = Color(1, 0.894118, 0.470588, 1)
+corner_radius_top_left = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_habok"]
+bg_color = Color(1, 0.894118, 0.470588, 1)
+corner_radius_top_left = 7
+corner_radius_bottom_left = 7
 expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
@@ -69,74 +94,78 @@ theme_override_fonts/font = ExtResource("3_r1h2e")
 theme_override_font_sizes/font_size = 30
 text = "OPTIONS"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="WoodPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -237.0
-offset_top = -52.0
-offset_right = 238.0
-offset_bottom = 52.0
+offset_left = -138.0
+offset_top = -56.0
+offset_right = 142.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4alc5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.114583
+anchor_right = 0.872917
+anchor_bottom = 0.722222
+offset_left = 20.0
+offset_top = 60.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 67
+theme_override_constants/margin_right = 67
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.894118, 0.470588, 1)
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+modulate = Color(1, 0.894118, 0.470588, 1)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 14
-text = "MUSIC"
+text = "Music"
 
-[node name="MusicHSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-theme_override_constants/center_grabber = 0
-theme_override_styles/slider = SubResource("StyleBoxFlat_qtcgw")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_xsmii")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsmii")
-value = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_5rc2k")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5qdk6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_38kub")
+max_value = 1.0
+step = 0.05
+value = 1.0
 
-[node name="MusicPersentase" type="Label" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+modulate = Color(1, 0.894118, 0.470588, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 14
-text = "100%"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.894118, 0.470588, 1)
-theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 14
 text = "SFX"
 
-[node name="SfxHSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(300, 50)
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-theme_override_styles/slider = SubResource("StyleBoxFlat_t67lb")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_xsmii")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsmii")
-value = 100.0
-
-[node name="SfxPersentase" type="Label" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r1h2e")
-theme_override_font_sizes/font_size = 14
-text = "100%"
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_ng16w")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6f4dh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_habok")
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -156,6 +185,5 @@ texture_normal = ExtResource("4_jouu4")
 texture_pressed = ExtResource("5_s2x4r")
 texture_hover = ExtResource("6_r48da")
 
-[connection signal="value_changed" from="VBoxContainer/HBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/SfxHSlider" to="." method="_on_sfx_h_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

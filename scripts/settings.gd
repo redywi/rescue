@@ -1,14 +1,10 @@
 extends Control
 
-# Fungsi untuk slider music
-func _on_music_h_slider_value_changed(value: float) -> void:
-	$VBoxContainer/HBoxContainer/MusicPersentase.text = str(value) + "%"
-
-# Fungsi untuk slider sfx
-func _on_sfx_h_slider_value_changed(value: float) -> void:
-	$VBoxContainer/HBoxContainer2/SfxPersentase.text = str(value) + "%"
+@onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Master")
 	
-
 func _on_back_button_pressed() -> void:
-	# Kembali ke scene utamas
 	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
+	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < .05)
