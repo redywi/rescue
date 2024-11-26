@@ -17,3 +17,5 @@ var slime_count = 0
 var you_lost = false
 var you_won = false
 var win_count = 0
+
+var lost_animals = 0

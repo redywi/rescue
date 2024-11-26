@@ -17,6 +17,7 @@ extends Node2D
 @onready var cooldown_seed4 = $seed_slots/cooldown_bar_seed4/TextureProgressBar
 @onready var cooldown_seed5 = $seed_slots/cooldown_bar_seed5/TextureProgressBar
 @onready var cooldown_seed6 = $seed_slots/cooldown_bar_seed6/TextureProgressBar
+@onready var lost_animal = $LostAnimalIndicator
 
 var rng = RandomNumberGenerator.new()
 var lawn_space = {}
@@ -219,8 +220,15 @@ func slotkey(event):
 func level_won():
 	music_2.stop()
 	win_sound.play()
+	global.lost_animals = 0
 	get_node("win").visible = true
 	allbutone_slot_reset(0)
+
+func trigger_game_loss():
+	get_tree().paused = true
+	global.you_lost = true
+	get_node("dead").visible = true
+	# Jika ingin menampilkan elemen lain, tambahkan di sini
 
 func _input(event):
 	if global.you_lost:
@@ -245,6 +253,8 @@ func _input(event):
 				if lawn_key_list[i] == (str(x) + str(y)):
 					lawn_key_list.remove_at(i)
 					break
+			
+			lost_animal.add_lost_animal()
 					
 		shovel_func(event)
 		
@@ -401,13 +411,21 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	for i in lawn_key_list:
 		if lawn_space[i].dead:
-			if lawn_space[i].state < 2:
-				global.leaf_value_surplus += 2
-			elif lawn_space[i].state >= 2:
-				global.leaf_value_surplus += 10
+			# Hapus hewan dari permainan
 			lawn_space[i].queue_free()
 			lawn_space.erase(i)
 			global.danger_level -= 1
+			
+			# Tambahkan jumlah hewan yang hilang
+			global.lost_animals += 1
+			
+			lost_animal.add_lost_animal()
+
+			# Periksa apakah pemain kehilangan lebih dari 5 hewan
+			if global.lost_animals > 5:
+				trigger_game_loss()
+
+			# Hapus kunci dari daftar
 			for j in len(lawn_key_list):
 				if lawn_key_list[j] == i:
 					lawn_key_list.remove_at(j)
@@ -442,6 +460,7 @@ func _on_button_restart_pressed() -> void:
 	global.sun_value_surplus = 0
 	global.danger_level = 0
 	global.slime_count = 0
+	global.lost_animals = 0
 	global.you_lost = false
 	get_tree().reload_current_scene()
 
@@ -454,6 +473,7 @@ func _on_button_home_pressed() -> void:
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
 	global.danger_level = 0
+	global.lost_animals = 0
 	global.slime_count = 0
 	global.you_lost = false
 	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")

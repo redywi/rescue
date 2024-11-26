@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ctaigilcdnkjy"]
+[gd_scene load_steps=76 format=3 uid="uid://ctaigilcdnkjy"]
 
 [ext_resource type="Script" path="res://scripts/lawn_4.gd" id="1_86kph"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_s2kwu"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://db3rwq23jw25j" path="res://assets/button/kayu1.png" id="42_mgost"]
 [ext_resource type="Texture2D" uid="uid://n6cpsgwy016v" path="res://assets/button/delete.png" id="44_r7hbg"]
 [ext_resource type="Texture2D" uid="uid://x10wocg6srgl" path="res://assets/button/delete_shadow.png" id="45_cc6x6"]
+[ext_resource type="PackedScene" uid="uid://x1ivlswsxxex" path="res://scenes/LostAnimalIndicator.tscn" id="47_vrkqs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eymok"]
 load_path = "res://.godot/imported/pvv_tiles.png-4db2e4440509f4c95e36c6887defee69.ctex"
@@ -2087,7 +2088,7 @@ shape = SubResource("RectangleShape2D_5pil5")
 position = Vector2(348, 229)
 
 [node name="npc_pig2" parent="." instance=ExtResource("34_6cchy")]
-position = Vector2(162, 268)
+position = Vector2(429, 264)
 
 [node name="npc_pig3" parent="." instance=ExtResource("34_6cchy")]
 position = Vector2(327, 256)
@@ -2111,7 +2112,7 @@ position = Vector2(45, 11)
 position = Vector2(440, 13)
 
 [node name="NpcBee6" parent="." instance=ExtResource("36_yu3a4")]
-position = Vector2(189, 39)
+position = Vector2(139, 15)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(400.5, 248.5)
@@ -2153,6 +2154,10 @@ process_mode = 1
 position = Vector2(410, 25)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("45_cc6x6")
+
+[node name="LostAnimalIndicator" parent="." instance=ExtResource("47_vrkqs")]
+offset = Vector2(310, 9)
+transform = Transform2D(1, 0, 0, 1, 310, 9)
 
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
