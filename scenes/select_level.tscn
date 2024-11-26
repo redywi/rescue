@@ -79,10 +79,10 @@ custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 text = "Level 5"
 
-[node name="ButtonLevelBoss" type="Button" parent="GridContainer"]
+[node name="ButtonLevel6" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "BOSS!"
+text = "Level 6"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -104,5 +104,5 @@ text = "Back"
 [connection signal="pressed" from="GridContainer/ButtonLevel3" to="." method="_on_button_level_3_pressed"]
 [connection signal="pressed" from="GridContainer/ButtonLevel4" to="." method="_on_button_level_4_pressed"]
 [connection signal="pressed" from="GridContainer/ButtonLevel5" to="." method="_on_button_level_5_pressed"]
-[connection signal="pressed" from="GridContainer/ButtonLevelBoss" to="." method="_on_button_level_boss_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel6" to="." method="_on_button_level_6_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
