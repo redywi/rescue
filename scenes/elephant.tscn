@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0gi6wl2myl4x"]
+[gd_scene load_steps=11 format=3 uid="uid://b0gi6wl2myl4x"]
 
 [ext_resource type="Script" path="res://scripts/elephant.gd" id="1_8rs8o"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="1_70dvt"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://hjbstki7vlw1" path="res://assets/characters/gajah/1.png" id="3_jhb4p"]
 [ext_resource type="Texture2D" uid="uid://bjrat5enat10l" path="res://assets/characters/gajah/4.png" id="4_b3m5f"]
 [ext_resource type="Texture2D" uid="uid://7vr82likoxq2" path="res://assets/characters/gajah/3.png" id="5_2k6qt"]
+[ext_resource type="AudioStream" uid="uid://brn63h7bwwoey" path="res://assets/sound/juicy-splash-104642.mp3" id="7_u1y4f"]
+[ext_resource type="AudioStream" uid="uid://cfncjspucdnya" path="res://assets/sound/elephant-trumpets-growls-6047.mp3" id="8_p0g57"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yosp"]
 animations = [{
@@ -55,5 +57,11 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(4, -3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tn2xd")
+
+[node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_u1y4f")
+
+[node name="dead_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_p0g57")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

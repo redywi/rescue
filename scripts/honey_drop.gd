@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sun_sprite = $sun_sprite
 @onready var timer = $Timer
+@onready var picked_sound = $picked_sound
 
 var rng = RandomNumberGenerator.new()
 var sun_speed = 40
@@ -46,3 +47,4 @@ func _on_sun_area_input_event(viewport, event, shape_idx):
 		viewport = viewport
 		shape_idx = shape_idx
 	picked = true
+	picked_sound.play()

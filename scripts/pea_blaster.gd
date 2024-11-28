@@ -5,16 +5,21 @@ extends Node2D
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var shoot_range = $shoot_range
 @onready var hitbox = $hitbox
+@onready var enter_sound = $enter_sound
+
 var dead = false
 var found_enemy = false
 var state: int = 0
 var last_state: int = 0
+var has_entered = false
 
 func _ready():
 	health_bar.visible = false
 	timer_bar.visible = false
 	health_bar.value = 100
 	_animated_sprite.play("idle")
+	enter_sound.play()
+	has_entered = true
 
 func _physics_process(delta):
 	_animated_sprite.speed_scale = 0.8 * global.speed

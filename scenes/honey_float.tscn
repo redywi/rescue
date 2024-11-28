@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0qbmharabbuv"]
+[gd_scene load_steps=5 format=3 uid="uid://0qbmharabbuv"]
 
 [ext_resource type="Script" path="res://scripts/honey_float.gd" id="1_06r4u"]
 [ext_resource type="Texture2D" uid="uid://dtei2fn6g3l6e" path="res://assets/characters/bee hive/honey_drop.png" id="2_s7syo"]
+[ext_resource type="AudioStream" uid="uid://cxxvfrxfqd0v1" path="res://assets/sound/Honey_Block_dig3.ogg" id="3_6hrdo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsdic"]
 
@@ -23,6 +24,9 @@ shape = SubResource("CircleShape2D_vsdic")
 process_callback = 0
 wait_time = 15.0
 one_shot = true
+
+[node name="picked_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6hrdo")
 
 [connection signal="input_event" from="sun_area" to="." method="_on_sun_area_input_event"]
 [connection signal="mouse_entered" from="sun_area" to="." method="_on_sun_area_mouse_entered"]

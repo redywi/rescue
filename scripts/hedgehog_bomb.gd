@@ -3,6 +3,8 @@ extends Node2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var area_triggered = $area_triggered
 @onready var hitbox = $hitbox/CollisionShape2D
+@onready var explode_sound = $explode_sound
+
 var dead = true
 var state = 0
 var last_state = 0
@@ -21,6 +23,8 @@ func _on_death():
 	_animated_sprite.play("explode")
 	hitbox.disabled = true
 	explode()
+	if not explode_sound.playing:
+		explode_sound.play()
 
 func explode():
 	var ball = load("res://scenes/explode_area.tscn").instantiate()

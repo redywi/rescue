@@ -4,10 +4,14 @@ extends Node2D
 @onready var hog_hit_range = $hog_hit_range
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var hitbox_collision = $hitbox/CollisionShape2D
+@onready var attack_sound = $attack_sound
+@onready var enter_sound = $enter_sound
+
 var state = 0
 var last_state = 0
 var found_enemy = false
 var dead = false
+var has_entered = false
 
 func _ready():
 	health_bar.visible = false
@@ -25,15 +29,18 @@ func _physics_process(delta):
 		for area in hog_hit_range.get_overlapping_areas():
 			if area.name == "enemy" or area.name == "enemy_fly":
 				found_enemy = true
-			if found_enemy and _animated_sprite.animation != "attack":
-				_animated_sprite.play("attack")
-		
+
+		# Mengatur animasi dan suara berdasarkan keberadaan musuh
 		if found_enemy:
 			if _animated_sprite.animation != "attack":
 				_animated_sprite.play("attack")
+				if not attack_sound.playing:
+					attack_sound.play()  # Mainkan suara jika belum diputar
 		else:
 			if _animated_sprite.animation != "idle":
 				_animated_sprite.play("idle")
+				if attack_sound.playing:
+					attack_sound.stop()  # Hentikan suara saat tidak menyerang
 
 func is_died(health):
 	if health <= 0:
@@ -55,5 +62,8 @@ func _on_hog_hit_range_input_event(viewport: Node, event: InputEvent, shape_idx:
 	pass
 
 func _on_hitbox_area_entered(area):
+	if not has_entered:
+		enter_sound.play()
+		has_entered = true
 	if area.name == "attack_area_enemy" and not dead:
 		health_bar.value -= 1

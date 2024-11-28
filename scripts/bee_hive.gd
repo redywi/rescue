@@ -5,11 +5,14 @@ extends Node2D
 @onready var timer_bar = $timer_bar/TextureProgressBar
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var hitbox = $hitbox
+@onready var enter_sound = $enter_sound
+
 @export var state = 2
 var last_state = 2
 var dead = false
 var sun_time = false
 var color_up = 200
+var has_entered = false
 
 func _ready():
 	health_bar.value = 100
@@ -18,6 +21,8 @@ func _ready():
 	sun_timer.wait_time = 30
 	sun_timer.start()
 	_animated_sprite.play("idle")
+	enter_sound.play()
+	has_entered = true
 	
 func _physics_process(delta):
 	
