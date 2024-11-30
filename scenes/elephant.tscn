@@ -60,6 +60,7 @@ shape = SubResource("CapsuleShape2D_tn2xd")
 
 [node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_u1y4f")
+bus = &"SFX"
 
 [node name="dead_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_p0g57")

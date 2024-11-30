@@ -27,6 +27,7 @@ one_shot = true
 
 [node name="picked_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_b5gvl")
+bus = &"SFX"
 
 [connection signal="input_event" from="sun_area" to="." method="_on_sun_area_input_event"]
 [connection signal="mouse_entered" from="sun_area" to="." method="_on_sun_area_mouse_entered"]

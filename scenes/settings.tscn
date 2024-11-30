@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ba42qeyg2k45i"]
+[gd_scene load_steps=13 format=3 uid="uid://ba42qeyg2k45i"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_xeg70"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_2gn6u"]
@@ -31,29 +31,6 @@ expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38kub"]
-bg_color = Color(1, 0.894118, 0.470588, 1)
-corner_radius_top_left = 7
-corner_radius_bottom_left = 7
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng16w"]
-bg_color = Color(0.290196, 0.133333, 0.0588235, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f4dh"]
-bg_color = Color(1, 0.894118, 0.470588, 1)
-corner_radius_top_left = 7
-corner_radius_bottom_left = 7
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_habok"]
 bg_color = Color(1, 0.894118, 0.470588, 1)
 corner_radius_top_left = 7
 corner_radius_bottom_left = 7
@@ -137,7 +114,8 @@ columns = 2
 modulate = Color(1, 0.894118, 0.470588, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r1h2e")
-text = "Music"
+theme_override_font_sizes/font_size = 13
+text = "Music & SFX"
 
 [node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -146,23 +124,6 @@ size_flags_vertical = 4
 theme_override_styles/slider = SubResource("StyleBoxFlat_5rc2k")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5qdk6")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_38kub")
-max_value = 1.0
-step = 0.05
-value = 1.0
-
-[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
-modulate = Color(1, 0.894118, 0.470588, 1)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r1h2e")
-text = "SFX"
-
-[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_ng16w")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6f4dh")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_habok")
 max_value = 1.0
 step = 0.05
 value = 1.0

@@ -135,6 +135,7 @@ shape = SubResource("CapsuleShape2D_3qlsk")
 
 [node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_m382e")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sun_timer" to="." method="_on_sun_timer_timeout"]
