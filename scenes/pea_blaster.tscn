@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dgc6utx06dd54"]
+[gd_scene load_steps=31 format=3 uid="uid://dgc6utx06dd54"]
 
 [ext_resource type="Script" path="res://scripts/pea_blaster.gd" id="1_22pup"]
 [ext_resource type="Texture2D" uid="uid://bo47v806lmn4p" path="res://assets/characters/gorilla/attack/1.png" id="2_7akfa"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b8dag0ywrh814" path="res://assets/characters/gorilla/idle/2.png" id="9_h1sjo"]
 [ext_resource type="Texture2D" uid="uid://c6il38iyqf3fe" path="res://assets/characters/gorilla/idle/3.png" id="10_nshpd"]
 [ext_resource type="Texture2D" uid="uid://mojcaey5ujdo" path="res://assets/characters/gorilla/idle/4.png" id="11_gaasf"]
+[ext_resource type="AudioStream" uid="uid://brn63h7bwwoey" path="res://assets/sound/juicy-splash-104642.mp3" id="16_bylyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw2pp"]
 atlas = ExtResource("3_4r1qs")
@@ -196,6 +197,9 @@ shape = SubResource("RectangleShape2D_3ik8d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_q3kiv")
+
+[node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_bylyy")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

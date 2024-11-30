@@ -422,7 +422,7 @@ func _on_timer_timeout():
 			lost_animal.add_lost_animal()
 
 			# Periksa apakah pemain kehilangan lebih dari 5 hewan
-			if global.lost_animals > 5:
+			if global.lost_animals > 10:
 				trigger_game_loss()
 
 			# Hapus kunci dari daftar

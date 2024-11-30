@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2g0hw7qcw70y"]
+[gd_scene load_steps=27 format=3 uid="uid://c2g0hw7qcw70y"]
 
 [ext_resource type="Script" path="res://scripts/hog.gd" id="1_syjtd"]
 [ext_resource type="Texture2D" uid="uid://dudrw5vcm5u1g" path="res://assets/characters/babihutan_remake/attack/1.png" id="2_6wye5"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dxg1ts7a5fr8u" path="res://assets/characters/babihutan_remake/idle/2.png" id="14_32rt0"]
 [ext_resource type="Texture2D" uid="uid://bq0b2hyh5oo7q" path="res://assets/characters/babihutan_remake/idle/3.png" id="15_hmq0f"]
 [ext_resource type="Texture2D" uid="uid://c74r0whjcc364" path="res://assets/characters/babihutan_remake/idle/4.png" id="16_4kmci"]
+[ext_resource type="AudioStream" uid="uid://qrhpgqicfkuq" path="res://assets/sound/pig-125132.mp3" id="22_ebb4u"]
+[ext_resource type="AudioStream" uid="uid://brn63h7bwwoey" path="res://assets/sound/juicy-splash-104642.mp3" id="23_hw8m4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wed4m"]
 animations = [{
@@ -143,6 +145,13 @@ visibility_layer = 512
 position = Vector2(0, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6fcvy")
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_ebb4u")
+parameters/looping = true
+
+[node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_hw8m4")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="input_event" from="hog_hit_range" to="." method="_on_hog_hit_range_input_event"]

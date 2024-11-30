@@ -26,6 +26,7 @@ win_sound="*res://scenes/win_sound.tscn"
 music_1="*res://scenes/level_music_1.tscn"
 music_2="*res://scenes/level_music_2.tscn"
 music_3="*res://scenes/level_music_3.tscn"
+music_4="*res://scenes/level_music_4.tscn"
 
 [display]
 
