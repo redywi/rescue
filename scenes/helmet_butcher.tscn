@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cewq3ujok33qv"]
+[gd_scene load_steps=19 format=3 uid="uid://cewq3ujok33qv"]
 
 [ext_resource type="Texture2D" uid="uid://htt4ma7mtwjy" path="res://assets/characters/enemies/Helmet Butcher/attack/1.png" id="1_1asi8"]
 [ext_resource type="Texture2D" uid="uid://barypggjkweg4" path="res://assets/characters/enemies/Helmet Butcher/walk/1.png" id="1_1hhwj"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://ch0hj45e6ft3j" path="res://assets/characters/enemies/Helmet Butcher/walk/5.png" id="5_trbvg"]
 [ext_resource type="Texture2D" uid="uid://bre36qwtvsug6" path="res://assets/characters/enemies/Helmet Butcher/walk/6.png" id="6_kojcm"]
 [ext_resource type="Texture2D" uid="uid://bmqld6olct73" path="res://assets/characters/enemies/Helmet Butcher/attack/6.png" id="6_x1gkt"]
+[ext_resource type="AudioStream" uid="uid://dcdbthwqkxah6" path="res://assets/sound/sword-slash-02-266315.mp3" id="15_1hq4d"]
+[ext_resource type="AudioStream" uid="uid://bmf2h64tuwnlr" path="res://assets/sound/AudioCutter_Crot.mp3" id="16_squkt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtxtw"]
 animations = [{
@@ -85,6 +87,13 @@ shape = SubResource("CapsuleShape2D_cv1yg")
 [node name="health_bar" parent="." instance=ExtResource("1_o7cpp")]
 position = Vector2(-15, -15)
 scale = Vector2(0.2, 0.2)
+
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_1hq4d")
+parameters/looping = true
+
+[node name="bullet_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_squkt")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -10,6 +10,7 @@ var state = 0
 var last_state = 0
 var dead = false
 var has_entered = false
+var has_dead = false
 
 func _ready():
 	health_bar.visible = false
@@ -33,3 +34,5 @@ func is_died(health):
 func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy" and not dead:
 		health_bar.value -= 1
+		if not dead_sound.playing :
+			dead_sound.play()

@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://byg6ybqy8hacc"]
+[gd_scene load_steps=15 format=3 uid="uid://byg6ybqy8hacc"]
 
 [ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_ua2b8"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_7ae6g"]
-[ext_resource type="VideoStream" path="res://assets/backgroud/MainMenu_BG.ogv" id="3_4vvtq"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="3_gffnk"]
 [ext_resource type="Texture2D" uid="uid://bsy17u2cprquy" path="res://assets/button/play.png" id="3_syels"]
 [ext_resource type="Texture2D" uid="uid://cluei5qpgi1mi" path="res://assets/button/play (pressed).png" id="4_sxrsn"]
@@ -13,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="9_n0f1l"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="10_auxa2"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="11_jhctw"]
-[ext_resource type="Texture2D" uid="uid://br6rn1ttsdxir" path="res://assets/icon/title_game.png" id="13_t3svu"]
+[ext_resource type="Texture2D" uid="uid://b8uyrgw22eui2" path="res://assets/icon/title_game.png" id="13_t3svu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j14tt"]
 texture = ExtResource("2_7ae6g")
@@ -27,16 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ua2b8")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 480.0
-offset_bottom = 272.0
-stream = ExtResource("3_4vvtq")
-autoplay = true
-loop = true
-
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

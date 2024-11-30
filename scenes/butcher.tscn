@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6x1crfsipy3r"]
+[gd_scene load_steps=18 format=3 uid="uid://c6x1crfsipy3r"]
 
 [ext_resource type="Script" path="res://scripts/butcher.gd" id="1_rxl0g"]
 [ext_resource type="Texture2D" uid="uid://bgj28n7ba1xbm" path="res://assets/characters/enemies/Butcher/Attack/butcher_a_1.png" id="2_58hhv"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://db62j4a2v8lx5" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_5.png" id="11_bqmk3"]
 [ext_resource type="Texture2D" uid="uid://brrvf7s7mtebo" path="res://assets/characters/enemies/Butcher/Walk/butcher_w_6.png" id="12_08g3l"]
 [ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="13_lgyx3"]
+[ext_resource type="AudioStream" uid="uid://dcdbthwqkxah6" path="res://assets/sound/sword-slash-02-266315.mp3" id="14_bw1s3"]
+[ext_resource type="AudioStream" uid="uid://bmf2h64tuwnlr" path="res://assets/sound/AudioCutter_Crot.mp3" id="15_xkh0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f76ql"]
 animations = [{
@@ -72,7 +74,7 @@ script = ExtResource("1_rxl0g")
 position = Vector2(5, -10)
 scale = Vector2(0.34977, 0.344848)
 sprite_frames = SubResource("SpriteFrames_f76ql")
-animation = &"walk"
+animation = &"eat"
 
 [node name="enemy" type="Area2D" parent="."]
 
@@ -84,6 +86,13 @@ shape = SubResource("CapsuleShape2D_tf21x")
 modulate = Color(0.960784, 0.25098, 0.298039, 1)
 position = Vector2(-15, -15)
 scale = Vector2(0.2, 0.2)
+
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_bw1s3")
+parameters/looping = true
+
+[node name="bullet_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_xkh0r")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
