@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="9_n0f1l"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="10_auxa2"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="11_jhctw"]
-[ext_resource type="Texture2D" uid="uid://cxu45ki34t6db" path="res://assets/icon/title_game.png" id="13_t3svu"]
+[ext_resource type="Texture2D" uid="uid://b8uyrgw22eui2" path="res://assets/icon/title_game.png" id="13_t3svu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j14tt"]
 texture = ExtResource("2_7ae6g")
