@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://t45n2jw4o23f"]
+[gd_scene load_steps=91 format=3 uid="uid://t45n2jw4o23f"]
 
 [ext_resource type="Script" path="res://scripts/lawn_6.gd" id="1_hhiga"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="2_8g0tc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8vlnt7m0ncp4" path="res://assets/button/home (hover).png" id="6_n7tyx"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="7_rgrul"]
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="8_ofdm6"]
+[ext_resource type="Texture2D" uid="uid://bwcuq1434oqj5" path="res://assets/icon/pause.png" id="9_g6kck"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="9_p7xyc"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="10_50bjm"]
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="11_smbsk"]
@@ -2078,16 +2079,6 @@ offset_bottom = 25.0
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="pausetile" type="Sprite2D" parent="non_pause"]
-modulate = Color(0.890196, 0.686275, 0.482353, 1)
-z_index = 1201
-position = Vector2(20.7, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("8_ofdm6")
-hframes = 4
-vframes = 4
-frame = 15
-
 [node name="darkscreen" type="Sprite2D" parent="non_pause"]
 visible = false
 modulate = Color(0, 0, 0, 0.313726)
@@ -2098,6 +2089,13 @@ texture = ExtResource("9_p7xyc")
 hframes = 4
 vframes = 4
 frame = 15
+
+[node name="pausetile" type="Sprite2D" parent="non_pause"]
+modulate = Color(0.890196, 0.686275, 0.482353, 1)
+z_index = 1201
+position = Vector2(25.494, 13.522)
+scale = Vector2(0.0968359, 0.0958377)
+texture = ExtResource("9_g6kck")
 
 [node name="dead" type="Node2D" parent="."]
 process_mode = 3
@@ -2420,10 +2418,12 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("52_yqi4j")
 
 [node name="Elephant" parent="." instance=ExtResource("54_bnssu")]
+modulate = Color(0.753379, 0.371763, 0, 1)
 z_index = 8
 position = Vector2(208, 104)
 
 [node name="Elephant2" parent="." instance=ExtResource("54_bnssu")]
+modulate = Color(0.752941, 0.372549, 0, 1)
 z_index = 8
 position = Vector2(208, 168)
 

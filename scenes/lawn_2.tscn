@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b7mml1y3kqiyk"]
+[gd_scene load_steps=63 format=3 uid="uid://b7mml1y3kqiyk"]
 
 [ext_resource type="Script" path="res://scripts/lawn_2.gd" id="1_qrkx8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_iwrvn"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="7_vj16e"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_dlb7k"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_jsdt6"]
+[ext_resource type="Texture2D" uid="uid://bwcuq1434oqj5" path="res://assets/icon/pause.png" id="9_wmta8"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="10_7db1a"]
 [ext_resource type="Texture2D" uid="uid://dtei2fn6g3l6e" path="res://assets/characters/bee hive/honey_drop.png" id="10_jdyof"]
 [ext_resource type="Texture2D" uid="uid://bgs1xwfwfa1ib" path="res://assets/backgroud/tileset_1/Tiles/Grass_Middle.png" id="11_xntsm"]
@@ -1622,16 +1623,6 @@ offset_bottom = 25.0
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="pausetile" type="Sprite2D" parent="non_pause"]
-modulate = Color(0.890196, 0.686275, 0.482353, 1)
-z_index = 1201
-position = Vector2(20.7, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("4_swnol")
-hframes = 4
-vframes = 4
-frame = 15
-
 [node name="darkscreen" type="Sprite2D" parent="non_pause"]
 visible = false
 modulate = Color(0, 0, 0, 0.313726)
@@ -1642,6 +1633,13 @@ texture = ExtResource("5_bn0b0")
 hframes = 4
 vframes = 4
 frame = 15
+
+[node name="pausetile" type="Sprite2D" parent="non_pause"]
+modulate = Color(0.890196, 0.686275, 0.482353, 1)
+z_index = 1201
+position = Vector2(25.494, 13.522)
+scale = Vector2(0.0968359, 0.0958377)
+texture = ExtResource("9_wmta8")
 
 [node name="dead" type="Node2D" parent="."]
 process_mode = 3

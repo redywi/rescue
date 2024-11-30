@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://b7uemo4sodf3v"]
+[gd_scene load_steps=75 format=3 uid="uid://b7uemo4sodf3v"]
 
 [ext_resource type="Script" path="res://scripts/lawn_3.gd" id="1_4jms8"]
 [ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="2_fyi8m"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="7_87u0i"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="8_6jc36"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="8_k1mj4"]
+[ext_resource type="Texture2D" uid="uid://bwcuq1434oqj5" path="res://assets/icon/pause.png" id="9_0twpa"]
 [ext_resource type="Texture2D" uid="uid://b4br7tdau8jwv" path="res://assets/characters/slot/hedgehog.png" id="9_2dkl0"]
 [ext_resource type="Texture2D" uid="uid://dtei2fn6g3l6e" path="res://assets/characters/bee hive/honey_drop.png" id="11_dqsqe"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="11_i6rb6"]
@@ -1794,16 +1795,6 @@ offset_bottom = 25.0
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="pausetile" type="Sprite2D" parent="non_pause"]
-modulate = Color(0.890196, 0.686275, 0.482353, 1)
-z_index = 1201
-position = Vector2(20.7, 13.3)
-scale = Vector2(0.757812, 0.75)
-texture = ExtResource("4_6i42r")
-hframes = 4
-vframes = 4
-frame = 15
-
 [node name="darkscreen" type="Sprite2D" parent="non_pause"]
 visible = false
 modulate = Color(0, 0, 0, 0.313726)
@@ -1814,6 +1805,13 @@ texture = ExtResource("5_hqag1")
 hframes = 4
 vframes = 4
 frame = 15
+
+[node name="pausetile" type="Sprite2D" parent="non_pause"]
+modulate = Color(0.890196, 0.686275, 0.482353, 1)
+z_index = 1201
+position = Vector2(25.494, 13.522)
+scale = Vector2(0.0968359, 0.0958377)
+texture = ExtResource("9_0twpa")
 
 [node name="dead" type="Node2D" parent="."]
 process_mode = 3
