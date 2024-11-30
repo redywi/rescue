@@ -2405,13 +2405,6 @@ offset_top = 236.0
 offset_right = 452.0
 offset_bottom = 259.0
 
-[node name="win" parent="." instance=ExtResource("50_pym0g")]
-visible = false
-offset_left = -5.0
-offset_top = -7.0
-offset_right = 486.0
-offset_bottom = 275.0
-
 [node name="shovel" type="Sprite2D" parent="."]
 process_mode = 1
 z_index = 1
@@ -2427,10 +2420,20 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("52_yqi4j")
 
 [node name="Elephant" parent="." instance=ExtResource("54_bnssu")]
-position = Vector2(208, 107)
+z_index = 8
+position = Vector2(208, 104)
 
 [node name="Elephant2" parent="." instance=ExtResource("54_bnssu")]
-position = Vector2(208, 171)
+z_index = 8
+position = Vector2(208, 168)
+
+[node name="win" parent="." instance=ExtResource("50_pym0g")]
+visible = false
+z_index = 999
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 486.0
+offset_bottom = 275.0
 
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]

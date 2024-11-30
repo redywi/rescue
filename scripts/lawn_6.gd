@@ -171,6 +171,7 @@ func seed5_func(event):
 		elephant_seed5.position = Vector2(208, 240)
 		current_seed = 0
 		elephant_seed5.z_index = 1
+		return
 	if pos.x > 192 and pos.x < 224 and pos.y > 240 and pos.y < 272 and event.pressed:
 		elephant_seed5.z_index += 1
 		current_seed = 5

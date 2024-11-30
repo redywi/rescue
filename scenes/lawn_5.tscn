@@ -2366,13 +2366,6 @@ offset_top = 236.0
 offset_right = 452.0
 offset_bottom = 259.0
 
-[node name="win" parent="." instance=ExtResource("44_f03ke")]
-visible = false
-offset_left = -5.0
-offset_top = -7.0
-offset_right = 486.0
-offset_bottom = 275.0
-
 [node name="shovel" type="Sprite2D" parent="."]
 process_mode = 1
 z_index = 1
@@ -2386,6 +2379,14 @@ process_mode = 1
 position = Vector2(410, 25)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("46_t6p1n")
+
+[node name="win" parent="." instance=ExtResource("44_f03ke")]
+visible = false
+z_index = 999
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 486.0
+offset_bottom = 275.0
 
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]

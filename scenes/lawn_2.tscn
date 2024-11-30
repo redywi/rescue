@@ -1942,6 +1942,7 @@ offset_bottom = 258.0
 
 [node name="win" parent="." instance=ExtResource("29_5td0y")]
 visible = false
+z_index = 999
 offset_left = -5.0
 offset_top = -7.0
 offset_right = 486.0

@@ -37,7 +37,7 @@ height = 42.0
 script = ExtResource("1_8rs8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.5, -11.5)
+position = Vector2(5.5, -6.5)
 scale = Vector2(0.40625, 0.43125)
 sprite_frames = SubResource("SpriteFrames_3yosp")
 animation = &"idle"
@@ -48,13 +48,14 @@ frame_progress = 0.00866906
 [node name="health_bar" parent="." instance=ExtResource("1_70dvt")]
 modulate = Color(0.960784, 0.25098, 0.298039, 1)
 z_index = -1
-position = Vector2(-27, -29)
+position = Vector2(-27, -31)
 scale = Vector2(0.2, 0.2)
 
 [node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(4, -3)
+position = Vector2(4, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tn2xd")
 
