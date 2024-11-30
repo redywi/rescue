@@ -34,5 +34,3 @@ func is_died(health):
 func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy" and not dead:
 		health_bar.value -= 1
-		if not dead_sound.playing :
-			dead_sound.play()
