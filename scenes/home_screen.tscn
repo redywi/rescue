@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byg6ybqy8hacc"]
+[gd_scene load_steps=15 format=3 uid="uid://byg6ybqy8hacc"]
 
 [ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_ua2b8"]
 [ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_7ae6g"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="9_n0f1l"]
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="10_auxa2"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="11_jhctw"]
+[ext_resource type="Texture2D" uid="uid://b1fl08m7g3bll" path="res://assets/icon/title_game.png" id="13_t3svu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j14tt"]
 texture = ExtResource("2_7ae6g")
@@ -35,6 +36,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_j14tt")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -93,6 +95,11 @@ size_flags_vertical = 4
 texture_normal = ExtResource("9_n0f1l")
 texture_pressed = ExtResource("10_auxa2")
 texture_hover = ExtResource("11_jhctw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 90)
+scale = Vector2(0.245312, 0.23125)
+texture = ExtResource("13_t3svu")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
