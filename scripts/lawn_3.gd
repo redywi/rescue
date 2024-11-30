@@ -29,7 +29,7 @@ var start_sun_time = 1
 var particle = preload("res://scenes/particles_square.tscn")
 
 func _ready():
-	music_2.play()
+	music_3.play()
 	sun_value.text = str(global.sun_value)
 	sun_timer.start()
 
