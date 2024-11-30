@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvow1iq0u0l80"]
+
+[ext_resource type="Texture2D" uid="uid://dgh0sdklf0ybe" path="res://assets/icon/border_3.png" id="1_0tkqs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imcqy"]
+texture = ExtResource("1_0tkqs")
+
+[node name="Hint" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 95.0
+offset_bottom = 44.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_imcqy")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 11
+text = "Hint hint 
+hint hint"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

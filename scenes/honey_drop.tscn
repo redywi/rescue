@@ -12,12 +12,14 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("1_n3vr5")
 
 [node name="sun_sprite" type="Sprite2D" parent="."]
+z_index = 5
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("2_dt1w7")
 
 [node name="sun_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sun_area"]
+z_index = 5
 shape = SubResource("CircleShape2D_vsdic")
 
 [node name="Timer" type="Timer" parent="."]
@@ -27,7 +29,6 @@ one_shot = true
 
 [node name="picked_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_b5gvl")
-bus = &"SFX"
 
 [connection signal="input_event" from="sun_area" to="." method="_on_sun_area_input_event"]
 [connection signal="mouse_entered" from="sun_area" to="." method="_on_sun_area_mouse_entered"]

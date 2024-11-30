@@ -7,16 +7,18 @@
 radius = 7.0
 
 [node name="pea_bullet" type="Node2D"]
+z_index = 10
 script = ExtResource("1_q8o0q")
 
 [node name="pvv_peablasting" type="Sprite2D" parent="."]
-position = Vector2(1, 4)
-scale = Vector2(0.672656, 0.666606)
+position = Vector2(4, 11)
+scale = Vector2(0.980664, 0.971844)
 texture = ExtResource("2_yraio")
 
 [node name="bullet_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_area"]
+position = Vector2(2, 6)
 shape = SubResource("CircleShape2D_kh5dn")
 
 [node name="Timer" type="Timer" parent="."]

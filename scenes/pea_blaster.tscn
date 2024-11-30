@@ -161,6 +161,7 @@ height = 26.0
 
 [node name="pea_blaster" type="Node2D"]
 process_mode = 1
+z_index = 2
 script = ExtResource("1_22pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -200,7 +201,6 @@ shape = SubResource("CapsuleShape2D_q3kiv")
 
 [node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_bylyy")
-bus = &"SFX"
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

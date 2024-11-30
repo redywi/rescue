@@ -112,6 +112,7 @@ height = 32.0
 
 [node name="hog" type="Node2D"]
 process_mode = 1
+z_index = 6
 script = ExtResource("1_syjtd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -148,12 +149,10 @@ shape = SubResource("CapsuleShape2D_6fcvy")
 
 [node name="attack_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_ebb4u")
-bus = &"SFX"
 parameters/looping = true
 
 [node name="enter_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_hw8m4")
-bus = &"SFX"
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="input_event" from="hog_hit_range" to="." method="_on_hog_hit_range_input_event"]
