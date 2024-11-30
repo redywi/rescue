@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b43sidcxbdehv"]
+[gd_scene load_steps=10 format=3 uid="uid://b43sidcxbdehv"]
 
 [ext_resource type="Texture2D" uid="uid://2obsta7tyd0s" path="res://assets/characters/enemies/Butcher/Death/butcher_d_1.png" id="1_3ftsf"]
 [ext_resource type="Texture2D" uid="uid://opexndek8cpq" path="res://assets/characters/enemies/Butcher/Death/butcher_d_2.png" id="2_7f26c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5fndbc74f471" path="res://assets/characters/enemies/Butcher/Death/butcher_d_5.png" id="5_2ix74"]
 [ext_resource type="Texture2D" uid="uid://bqj2jpqi18y7y" path="res://assets/characters/enemies/Butcher/Death/butcher_d_6.png" id="6_pa20q"]
 [ext_resource type="Script" path="res://scripts/butcher_dead.gd" id="7_3v653"]
+[ext_resource type="AudioStream" uid="uid://c57pknbf6tggr" path="res://assets/sound/hit-flesh-02-266309.mp3" id="8_o0tvd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdgx7"]
 animations = [{
@@ -44,3 +45,6 @@ sprite_frames = SubResource("SpriteFrames_jdgx7")
 animation = &"dead"
 frame = 5
 frame_progress = 1.0
+
+[node name="dead_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_o0tvd")

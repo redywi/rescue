@@ -3,6 +3,8 @@ extends Node2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var health_bar = $health_bar/TextureProgressBar
 @onready var collision = $enemy/CollisionShape2D
+@onready var hit_sound = $hit_sound
+@onready var bullet_sound = $bullet_sound
 
 var slimespeed = 2
 var speed_multiplier = 1
@@ -34,8 +36,12 @@ func _on_area_2d_area_entered(area):
 	if area.name == "hitbox" and move == 1:
 		_animated_sprite.play("eat")
 		move = 0
+		if not hit_sound.playing :
+			hit_sound.play()
+		
 	if area.name == "bullet_area":
 		health_bar.value -= 10
+		bullet_sound.play()
 	if area.name == "bullet_area2":
 		health_bar.value -= 8
 	if area.name == "bullet_area3":
@@ -49,6 +55,8 @@ func _on_enemy_area_exited(area):
 	if area.name == "hitbox" and move == 0:
 		_animated_sprite.play("walk")
 		move = 1
+		if hit_sound.playing :
+			hit_sound.stop()
 
 func _on_animated_sprite_2d_animation_looped():
 	if _animated_sprite.animation == "eat":
