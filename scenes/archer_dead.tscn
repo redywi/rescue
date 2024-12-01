@@ -36,11 +36,9 @@ script = ExtResource("1_o5hlk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -2)
-scale = Vector2(0.488, 0.488)
+scale = Vector2(0.488, 0.475)
 sprite_frames = SubResource("SpriteFrames_5i531")
 animation = &"dead"
-frame = 4
-frame_progress = 1.0
 
 [node name="dead_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_tbppe")
