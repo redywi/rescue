@@ -1641,6 +1641,7 @@ frame = 15
 [node name="dead" type="Node2D" parent="."]
 process_mode = 3
 visible = false
+z_index = 1201
 
 [node name="dead_screen" type="Sprite2D" parent="dead"]
 modulate = Color(0, 0, 0, 0.313726)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://t45n2jw4o23f"]
+[gd_scene load_steps=91 format=3 uid="uid://t45n2jw4o23f"]
 
 [ext_resource type="Script" path="res://scripts/lawn_6.gd" id="1_hhiga"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="2_8g0tc"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ouam6ijtsl5h" path="res://sprites/pvv_tiles2.png" id="8_ofdm6"]
 [ext_resource type="Texture2D" uid="uid://bwcuq1434oqj5" path="res://assets/icon/pause.png" id="9_g6kck"]
 [ext_resource type="Texture2D" uid="uid://dy02nelf7w0h4" path="res://sprites/square.png" id="9_p7xyc"]
-[ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="10_50bjm"]
 [ext_resource type="Texture2D" uid="uid://bchqgo2lxfypk" path="res://assets/characters/slot/gorilla.png" id="11_smbsk"]
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="12_j1r7u"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="13_e7cx6"]
@@ -2102,6 +2101,7 @@ texture = ExtResource("9_g6kck")
 [node name="dead" type="Node2D" parent="."]
 process_mode = 3
 visible = false
+z_index = 1201
 
 [node name="dead_screen" type="Sprite2D" parent="dead"]
 modulate = Color(0, 0, 0, 0.313726)
@@ -2142,21 +2142,25 @@ text = "Pilih restart untuk mengulangi level atau kembali ke main menu"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="restart" type="Sprite2D" parent="dead"]
-modulate = Color(0.981127, 0.339741, 0.391828, 1)
-z_index = 1230
-position = Vector2(240, 165)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("10_50bjm")
-hframes = 6
-frame = 5
+[node name="Sprite2D" type="Sprite2D" parent="dead"]
+position = Vector2(203, 165)
 
-[node name="Button_restart" type="Button" parent="dead/restart"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -13.0
-offset_top = -13.0
-offset_right = 15.0
-offset_bottom = 13.0
+[node name="VBoxContainer" type="VBoxContainer" parent="dead/Sprite2D"]
+offset_right = 625.0
+offset_bottom = 344.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button_restart" type="TextureButton" parent="dead/Sprite2D/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4n4d0")
+texture_hover = ExtResource("4_3g87x")
+
+[node name="Button_home" type="TextureButton" parent="dead/Sprite2D/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_revlw")
+texture_hover = ExtResource("6_n7tyx")
 
 [node name="seed_slots" type="TileMap" parent="."]
 position = Vector2(0, 8)
@@ -2458,7 +2462,8 @@ vertical_alignment = 1
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
 [connection signal="button_up" from="non_pause/Button_pause" to="non_pause" method="_on_button_pause_button_up"]
-[connection signal="button_up" from="dead/restart/Button_restart" to="." method="_on_button_restart_button_up"]
+[connection signal="pressed" from="dead/Sprite2D/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="dead/Sprite2D/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sun_timer" to="." method="_on_sun_timer_timeout"]
 [connection signal="area_entered" from="dead_area" to="." method="_on_dead_area_area_entered"]
