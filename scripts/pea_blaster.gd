@@ -54,8 +54,8 @@ func _on_hitbox_area_entered(area):
 	if area.name == "attack_area_enemy" and not dead:
 		health_bar.value -= 1
 	if area.name == "projectile_area" and not dead:
-		health_bar.value -= 20
+		health_bar.value -= 16
 	if area.name == "projectile_area2" and not dead:
-		health_bar.value -= 18
+		health_bar.value -= 14
 	if area.name == "projectile_area3" and not dead:
-		health_bar.value -= 40
+		health_bar.value -= 32
