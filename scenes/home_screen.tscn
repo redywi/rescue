@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://byg6ybqy8hacc"]
+[gd_scene load_steps=17 format=3 uid="uid://byg6ybqy8hacc"]
 
 [ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_ua2b8"]
-[ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_7ae6g"]
+[ext_resource type="VideoStream" path="res://assets/backgroud/MainMenu_BG.ogv" id="2_6rtkj"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="3_gffnk"]
 [ext_resource type="Texture2D" uid="uid://bsy17u2cprquy" path="res://assets/button/play.png" id="3_syels"]
 [ext_resource type="Texture2D" uid="uid://cluei5qpgi1mi" path="res://assets/button/play (pressed).png" id="4_sxrsn"]
@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="10_auxa2"]
 [ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="11_jhctw"]
 [ext_resource type="Texture2D" uid="uid://b8uyrgw22eui2" path="res://assets/icon/title_game.png" id="13_t3svu"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j14tt"]
-texture = ExtResource("2_7ae6g")
+[ext_resource type="Texture2D" uid="uid://bmv3rpq2hvgd0" path="res://assets/button/credits.png" id="14_cq8ye"]
+[ext_resource type="Texture2D" uid="uid://bfsxj2okd6coa" path="res://assets/button/credits(pressed).png" id="15_ppkre"]
+[ext_resource type="Texture2D" uid="uid://b1ba5yg0d05o5" path="res://assets/button/credits(hover).png" id="16_ufskr"]
 
 [node name="HomeScreen" type="Control"]
 layout_mode = 3
@@ -33,7 +33,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_j14tt")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_6rtkj")
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -101,6 +111,35 @@ position = Vector2(240, 90)
 scale = Vector2(0.245312, 0.23125)
 texture = ExtResource("13_t3svu")
 
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -65.0
+offset_right = -9.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("14_cq8ye")
+texture_pressed = ExtResource("15_ppkre")
+texture_hover = ExtResource("16_ufskr")
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 382.0
+offset_top = 178.0
+offset_right = 460.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("3_gffnk")
+text = "CREDITS"
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

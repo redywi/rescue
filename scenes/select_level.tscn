@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqn5br55m7y75"]
+[gd_scene load_steps=25 format=3 uid="uid://dqn5br55m7y75"]
 
 [ext_resource type="Script" path="res://scripts/select_level.gd" id="1_f4psx"]
-[ext_resource type="Texture2D" uid="uid://b8nyaebgxm1o2" path="res://assets/backgroud/MainMenu_BG.png" id="2_csa5r"]
+[ext_resource type="VideoStream" path="res://assets/backgroud/MainMenu_BG.ogv" id="3_8t4bd"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="3_swxbd"]
 [ext_resource type="Texture2D" uid="uid://do5xwt5mf0ked" path="res://assets/button/level_1.png" id="4_c2y2g"]
 [ext_resource type="Texture2D" uid="uid://dsqafbmf2i0hl" path="res://assets/button/level_1 (pressed).png" id="5_27wei"]
@@ -25,9 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://pb87237tdupt" path="res://assets/button/level_6 (pressed).png" id="20_g0elu"]
 [ext_resource type="Texture2D" uid="uid://bty1bhvyprkxl" path="res://assets/button/level_6 (hover).png" id="21_gjvvr"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hksmd"]
-texture = ExtResource("2_csa5r")
-
 [node name="SelectLevel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -44,7 +41,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_hksmd")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_8t4bd")
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

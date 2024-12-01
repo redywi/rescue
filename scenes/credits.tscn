@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpoy3x3lqfkxp"]
+[gd_scene load_steps=7 format=3 uid="uid://bpoy3x3lqfkxp"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_423ny"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="2_rihw1"]
+[ext_resource type="VideoStream" path="res://assets/backgroud/MainMenu_BG.ogv" id="2_s8y2s"]
+[ext_resource type="Texture2D" uid="uid://dlq6pqh4c75jx" path="res://assets/button/exit.png" id="3_txi2c"]
+[ext_resource type="Texture2D" uid="uid://clvkiaw635ber" path="res://assets/button/exit (pressed).png" id="4_o6bgy"]
+[ext_resource type="Texture2D" uid="uid://depwesukvwjvj" path="res://assets/button/exit (hover).png" id="4_yevh4"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -19,6 +23,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_s8y2s")
+autoplay = true
+
+[node name="Button" type="TextureButton" parent="Panel"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -24.0
+offset_right = 590.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_txi2c")
+texture_pressed = ExtResource("4_o6bgy")
+texture_hover = ExtResource("4_yevh4")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -63,21 +97,4 @@ All content and assets are © 2024 MINOS. All rights reserved.
 ===========================
 "
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -28.0
-offset_right = 27.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_rihw1")
-theme_override_font_sizes/font_size = 11
-text = "EXIT"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
