@@ -53,6 +53,11 @@ func enemy_spawning():
 		helmet_butcher.position = Vector2(496, pos_y)
 		add_child(helmet_butcher)
 		global.danger_level -= 1
+	if rng.randf_range(0, 60000) < (global.danger_level):
+		var helmet_butcher = load("res://scenes/archer_hunter.tscn").instantiate()
+		helmet_butcher.position = Vector2(496, pos_y)
+		add_child(helmet_butcher)
+		global.danger_level -= 1
 
 func shovel_func(event):
 	if shove and !event.pressed:

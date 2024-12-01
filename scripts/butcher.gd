@@ -14,7 +14,7 @@ var butcher_dead = preload("res://scenes/butcher_dead.tscn")
 
 func _ready():
 	health_bar.visible = false
-	health_bar.value = 100
+	health_bar.value = 110
 	_animated_sprite.play("walk")
 
 func _physics_process(delta):

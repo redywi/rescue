@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce1fcwqvu3qph"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_hv3qe"]
+[ext_resource type="Texture2D" uid="uid://jukkd01kha7k" path="res://assets/characters/enemies/Archer the Hunter/attack/proyektil.png" id="2_hhegp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2awe"]
+radius = 1.0
+height = 40.0
+
+[node name="Projectile" type="Node2D"]
+z_index = 10
+script = ExtResource("1_hv3qe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(1.19375, 1)
+texture = ExtResource("2_hhegp")
+
+[node name="projectile_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="projectile_area"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_b2awe")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="projectile_area" to="." method="_on_projectile_area_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

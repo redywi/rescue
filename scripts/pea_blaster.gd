@@ -26,7 +26,6 @@ func _physics_process(delta):
 	if health_bar.value <= 0:
 		dead = true
 
-	# Periksa musuh di area tembak
 	found_enemy = false
 	for area in shoot_range.get_overlapping_areas():
 		if area.name == "enemy":
@@ -52,5 +51,11 @@ func _on_animated_sprite_2d_animation_looped():
 		get_parent().add_child(bullet)
 
 func _on_hitbox_area_entered(area):
-	if area.name == "attack_area_enemy":
-			health_bar.value -= 1
+	if area.name == "attack_area_enemy" and not dead:
+		health_bar.value -= 1
+	if area.name == "projectile_area" and not dead:
+		health_bar.value -= 20
+	if area.name == "projectile_area2" and not dead:
+		health_bar.value -= 18
+	if area.name == "projectile_area3" and not dead:
+		health_bar.value -= 40

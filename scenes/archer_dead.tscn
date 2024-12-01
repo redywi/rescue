@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfwoitkubsvqo"]
+
+[ext_resource type="Script" path="res://scripts/archer_dead.gd" id="1_o5hlk"]
+[ext_resource type="Texture2D" uid="uid://ehchheangppl" path="res://assets/characters/enemies/Archer the Hunter/death/2.png" id="1_wceap"]
+[ext_resource type="Texture2D" uid="uid://cvuo3t08wuvgw" path="res://assets/characters/enemies/Archer the Hunter/death/6.png" id="5_1sydc"]
+[ext_resource type="Texture2D" uid="uid://dwljc1v2pmh5r" path="res://assets/characters/enemies/Archer the Hunter/death/7.png" id="6_vw0cr"]
+[ext_resource type="Texture2D" uid="uid://dmq5wbf8028wj" path="res://assets/characters/enemies/Archer the Hunter/death/8.png" id="7_uo1wu"]
+[ext_resource type="Texture2D" uid="uid://coqbqwnxqrgpj" path="res://assets/characters/enemies/Archer the Hunter/death/9.png" id="8_ivu0w"]
+[ext_resource type="AudioStream" uid="uid://c57pknbf6tggr" path="res://assets/sound/hit-flesh-02-266309.mp3" id="9_tbppe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i531"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wceap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1sydc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vw0cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uo1wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ivu0w")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 3.0
+}]
+
+[node name="ArcherDead" type="Node2D"]
+script = ExtResource("1_o5hlk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+scale = Vector2(0.488, 0.488)
+sprite_frames = SubResource("SpriteFrames_5i531")
+animation = &"dead"
+frame = 4
+frame_progress = 1.0
+
+[node name="dead_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_tbppe")

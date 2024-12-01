@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://bimsganmh0b0i"]
+
+[ext_resource type="Texture2D" uid="uid://f16l8yb8k5tb" path="res://assets/characters/enemies/Archer the Hunter/attack/4.png" id="1_2tlif"]
+[ext_resource type="Script" path="res://scripts/archer_hunter.gd" id="1_u0neb"]
+[ext_resource type="Texture2D" uid="uid://byn5a1oc18tl4" path="res://assets/characters/enemies/Archer the Hunter/attack/5.png" id="2_yetig"]
+[ext_resource type="Texture2D" uid="uid://dtvt6w7ilhntc" path="res://assets/characters/enemies/Archer the Hunter/attack/6.png" id="3_e75de"]
+[ext_resource type="Texture2D" uid="uid://dtgon0gmmjre4" path="res://assets/characters/enemies/Archer the Hunter/attack/7.png" id="4_hma6w"]
+[ext_resource type="Texture2D" uid="uid://r2yuenfakxey" path="res://assets/characters/enemies/Archer the Hunter/attack/8.png" id="5_ar1im"]
+[ext_resource type="Texture2D" uid="uid://v7s6l1r2m08r" path="res://assets/characters/enemies/Archer the Hunter/attack/9.png" id="6_aa74h"]
+[ext_resource type="PackedScene" uid="uid://dvy7lryr5q3ee" path="res://scenes/health_bar.tscn" id="7_6j766"]
+[ext_resource type="Texture2D" uid="uid://bfduhuvkpm14t" path="res://assets/characters/enemies/Archer the Hunter/walk/1.png" id="8_daktg"]
+[ext_resource type="AudioStream" uid="uid://bmf2h64tuwnlr" path="res://assets/sound/AudioCutter_Crot.mp3" id="8_lpsup"]
+[ext_resource type="Texture2D" uid="uid://cftlyf0j75twj" path="res://assets/characters/enemies/Archer the Hunter/walk/2.png" id="9_r77ka"]
+[ext_resource type="Texture2D" uid="uid://bujvtwp8uh47" path="res://assets/characters/enemies/Archer the Hunter/walk/3.png" id="10_pyj4g"]
+[ext_resource type="Texture2D" uid="uid://bx22go8aplgy6" path="res://assets/characters/enemies/Archer the Hunter/walk/4.png" id="11_aj20j"]
+[ext_resource type="Texture2D" uid="uid://da52bcepljk03" path="res://assets/characters/enemies/Archer the Hunter/walk/5.png" id="12_sao3a"]
+[ext_resource type="Texture2D" uid="uid://c20elr1dbm03b" path="res://assets/characters/enemies/Archer the Hunter/walk/6.png" id="13_dhw3r"]
+[ext_resource type="Texture2D" uid="uid://ktuwvbv3ptkk" path="res://assets/characters/enemies/Archer the Hunter/walk/7.png" id="14_knhhx"]
+[ext_resource type="Texture2D" uid="uid://c2amx7juc2nir" path="res://assets/characters/enemies/Archer the Hunter/walk/8.png" id="15_0yuqp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd10l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2tlif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yetig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e75de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hma6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ar1im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aa74h")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_daktg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r77ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pyj4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aj20j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sao3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dhw3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_knhhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0yuqp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yijd6"]
+size = Vector2(242, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br8f0"]
+radius = 5.0
+height = 20.0
+
+[node name="archer_hunter" type="Node2D"]
+script = ExtResource("1_u0neb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+scale = Vector2(0.488379, 0.488379)
+sprite_frames = SubResource("SpriteFrames_dd10l")
+animation = &"attack"
+
+[node name="shoot_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_range"]
+position = Vector2(-119, 0)
+shape = SubResource("RectangleShape2D_yijd6")
+
+[node name="enemy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_br8f0")
+
+[node name="health_bar" parent="." instance=ExtResource("7_6j766")]
+modulate = Color(0.960784, 0.25098, 0.298039, 1)
+position = Vector2(12, -26)
+scale = Vector2(0.2, 0.2)
+
+[node name="bullet_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lpsup")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="area_entered" from="shoot_range" to="." method="_on_shoot_range_area_entered"]
+[connection signal="area_entered" from="enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="area_exited" from="enemy" to="." method="_on_enemy_area_exited"]

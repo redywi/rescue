@@ -55,5 +55,11 @@ func _on_sun_timer_timeout():
 		sun_timer.start()
 
 func _on_hitbox_area_entered(area):
-	if area.name == "attack_area_enemy":
-			health_bar.value -= 1
+	if area.name == "attack_area_enemy" and not dead:
+		health_bar.value -= 1
+	if area.name == "projectile_area" and not dead:
+		health_bar.value -= 20
+	if area.name == "projectile_area2" and not dead:
+		health_bar.value -= 18
+	if area.name == "projectile_area3" and not dead:
+		health_bar.value -= 40
