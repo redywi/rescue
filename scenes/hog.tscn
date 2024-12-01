@@ -113,15 +113,16 @@ height = 38.0
 
 [node name="hog" type="Node2D"]
 process_mode = 1
-z_index = 6
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_syjtd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.125, 2)
 scale = Vector2(0.398437, 0.431781)
 sprite_frames = SubResource("SpriteFrames_wed4m")
 animation = &"idle"
 speed_scale = 0.8
+offset = Vector2(5.125, 2)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

@@ -1748,6 +1748,7 @@ size = Vector2(32, 160)
 
 [node name="lawn_1" type="Node2D"]
 process_mode = 1
+y_sort_enabled = true
 script = ExtResource("1_4jms8")
 
 [node name="pausetext" type="Node2D" parent="."]
@@ -2100,6 +2101,7 @@ texture = ExtResource("41_h4u4p")
 
 [node name="survive" type="Label" parent="."]
 modulate = Color(1, 1, 0, 1)
+z_index = 1
 offset_left = 350.0
 offset_top = 235.0
 offset_right = 407.0
@@ -2108,6 +2110,7 @@ text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("29_p880x")]
 modulate = Color(1, 1, 0, 1)
+z_index = 1
 offset_left = 411.0
 offset_top = 236.0
 offset_right = 452.0

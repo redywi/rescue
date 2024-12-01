@@ -70,7 +70,8 @@ animations = [{
 height = 28.0
 
 [node name="HelmetButcher" type="Node2D"]
-z_index = 7
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_keoam")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

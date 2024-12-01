@@ -41,7 +41,7 @@ func enemy_spawning():
 		4: pos_y = 103
 		5: pos_y = 71
 	if rng.randf_range(0, 50000) < (global.danger_level):
-		var butcher = load("res://scenes/archer_hunter.tscn").instantiate()
+		var butcher = load("res://scenes/butcher.tscn").instantiate()
 		butcher.position = Vector2(496, pos_y)
 		add_child(butcher)
 		global.danger_level -= 1

@@ -1,11 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://dwc4qx4lfdgjv"]
+[gd_scene load_steps=61 format=3 uid="uid://dwc4qx4lfdgjv"]
 
 [ext_resource type="Script" path="res://scripts/lawn_1.gd" id="1_g72vm"]
 [ext_resource type="Script" path="res://scripts/paused.gd" id="2_egcmh"]
 [ext_resource type="Texture2D" uid="uid://b52owsv36cemf" path="res://assets/button/restart.png" id="3_hmsfh"]
 [ext_resource type="Texture2D" uid="uid://de4c83qmpxfbq" path="res://assets/button/restart (hover).png" id="4_63cvr"]
 [ext_resource type="Texture2D" uid="uid://ddejo4sr2y6if" path="res://assets/button/home.png" id="5_a6d1y"]
-[ext_resource type="Texture2D" uid="uid://hhljxsuua52e" path="res://sprites/pvv_fly.png" id="5_pwjgy"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="5_xht25"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="6_h5s11"]
 [ext_resource type="Texture2D" uid="uid://c8vlnt7m0ncp4" path="res://assets/button/home (hover).png" id="6_t7cr2"]
@@ -1573,6 +1572,7 @@ size = Vector2(32, 160)
 
 [node name="lawn" type="Node2D"]
 process_mode = 1
+y_sort_enabled = true
 script = ExtResource("1_g72vm")
 
 [node name="pausetext" type="Node2D" parent="."]
@@ -1681,21 +1681,25 @@ text = "Pilih restart untuk mengulangi level atau kembali ke main menu"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="restart" type="Sprite2D" parent="dead"]
-modulate = Color(0.981127, 0.339741, 0.391828, 1)
-z_index = 1230
-position = Vector2(240, 165)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("5_pwjgy")
-hframes = 6
-frame = 5
+[node name="Sprite2D" type="Sprite2D" parent="dead"]
+position = Vector2(203, 165)
 
-[node name="Button_restart" type="Button" parent="dead/restart"]
-modulate = Color(1, 1, 1, 0)
-offset_left = -13.0
-offset_top = -13.0
-offset_right = 15.0
-offset_bottom = 13.0
+[node name="VBoxContainer" type="VBoxContainer" parent="dead/Sprite2D"]
+offset_right = 625.0
+offset_bottom = 344.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button_restart" type="TextureButton" parent="dead/Sprite2D/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_hmsfh")
+texture_hover = ExtResource("4_63cvr")
+
+[node name="Button_home" type="TextureButton" parent="dead/Sprite2D/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_a6d1y")
+texture_hover = ExtResource("6_t7cr2")
 
 [node name="seed_slots" type="TileMap" parent="."]
 position = Vector2(0, 8)
@@ -1922,6 +1926,7 @@ texture = ExtResource("36_jekqe")
 
 [node name="survive" type="Label" parent="."]
 modulate = Color(1, 1, 0, 1)
+z_index = 1
 offset_left = 350.0
 offset_top = 234.0
 offset_right = 407.0
@@ -1930,6 +1935,7 @@ text = "Survive"
 
 [node name="countdown" parent="." instance=ExtResource("34_elof8")]
 modulate = Color(1, 1, 0, 1)
+z_index = 1
 offset_left = 411.0
 offset_top = 235.0
 offset_right = 452.0
@@ -1946,7 +1952,8 @@ offset_bottom = 275.0
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="pausetext/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
 [connection signal="button_up" from="non_pause/Button_pause" to="non_pause" method="_on_button_pause_button_up"]
-[connection signal="button_up" from="dead/restart/Button_restart" to="." method="_on_button_restart_button_up"]
+[connection signal="pressed" from="dead/Sprite2D/VBoxContainer/Button_restart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="dead/Sprite2D/VBoxContainer/Button_home" to="." method="_on_button_home_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="sun_timer" to="." method="_on_sun_timer_timeout"]
 [connection signal="area_entered" from="dead_area" to="." method="_on_dead_area_area_entered"]

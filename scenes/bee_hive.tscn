@@ -102,15 +102,16 @@ height = 24.0
 
 [node name="sun_bloom" type="Node2D"]
 z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_juajy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.68434e-14, -5)
 scale = Vector2(0.215625, 0.215625)
 sprite_frames = SubResource("SpriteFrames_v6ywa")
 animation = &"idle"
 frame_progress = 0.561763
 speed_scale = 0.8
+offset = Vector2(0, -20)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

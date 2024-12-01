@@ -67,15 +67,15 @@ radius = 9.0
 height = 26.0
 
 [node name="butcher" type="Node2D"]
-z_index = 7
+z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_rxl0g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -10)
 scale = Vector2(0.34977, 0.344848)
 sprite_frames = SubResource("SpriteFrames_f76ql")
 animation = &"eat"
+offset = Vector2(9, -22)
 
 [node name="enemy" type="Area2D" parent="."]
 

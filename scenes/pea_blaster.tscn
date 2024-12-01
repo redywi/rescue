@@ -161,16 +161,17 @@ height = 26.0
 
 [node name="pea_blaster" type="Node2D"]
 process_mode = 1
-z_index = 2
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_22pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.69532, -5.30468)
 scale = Vector2(0.421191, 0.446191)
 sprite_frames = SubResource("SpriteFrames_y6k14")
 animation = &"action"
 frame = 5
 frame_progress = 0.692726
+offset = Vector2(-4.695, -5.305)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
