@@ -72,7 +72,7 @@ func seed1_func(event):
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return
-	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed1")):
 		shooter_seed1.z_index += 1
 		current_seed = 1
 
@@ -82,7 +82,7 @@ func seed1_key_func(event):
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return false
-	if event.pressed and event.keycode == 49 and cooldown_seed1.value == 10000:
+	if ((event.pressed and event.keycode == 49) or Input.is_action_just_pressed("choose_seed1")) and cooldown_seed1.value == 10000:
 		shooter_seed1.z_index += 1
 		current_seed = 1
 		allbutone_slot_reset(1)
@@ -94,7 +94,7 @@ func seed2_func(event):
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return
-	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed2")):
 		bloom_seed2.z_index += 1
 		current_seed = 2
 
@@ -104,7 +104,7 @@ func seed2_key_func(event):
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return false
-	if event.pressed and event.keycode == 50 and cooldown_seed2.value == 10000:
+	if ((event.pressed and event.keycode == 50) or Input.is_action_just_pressed("choose_seed2")) and cooldown_seed2.value == 10000:
 		bloom_seed2.z_index += 1
 		current_seed = 2
 		allbutone_slot_reset(2)
@@ -116,7 +116,7 @@ func seed3_func(event):
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return
-	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed3")):
 		hog_seed3.z_index += 1
 		current_seed = 3
 
@@ -126,7 +126,7 @@ func seed3_key_func(event):
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return false
-	if event.pressed and event.keycode == 51 and cooldown_seed3.value == 10000:
+	if ((event.pressed and event.keycode == 51) or Input.is_action_just_pressed("choose_seed3")) and cooldown_seed3.value == 10000:
 		hog_seed3.z_index += 1
 		current_seed = 3
 		allbutone_slot_reset(3)

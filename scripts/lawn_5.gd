@@ -86,7 +86,7 @@ func seed1_func(event):
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return
-	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 64 and pos.x < 96 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed1")):
 		shooter_seed1.z_index += 1
 		current_seed = 1
 
@@ -96,7 +96,7 @@ func seed1_key_func(event):
 		current_seed = 0
 		shooter_seed1.z_index = 1
 		return false
-	if event.pressed and event.keycode == 49 and cooldown_seed1.value == 10000:
+	if ((event.pressed and event.keycode == 49) or Input.is_action_just_pressed("choose_seed1")) and cooldown_seed1.value == 10000:
 		shooter_seed1.z_index += 1
 		current_seed = 1
 		allbutone_slot_reset(1)
@@ -108,7 +108,7 @@ func seed2_func(event):
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return
-	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 96 and pos.x < 128 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed2")):
 		bloom_seed2.z_index += 1
 		current_seed = 2
 
@@ -118,7 +118,7 @@ func seed2_key_func(event):
 		current_seed = 0
 		bloom_seed2.z_index = 1
 		return false
-	if event.pressed and event.keycode == 50 and cooldown_seed2.value == 10000:
+	if ((event.pressed and event.keycode == 50) or Input.is_action_just_pressed("choose_seed2")) and cooldown_seed2.value == 10000:
 		bloom_seed2.z_index += 1
 		current_seed = 2
 		allbutone_slot_reset(2)
@@ -130,7 +130,7 @@ func seed3_func(event):
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return
-	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 128 and pos.x < 160 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed3")):
 		hog_seed3.z_index += 1
 		current_seed = 3
 
@@ -140,7 +140,7 @@ func seed3_key_func(event):
 		current_seed = 0
 		hog_seed3.z_index = 1
 		return false
-	if event.pressed and event.keycode == 51 and cooldown_seed3.value == 10000:
+	if ((event.pressed and event.keycode == 51) or Input.is_action_just_pressed("choose_seed3")) and cooldown_seed3.value == 10000:
 		hog_seed3.z_index += 1
 		current_seed = 3
 		allbutone_slot_reset(3)
@@ -152,7 +152,7 @@ func seed4_func(event):
 		current_seed = 0
 		hedgehog_seed4.z_index = 1
 		return
-	if pos.x > 160 and pos.x < 192 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 160 and pos.x < 192 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed4")):
 		hedgehog_seed4.z_index += 1
 		current_seed = 4
 
@@ -162,7 +162,7 @@ func seed4_key_func(event):
 		current_seed = 0
 		hedgehog_seed4.z_index = 1
 		return false
-	if event.pressed and event.keycode == 52 and cooldown_seed4.value == 10000:
+	if ((event.pressed and event.keycode == 52) or Input.is_action_just_pressed("choose_seed4")) and cooldown_seed4.value == 10000:
 		hedgehog_seed4.z_index += 1
 		current_seed = 4
 		allbutone_slot_reset(4)
@@ -173,7 +173,7 @@ func seed5_func(event):
 		elephant_seed5.position = Vector2(208, 240)
 		current_seed = 0
 		elephant_seed5.z_index = 1
-	if pos.x > 192 and pos.x < 224 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 192 and pos.x < 224 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed5")):
 		elephant_seed5.z_index += 1
 		current_seed = 5
 
@@ -183,7 +183,7 @@ func seed5_key_func(event):
 		current_seed = 0
 		elephant_seed5.z_index = 1
 		return false
-	if event.pressed and event.keycode == 53 and cooldown_seed4.value == 10000:
+	if ((event.pressed and event.keycode == 53) or Input.is_action_just_pressed("choose_seed5")) and cooldown_seed5.value == 10000:
 		elephant_seed5.z_index += 1
 		current_seed = 5
 		allbutone_slot_reset(5)
@@ -195,7 +195,7 @@ func seed6_func(event):
 		current_seed = 0
 		pangolin_seed6.z_index = 1
 		return
-	if pos.x > 224 and pos.x < 256 and pos.y > 240 and pos.y < 272 and event.pressed:
+	if pos.x > 224 and pos.x < 256 and pos.y > 240 and pos.y < 272 and (event.pressed or Input.is_action_just_pressed("choose_seed6")):
 		pangolin_seed6.z_index += 1
 		current_seed = 6
 
@@ -205,7 +205,7 @@ func seed6_key_func(event):
 		current_seed = 0
 		pangolin_seed6.z_index = 1
 		return false
-	if event.pressed and event.keycode == 54 and cooldown_seed4.value == 10000:
+	if((event.pressed and event.keycode == 54) or Input.is_action_just_pressed("choose_seed5")) and cooldown_seed6.value == 10000:
 		pangolin_seed6.z_index += 1
 		current_seed = 6
 		allbutone_slot_reset(6)
