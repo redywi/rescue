@@ -52,9 +52,11 @@ y_sort_enabled = true
 script = ExtResource("1_qsnsu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 5
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_atwfu")
 animation = &"attack"
+frame_progress = 0.983327
 speed_scale = 2.0
 offset = Vector2(0, -4)
 
