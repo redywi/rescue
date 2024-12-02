@@ -78,8 +78,9 @@ theme_override_fonts/font = ExtResource("2_rihw1")
 theme_override_font_sizes/font_size = 9
 text = "Game Title: RESCUE! Save The Wild Life
 
+=======================================================================
 Developed by:
----------------------------
+------------------------------------------------------------------------------------------------------------------------------
 - Ignatius Krisna Issaputra – 121140037 – Game Artist, Game Designer
 - Benecdictus Budhi Dharmawan – 121140098 – Programmer, Game Designer
 - Made Redy Wijaya – 121140157 – Programmer, Game Designer
@@ -87,15 +88,19 @@ Developed by:
 - Carlos Piero Parhusip – 121140193 – Programmer, Game Designer, Music Designer
 
 Tools & Libraries:
----------------------------
+------------------------------------------------------------------------------------------------------------------------------
 - Godot Engine – For creating the game engine.
 - Photoshop – For creating the art assets.
 - FLStudio – For editing sound effects.
 
+Code Reference:
+------------------------------------------------------------------------------------------------------------------------------
+https://github.com/Unknown-Dolphin/Pvv-project
+
 Copyright:
----------------------------
+------------------------------------------------------------------------------------------------------------------------------
 All content and assets are © 2024 MINOS. All rights reserved.
-===========================
+=======================================================================
 "
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
