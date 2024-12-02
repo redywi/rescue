@@ -16,4 +16,7 @@ func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 
 func _on_exit_button_pressed():
-	get_tree().quit()
+	if OS.get_name() == "HTML5":
+		print("Exiting is not supported on web. Please click ESC.")
+	else:
+		get_tree().quit()
