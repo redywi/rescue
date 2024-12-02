@@ -7,6 +7,7 @@ extends Node2D
 @onready var hog_seed3 = $seed_slots/hog_seed3
 @onready var hedgehog_seed4 = $seed_slots/hedgehog_seed4
 @onready var elephant_seed5 = $seed_slots/elephant_seed5
+@onready var pangolin_seed6 = $seed_slots/pangolin_seed6
 @onready var sun_value = $sun_value/Label
 @onready var endangered1 = $Elephant
 @onready var endangered2 = $Elephant2
@@ -24,7 +25,7 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn"), preload("res://scenes/elephant.tscn")]
+var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn"), preload("res://scenes/elephant.tscn"), preload("res://scenes/pangolin.tscn")]
 var shove = false
 var shovel_pos = Vector2(410, 25)
 var pos
@@ -193,6 +194,28 @@ func seed5_key_func(event):
 		allbutone_slot_reset(5)
 		return true
 
+func seed6_func(event):
+	if !event.pressed:
+		pangolin_seed6.position = Vector2(240, 240)
+		current_seed = 0
+		pangolin_seed6.z_index = 1
+		return
+	if pos.x > 224 and pos.x < 256 and pos.y > 240 and pos.y < 272 and event.pressed:
+		pangolin_seed6.z_index += 1
+		current_seed = 6
+
+func seed6_key_func(event):
+	if (current_seed == 6 and !event.pressed) or event.keycode != 54:
+		pangolin_seed6.position = Vector2(240, 240)
+		current_seed = 0
+		pangolin_seed6.z_index = 1
+		return false
+	if event.pressed and event.keycode == 54 and cooldown_seed4.value == 10000:
+		pangolin_seed6.z_index += 1
+		current_seed = 6
+		allbutone_slot_reset(6)
+		return true
+
 func allbutone_slot_reset(slot_button):
 	if slot_button != 1:
 		shooter_seed1.position = Vector2(80, 240)
@@ -210,7 +233,8 @@ func allbutone_slot_reset(slot_button):
 		elephant_seed5.position = Vector2(208, 240)
 		elephant_seed5.z_index = 1
 	if slot_button != 6:
-		pass
+		pangolin_seed6.position = Vector2(240, 240)
+		pangolin_seed6.z_index = 1
 	
 func slotkey(event):
 	if seed1_key_func(event):
@@ -222,6 +246,8 @@ func slotkey(event):
 	elif seed4_key_func(event):
 		return
 	elif seed5_key_func(event):
+		return
+	elif seed6_key_func(event):
 		return
 	
 	allbutone_slot_reset(0)
@@ -314,6 +340,13 @@ func _input(event):
 						current_seed = 0
 						get_node("sun_value").modulate.g = 0.2
 						get_node("sun_value").modulate.b = 0.2
+				6:
+					if (global.sun_value - 150 >= 0) and !event.pressed:
+						global.sun_value_deficit += 150
+					elif !event.pressed:
+						current_seed = 0
+						get_node("sun_value").modulate.g = 0.2
+						get_node("sun_value").modulate.b = 0.2
 		
 		if pos.x > 32 and pos.x < 448 and pos.y > 56 and pos.y < 216 and !event.pressed and current_seed != 0:
 			if pos.x > 196 and pos.x < 224 and pos.y > 88 and pos.y < 120 and !event.pressed and current_seed != 0:
@@ -355,6 +388,8 @@ func _input(event):
 			seed4_func(event)
 		if cooldown_seed5.value == 10000:
 			seed5_func(event)
+		if cooldown_seed6.value == 10000:
+			seed6_func(event)
 		
 	#hilight
 	elif event is InputEventMouseMotion:
@@ -378,6 +413,8 @@ func _physics_process(delta):
 		hedgehog_seed4.position = get_global_mouse_position()
 	elif current_seed == 5:
 		elephant_seed5.position = get_global_mouse_position()
+	elif current_seed == 6:
+		pangolin_seed6.position = get_global_mouse_position()
 	
 	if global.danger_level > 0:
 		global.danger_level += 3 * delta * global.speed
@@ -416,7 +453,7 @@ func _physics_process(delta):
 	cooldown_seed3.value += 20 * global.speed
 	cooldown_seed4.value += 2 * global.speed
 	cooldown_seed5.value += 5 * global.speed
-	cooldown_seed6.value += 20 * global.speed
+	cooldown_seed6.value += 3 * global.speed
 	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
@@ -454,14 +491,11 @@ func _on_sun_timer_timeout():
 	sun_timer.wait_time = start_sun_time
 	sun_timer.start()
 
-
 func _on_dead_area_area_entered(area):
 	if area.name == "enemy":
 		get_tree().paused = true
 		global.you_lost = true
 		get_node("dead").visible = true
-		#get_node("pausetext").visible = false
-		#get_node("non_pause").visible = false
 
 func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)

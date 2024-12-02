@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://byxe4qvuh8niw"]
+
+[ext_resource type="Texture2D" uid="uid://b1qvcci417kaw" path="res://assets/characters/trenggiling/attack/4.png" id="1_eahhi"]
+[ext_resource type="Script" path="res://scripts/pangolin.gd" id="1_qsnsu"]
+[ext_resource type="Texture2D" uid="uid://bh40c3cwcu046" path="res://assets/characters/trenggiling/attack/5.png" id="2_gpgpr"]
+[ext_resource type="Texture2D" uid="uid://c2ng14rv4lmsj" path="res://assets/characters/trenggiling/attack/6.png" id="3_8rl1l"]
+[ext_resource type="Texture2D" uid="uid://bgdgpkp3362kx" path="res://assets/characters/trenggiling/attack/7.png" id="4_phtq5"]
+[ext_resource type="Texture2D" uid="uid://demsvawkrruiv" path="res://assets/characters/trenggiling/attack/8.png" id="5_nqbl7"]
+[ext_resource type="Texture2D" uid="uid://wbecgj1mo1e0" path="res://assets/characters/trenggiling/attack/9.png" id="6_7x8wf"]
+[ext_resource type="Texture2D" uid="uid://dbm7w0aequj7n" path="res://assets/characters/trenggiling/attack/10.png" id="7_c883n"]
+[ext_resource type="Texture2D" uid="uid://r2n8gec41scv" path="res://assets/characters/trenggiling/attack/11.png" id="8_o1gnr"]
+[ext_resource type="Texture2D" uid="uid://muy5i887yntl" path="res://assets/characters/trenggiling/attack/12.png" id="9_wo4l0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atwfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eahhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gpgpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8rl1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_phtq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqbl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7x8wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c883n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o1gnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wo4l0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}]
+
+[node name="Pangolin" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_qsnsu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_atwfu")
+animation = &"attack"
+speed_scale = 2.0
+offset = Vector2(0, -4)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -50,6 +50,8 @@ func _on_area_2d_area_entered(area):
 		health_bar.value -= 1.6
 	if area.name == "explode_area" or area.name == "explode_area_bomb":
 		health_bar.value -= 100
+	if area.name == "attack_area" or area.name == "attack_area_pangolin":
+		health_bar.value -= 100
 
 func _on_enemy_area_exited(area):
 	if area.name == "hitbox" and move == 0:
