@@ -32,6 +32,8 @@ animations = [{
 }]
 
 [node name="ArcherDead" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_o5hlk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

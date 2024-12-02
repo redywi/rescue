@@ -36,6 +36,8 @@ animations = [{
 }]
 
 [node name="ButcherDead" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("7_3v653")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

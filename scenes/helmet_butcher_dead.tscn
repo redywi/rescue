@@ -36,6 +36,8 @@ animations = [{
 }]
 
 [node name="HelmetButcherDead" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_e0n0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
