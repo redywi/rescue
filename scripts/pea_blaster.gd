@@ -45,7 +45,7 @@ func _physics_process(delta):
 	
 func _on_animated_sprite_2d_animation_looped():
 	if _animated_sprite.animation == "action":
-		var bullet = load("res://scenes/pea_bullet.tscn").instantiate()
+		var bullet = load("res://scenes/banana_bullet.tscn").instantiate()
 		bullet.position = self.position + Vector2(8, -7)
 		bullet.scale /= 2
 		get_parent().add_child(bullet)

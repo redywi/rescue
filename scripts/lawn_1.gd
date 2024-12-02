@@ -19,7 +19,7 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn")]
+var seed_list = [null, preload("res://scenes/gorilla.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn")]
 var shove = false
 var shovel_pos = Vector2(410, 25)
 var pos

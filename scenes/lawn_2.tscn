@@ -1645,6 +1645,7 @@ texture = ExtResource("9_wmta8")
 process_mode = 3
 visible = false
 z_index = 1201
+y_sort_enabled = true
 
 [node name="dead_screen" type="Sprite2D" parent="dead"]
 modulate = Color(0, 0, 0, 0.313726)

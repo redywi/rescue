@@ -14,7 +14,6 @@ var picked = false
 func _ready():
 	timer.start()
 
-
 func _physics_process(delta):
 	if !picked:
 		self.position.y += sun_speed * global.speed * delta

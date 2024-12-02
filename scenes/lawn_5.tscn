@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://55lhst0kl04p"]
+[gd_scene load_steps=88 format=3 uid="uid://55lhst0kl04p"]
 
 [ext_resource type="Script" path="res://scripts/lawn_5.gd" id="1_7muw4"]
 [ext_resource type="FontFile" uid="uid://csknbgqrv8qic" path="res://Symtext.ttf" id="2_ej25s"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cdtiomt55wdhh" path="res://assets/characters/slot/bee hive.png" id="12_7lhwd"]
 [ext_resource type="Texture2D" uid="uid://b5oexmdx6jfvc" path="res://assets/characters/slot/hog.png" id="13_rab0y"]
 [ext_resource type="Texture2D" uid="uid://b4br7tdau8jwv" path="res://assets/characters/slot/hedgehog.png" id="14_4a18f"]
+[ext_resource type="Texture2D" uid="uid://cx5pmwk525e3t" path="res://assets/characters/slot/pangolin.png" id="15_340d0"]
 [ext_resource type="Texture2D" uid="uid://bl8c7rnkeonoc" path="res://assets/characters/slot/elephant.png" id="15_fa34e"]
 [ext_resource type="Texture2D" uid="uid://dtei2fn6g3l6e" path="res://assets/characters/bee hive/honey_drop.png" id="16_6k1tk"]
 [ext_resource type="PackedScene" uid="uid://bv6kjkbxxvryr" path="res://scenes/cooldown_bar.tscn" id="17_n47ol"]
@@ -2062,6 +2063,7 @@ texture = ExtResource("9_gbfgd")
 process_mode = 3
 visible = false
 z_index = 1201
+y_sort_enabled = true
 
 [node name="dead_screen" type="Sprite2D" parent="dead"]
 modulate = Color(0, 0, 0, 0.313726)
@@ -2185,6 +2187,17 @@ text = "125"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="sun_cost_seed6" type="Node2D" parent="seed_slots"]
+position = Vector2(234, 252)
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="seed_slots/sun_cost_seed6"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "150"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="shooter_seed1" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(80, 240)
@@ -2214,6 +2227,11 @@ y_sort_enabled = true
 position = Vector2(208, 240)
 scale = Vector2(0.184397, 0.20155)
 texture = ExtResource("15_fa34e")
+
+[node name="pangolin_seed6" type="Sprite2D" parent="seed_slots"]
+position = Vector2(240, 240)
+scale = Vector2(0.481481, 0.481481)
+texture = ExtResource("15_340d0")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
 position = Vector2(16, 240)

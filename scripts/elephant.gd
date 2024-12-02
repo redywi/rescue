@@ -14,7 +14,7 @@ var has_dead = false
 
 func _ready():
 	health_bar.visible = false
-	health_bar.value = 600
+	health_bar.value = 950
 	_animated_sprite.play("idle")
 	enter_sound.play()
 	has_entered = true

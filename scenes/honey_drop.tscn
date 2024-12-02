@@ -7,7 +7,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vsdic"]
 
 [node name="sun_drop" type="Node2D"]
-z_index = 1000
+z_index = 100
+y_sort_enabled = true
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_n3vr5")
 

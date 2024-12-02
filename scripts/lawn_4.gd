@@ -23,7 +23,7 @@ var rng = RandomNumberGenerator.new()
 var lawn_space = {}
 var lawn_key_list = []
 var current_seed = 0
-var seed_list = [null, preload("res://scenes/pea_blaster.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn"), preload("res://scenes/elephant.tscn")]
+var seed_list = [null, preload("res://scenes/gorilla.tscn"), preload("res://scenes/bee_hive.tscn"), preload("res://scenes/hog.tscn"), preload("res://scenes/hedgehog_bomb.tscn"), preload("res://scenes/elephant.tscn")]
 var shove = false
 var shovel_pos = Vector2(410, 25)
 var pos
@@ -397,8 +397,8 @@ func _physics_process(delta):
 	cooldown_seed1.value += 20 * global.speed
 	cooldown_seed2.value += 20 * global.speed
 	cooldown_seed3.value += 20 * global.speed
-	cooldown_seed4.value += 2 * global.speed
-	cooldown_seed5.value += 5 * global.speed
+	cooldown_seed4.value += 5 * global.speed
+	cooldown_seed5.value += 7 * global.speed
 	cooldown_seed6.value += 20 * global.speed
 	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
