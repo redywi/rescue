@@ -2270,7 +2270,7 @@ texture = ExtResource("15_qnm84")
 [node name="pangolin_seed6" type="Sprite2D" parent="seed_slots"]
 y_sort_enabled = true
 position = Vector2(240, 240)
-scale = Vector2(0.896551, 0.896552)
+scale = Vector2(0.481481, 0.481481)
 texture = ExtResource("15_rmuq8")
 
 [node name="sun" type="Sprite2D" parent="seed_slots"]
