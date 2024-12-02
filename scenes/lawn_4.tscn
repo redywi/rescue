@@ -1747,7 +1747,7 @@ sources/24 = SubResource("TileSetAtlasSource_xo1fm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pil5"]
 size = Vector2(32, 160)
 
-[node name="lawn" type="Node2D"]
+[node name="lawn2" type="Node2D"]
 process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_86kph")

@@ -14,8 +14,6 @@ var end_pos
 
 func _ready():
 	timer.start()
-
-	
 	end_pos = self.position - Vector2(rng.randf_range(-30, 30), rng.randf_range(-30, 30))
 
 func _process(delta):

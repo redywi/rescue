@@ -448,8 +448,6 @@ func _on_dead_area_area_entered(area):
 		get_tree().paused = true
 		global.you_lost = true
 		get_node("dead").visible = true
-		#get_node("pausetext").visible = false
-		#get_node("non_pause").visible = false
 
 func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)
@@ -458,7 +456,7 @@ func _on_button_restart_pressed() -> void:
 	global.sun_value = 100
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.danger_level = 0
+	global.danger_level = 10
 	global.slime_count = 0
 	global.lost_animals = 0
 	global.you_lost = false
@@ -472,7 +470,7 @@ func _on_button_home_pressed() -> void:
 	global.sun_value = 100
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.danger_level = 0
+	global.danger_level = 10
 	global.lost_animals = 0
 	global.slime_count = 0
 	global.you_lost = false

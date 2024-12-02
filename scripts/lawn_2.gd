@@ -355,7 +355,7 @@ func _on_button_restart_pressed() -> void:
 	global.sun_value = 100
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.danger_level = 0
+	global.danger_level = 10
 	global.slime_count = 0
 	global.you_lost = false
 	get_tree().reload_current_scene()
@@ -368,7 +368,7 @@ func _on_button_home_pressed() -> void:
 	global.sun_value = 100
 	global.sun_value_deficit = 0
 	global.sun_value_surplus = 0
-	global.danger_level = 0
+	global.danger_level = 10
 	global.slime_count = 0
 	global.you_lost = false
 	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
