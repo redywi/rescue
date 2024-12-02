@@ -347,9 +347,6 @@ func _on_dead_area_area_entered(area):
 		get_tree().paused = true
 		global.you_lost = true
 		get_node("dead").visible = true
-		#get_node("pausetext").visible = false
-		#get_node("non_pause").visible = false
-
 
 func _on_button_restart_pressed() -> void:
 	allbutone_slot_reset(0)
