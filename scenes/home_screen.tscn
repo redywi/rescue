@@ -44,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_6rtkj")
 autoplay = true
+loop = true
 
 [node name="Label" type="Label" parent="."]
 visible = false

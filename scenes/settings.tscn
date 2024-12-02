@@ -61,6 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_q8iw3")
 autoplay = true
+loop = true
 
 [node name="Judul" type="Label" parent="."]
 layout_mode = 1

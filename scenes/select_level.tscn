@@ -48,6 +48,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("3_8t4bd")
 autoplay = true
+loop = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
