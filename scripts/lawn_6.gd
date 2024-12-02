@@ -451,9 +451,9 @@ func _physics_process(delta):
 	cooldown_seed1.value += 20 * global.speed
 	cooldown_seed2.value += 20 * global.speed
 	cooldown_seed3.value += 20 * global.speed
-	cooldown_seed4.value += 5 * global.speed
-	cooldown_seed5.value += 7 * global.speed
-	cooldown_seed6.value += 5 * global.speed
+	cooldown_seed4.value += 7 * global.speed
+	cooldown_seed5.value += 9 * global.speed
+	cooldown_seed6.value += 7 * global.speed
 	
 	sun_timer.start(sun_timer.time_left - (delta * (global.speed - 1)))
 	if sun_timer.time_left < 0.5:
