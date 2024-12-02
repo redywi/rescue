@@ -218,7 +218,7 @@ func slotkey(event):
 	allbutone_slot_reset(0)
 
 func level_won():
-	music_2.stop()
+	music_4.stop()
 	win_sound.play()
 	global.lost_animals = 0
 	get_node("win").visible = true
