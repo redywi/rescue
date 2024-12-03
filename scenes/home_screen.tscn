@@ -108,7 +108,7 @@ texture_pressed = ExtResource("10_auxa2")
 texture_hover = ExtResource("11_jhctw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(240, 90)
+position = Vector2(240, 58)
 scale = Vector2(0.245312, 0.23125)
 texture = ExtResource("13_t3svu")
 
