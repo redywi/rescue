@@ -13,6 +13,7 @@ config_version=5
 config/name="RESCUE"
 run/main_scene="res://scenes/splash.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://assets/icon/logo game 256.png"
 
 [audio]
 
@@ -72,3 +73,4 @@ choose_seed6={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
